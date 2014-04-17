@@ -1,0 +1,12 @@
+
+.messagelist tr td.authres_status {
+	width: 17px;
+  padding: 0 0 0 3px;
+}
+
+.messagelist tr td.authres_status span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 14px;
+  background: url(badge.png) center no-repeat;
+}
