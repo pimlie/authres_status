@@ -295,6 +295,8 @@ class authres_status extends rcube_plugin
           /* Check for spamassassin's X-Spam-Status
           */
           } else if ($headers->others['x-spam-status']) {
+          		$status = self::STATUS_NOSIG;
+          		
               /* DKIM_* are defined at: http://search.cpan.org/~kmcgrail/Mail-SpamAssassin-3.3.2/lib/Mail/SpamAssassin/Plugin/DKIM.pm */
               $results = $headers->others['x-spam-status'];
               if(preg_match_all('/DKIM_[^,]+/', $results, $m)) {
