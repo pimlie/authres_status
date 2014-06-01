@@ -4,7 +4,7 @@
  * This plugin displays an icon showing the status
  * of an authentication results header of the message
  *
- * @version 0.1
+ * @version 0.2
  * @author pimlie
  * @mail pimlie@hotmail.com
  *
@@ -97,6 +97,10 @@ class authres_status extends rcube_plugin
         $input = new html_checkbox(array('name' => '_enable_authres_status_column', 'id' => 'enable_authres_status_column', 'value' => 1));
         $args['blocks']['authrescolumn']['options']['enable']['content'] = $input->show($rcmail->config->get('enable_authres_status_column'));
         
+        $args['blocks']['authrescolumn']['options']['fallback']['title'] = $this->gettext('label_fallback_verifier');
+        $input = new html_checkbox(array('name' => '_use_fallback_verifier', 'id' => 'use_fallback_verifier', 'value' => 1));
+        $args['blocks']['authrescolumn']['options']['fallback']['content'] = $input->show($rcmail->config->get('use_fallback_verifier'));
+        
         $statuses = array(1,2,4,8,16,32,64);
         $show_statuses = $rcmail->config->get('show_statuses');
         if($show_statuses === null) $show_statuses = array_sum($statuses) - self::STATUS_NOSIG;
@@ -108,8 +112,6 @@ class authres_status extends rcube_plugin
 	        $input = new html_checkbox(array('name' => '_show_statuses[]', 'id' => 'enable_authres_status_column', 'value' => $status));
 	        $args['blocks']['authresstatus']['options']['enable'.$status]['content'] = $input->show( ($show_statuses & $status) );
 	      }
-        
-        
       }
       
       return $args;
@@ -130,6 +132,8 @@ class authres_status extends rcube_plugin
     {
       $args['prefs']['enable_authres_status_column'] = isset($_POST["_enable_authres_status_column"]) && $_POST["_enable_authres_status_column"] == 1;
       $list_cols = rcmail::get_instance()->config->get('list_cols');
+      
+      $args['prefs']['use_fallback_verifier'] = isset($_POST["_use_fallback_verifier"]) && $_POST["_use_fallback_verifier"] == 1;
       
       if(!is_array($list_cols)) $list_cols = array();
       if($args['prefs']['enable_authres_status_column']) {
@@ -154,7 +158,7 @@ class authres_status extends rcube_plugin
 				if ($rcmail->config->get('enable_authres_status_column')) {
 					$show_statuses = (int)$rcmail->config->get('show_statuses');
 		    	foreach($p['messages'] As $index => $message) {
-		    		$img_status = $this->get_authentication_status($message, $show_statuses);
+		    		$img_status = $this->get_authentication_status($message, $show_statuses, $message->uid);
 		    		
 		    		$p['messages'][$index]->list_cols['authres_status'] = $img_status;
 		    	}
@@ -173,7 +177,7 @@ class authres_status extends rcube_plugin
         	$this->message_headers_done = true; 
         	
         	$show_statuses = (int)rcmail::get_instance()->config->get('show_statuses');
-					$this->img_status = $this->get_authentication_status($p['headers'], $show_statuses);
+					$this->img_status = $this->get_authentication_status($p['headers'], $show_statuses, (int)$_GET["_uid"]);
 			}
     	
     	$p['output']['from']['value'] = $this->img_status . $p['output']['from']['value'];
@@ -245,7 +249,7 @@ class authres_status extends rcube_plugin
 	    return $results;
     }
     
-    private function get_authentication_status($headers, $show_statuses = 0)
+    private function get_authentication_status($headers, $show_statuses = 0, $uid = 0)
     {
       /* If dkimproxy did not find a signature, stop here
       */
@@ -263,37 +267,35 @@ class authres_status extends rcube_plugin
 								$title.= ($title ? '; ' : '') . $result['title'];
 							}
 							
-							if(!$status) {
-								$status = self::STATUS_NOSIG;
-              }else if($status == self::STATUS_PASS) {
-                  /* Verify if its an author's domain signature or a third party
-                  */
-                  if(preg_match("/[@]([a-zA-Z0-9]+([.][a-zA-Z0-9]+)?\.[a-zA-Z]{2,4})/", $headers->from, $m)) {
-                    $authordomain = $m[1];
-                    
-                    foreach($results As $result) {
-                    	if($result['method'] == 'dkim' || $result['method'] == 'domainkeys') {
-                    		if(is_array($result['props']) && isset($result['props']['header'])) {
-                      		foreach($result['props']['header'] As $property => $pvalue) {
-                      			if(preg_match("/[@]?([a-zA-Z0-9]+([.][a-zA-Z0-9]+)?\.[a-zA-Z]{2,4})$/", $pvalue, $m)) {
-                      				$pvalue = $m[1];
-                      			}
-                      			
-                      			if(($property == 'd' || $property == 'i' || $property == 'from' || $property == 'sender') && $pvalue != $authordomain) {
-                      				if($status == self::STATUS_THIRD) {
-                      					$title.= '; '.$this->gettext('for').' ' . $pvalue .' '.$this->gettext('by').' '.$result['title'];
-                      				}else{
-                      					$status = self::STATUS_THIRD;
-                      					$title = $pvalue .' '.$this->gettext('by').' '.$result['title'];
-                      				}
-                      			}
-                      		}
-                      	}
+              if($status == self::STATUS_PASS) {
+                /* Verify if its an author's domain signature or a third party
+                */
+                if(preg_match("/[@]([a-zA-Z0-9]+([.][a-zA-Z0-9]+)?\.[a-zA-Z]{2,4})/", $headers->from, $m)) {
+                  $authordomain = $m[1];
+                  
+                  foreach($results As $result) {
+                  	if($result['method'] == 'dkim' || $result['method'] == 'domainkeys') {
+                  		if(is_array($result['props']) && isset($result['props']['header'])) {
+                    		foreach($result['props']['header'] As $property => $pvalue) {
+                    			if(preg_match("/[@]?([a-zA-Z0-9]+([.][a-zA-Z0-9]+)?\.[a-zA-Z]{2,4})$/", $pvalue, $m)) {
+                    				$pvalue = $m[1];
+                    			}
+                    			
+                    			if(($property == 'd' || $property == 'i' || $property == 'from' || $property == 'sender') && $pvalue != $authordomain) {
+                    				if($status == self::STATUS_THIRD) {
+                    					$title.= '; '.$this->gettext('for').' ' . $pvalue .' '.$this->gettext('by').' '.$result['title'];
+                    				}else{
+                    					$status = self::STATUS_THIRD;
+                    					$title = $pvalue .' '.$this->gettext('by').' '.$result['title'];
+                    				}
+                    			}
+                    		}
                     	}
-                    }
+                  	}
                   }
+                }
               }
-
+							if(!$status) $status = self::STATUS_NOSIG;
           /* Check for spamassassin's X-Spam-Status
           */
           } else if ($headers->others['x-spam-status']) {
@@ -318,7 +320,35 @@ class authres_status extends rcube_plugin
                   }
               }
           }else if($headers->others['dkim-signature'] || $headers->others['domainkey-signature']) {
-          	$status = self::STATUS_NORES;
+          	$status = 0;
+          	
+          	if($uid) {
+	          	$rcmail = rcmail::get_instance();
+	          	if($headers->others['dkim-signature'] && $rcmail->config->get('use_fallback_verifier')) {
+	          		if(!class_exists('Crypt_RSA')) {
+		          		$autoload = require __DIR__."/../../vendor/autoload.php";
+		          		$autoload->loadClass('Crypt_RSA'); // Preload for use in DKIM_Verify
+								}
+								$dkimVerify = new DKIM_Verify($rcmail->imap->get_raw_body($uid));
+								$results = $dkimVerify->validate();
+								
+								if(count($results)) {
+									$status = 0; $title = '';
+									foreach($results As $result) {
+										foreach($result As $res) {
+											if(count($res)) {
+												$status = $status | (isset(self::$RFC5451_authentication_results[$res['status']]) ? self::$RFC5451_authentication_results[$res['status']] : self::STATUS_FAIL);
+												
+												if($res['status'] == 'pass') $title.= ($title ? '; ' : '') . "dkim=pass (internal verifier)";
+											}
+										}
+									}
+									if(!$title) $title = $res['reason'];
+								}
+							}
+          	}
+          	
+          	if(!$status) $status = self::STATUS_NORES;
           }else{
  	  	      $status = self::STATUS_NOSIG;
           }
