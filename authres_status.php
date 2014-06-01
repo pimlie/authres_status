@@ -149,15 +149,17 @@ class authres_status extends rcube_plugin
     
     function messages_list($p) 
     {
-	   	$rcmail = rcmail::get_instance();
-			if ($rcmail->config->get('enable_authres_status_column')) {
-				$show_statuses = (int)$rcmail->config->get('show_statuses');
-	    	foreach($p['messages'] As $index => $message) {
-	    		$img_status = $this->get_authentication_status($message, $show_statuses);
-	    		
-	    		$p['messages'][$index]->list_cols['authres_status'] = $img_status;
+    	if (!empty($p['messages'])) {
+		   	$rcmail = rcmail::get_instance();
+				if ($rcmail->config->get('enable_authres_status_column')) {
+					$show_statuses = (int)$rcmail->config->get('show_statuses');
+		    	foreach($p['messages'] As $index => $message) {
+		    		$img_status = $this->get_authentication_status($message, $show_statuses);
+		    		
+		    		$p['messages'][$index]->list_cols['authres_status'] = $img_status;
+		    	}
 	    	}
-    	}
+	    }
     	return $p;
     }
     
