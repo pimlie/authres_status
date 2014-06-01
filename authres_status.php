@@ -206,7 +206,7 @@ class authres_status extends rcube_plugin
 			
 			$results = array();
 			foreach($headers As $header) {
-				if(preg_match('/^'.$cfws.'((?=.{1,254}$)((?=[a-z0-9-]{1,63}\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,63})'.$cfws.'(\(.*?\))?'.$cfws.';/i', trim($header), $m)) {
+				if(preg_match('/^'.$cfws.'((?=.{1,254}$)((?=[a-z0-9-]{1,63}\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,63}(\/[^\s]*)?))'.$cfws.'(\(.*?\))?'.$cfws.';/i', trim($header), $m)) {
 	        $authservid = $m[3];
 	        $header = substr($header, strlen($m[0]));
 	        
