@@ -1,10 +1,10 @@
 <?php
 
 $labels = array();
-$labels['nosignature'] = 'No signature information';
-$labels['noauthresults'] = 'Signature found but no auth. results header. Server configuration problem?';
-$labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
-$labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
+$labels['nosignature'] = 'Nessuna firma diponibile';
+$labels['noauthresults'] = 'Alcune firme sono state trovate, ma nessu auth. header. C\'è un problema di configurazione?';
+$labels['signaturepass'] = 'Firme valide dal dominio del mittente. Verificate da';
+$labels['partialpass'] = 'Alcune firme non sono valide, ma almeno una risulta valida per il dominio del mittente. Verificato da';
 $labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
 $labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
 $labels['invalidsignature'] = 'Signature is not valid! verified by ';
@@ -17,7 +17,6 @@ $labels['column_title']  = 'Auth. Result';
 
 $labels['title_enable_column']  = 'Enable Column';
 $labels['label_enable_column']  = 'Enable authentication result column in message list';
-$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
 
 $labels['title_include_status'] = 'Only show the following statuses';
 $labels['label_include_status1']  = 'No signature found';

@@ -9,22 +9,21 @@ $labels['thirdparty'] = 'Signed by third party, signature is present but for dif
 $labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
 $labels['invalidsignature'] = 'Signature is not valid! verified by ';
 
-$labels['for'] = 'for';
-$labels['by'] = 'by';
+$labels['for'] = 'számára';
+$labels['by'] = 'általa';
 
-$labels['section_title']  = 'Authenticaton Status';
+$labels['section_title']  = 'Hitelesítési Állapot';
 $labels['column_title']  = 'Auth. Result';
 
 $labels['title_enable_column']  = 'Enable Column';
 $labels['label_enable_column']  = 'Enable authentication result column in message list';
-$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
 
 $labels['title_include_status'] = 'Only show the following statuses';
-$labels['label_include_status1']  = 'No signature found';
+$labels['label_include_status1']  = 'Nem található aláírás';
 $labels['label_include_status2']  = 'Signature found but no auth. results header';
-$labels['label_include_status4']  = 'All signatures passed validation';
-$labels['label_include_status8']  = 'At least one signature passed validation';
-$labels['label_include_status16']  = 'Third party signature';
+$labels['label_include_status4']  = 'Az összes aláírás megfelelt az ellenörzésen';
+$labels['label_include_status8']  = 'Legalább egy aláírás megfelelt az ellenörzésen';
+$labels['label_include_status16']  = 'Külsö aláírás';
 $labels['label_include_status32']  = 'Signature temporary failed';
 $labels['label_include_status64']  = 'Signature permanently failed';
 

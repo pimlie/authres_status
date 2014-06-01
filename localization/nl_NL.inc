@@ -17,6 +17,7 @@ $labels['column_title']  = 'Auth. Status';
 
 $labels['title_enable_column']  = 'Activeer Kolom';
 $labels['label_enable_column']  = 'Voeg authenticatie status kolom toe aan berichtenlijst';
+$labels['label_fallback_verifier'] = 'Gebruik interne DKIM verifier (indien digitale handtekening gevonden maar geen auth. results header)';
 
 $labels['title_include_status'] = 'Geef alleen de volgende statussen weer';
 $labels['label_include_status1']  = 'Geen digitale handtekening gevonden';
