@@ -15,6 +15,8 @@ Configuration
 ----------------------
 If you want to enable the results column in your message list, enable this in your settings. You can also choose which statuses you would like to see/ignore.
 
+As of version 0.2 you can also enable an internal DKIM verifier ([php-dkim](https://github.com/pimlie/php-dkim) by angrychimp) if your MTA did not add a Authentication-Results header. You could experience some slow down because we need to retrieve the whole message body of each message for which we run the verifier.
+
 Tested
 ----------------------
 Tested on Roundcube 1.0.0, let me know if it works on previous version as well
