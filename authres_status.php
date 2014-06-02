@@ -206,7 +206,7 @@ class authres_status extends rcube_plugin
 			
 			$results = array();
 			foreach($headers As $header) {
-				if(preg_match('/^'.$cfws.'((?=.{1,254}$)((?=[a-z0-9-]{1,63}\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,63}(\/[^\s]*)?))'.$cfws.'(\(.*?\))?'.$cfws.';/i', trim($header), $m)) {
+				if(preg_match('/^'.$cfws.'((?=.{1,254}$)((?=[a-z0-9-]{1,63}\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,63}(\/[^\s]*)?)'.$cfws.'(\(.*?\))?'.$cfws.';/i', trim($header), $m)) {
 	        $authservid = $m[3];
 	        $header = substr($header, strlen($m[0]));
 	        
@@ -224,7 +224,7 @@ class authres_status extends rcube_plugin
 	        }
 	        
 	        foreach($resinfos As $resinfo) {
-	        	if(preg_match('/('.implode("|", self::$RFC5451_authentication_methods).')'.$cfws.'='.$cfws.'('.implode("|", array_keys(self::$RFC5451_authentication_results)).')'.$cfws.'(\(.*?\))?/', $resinfo, $m, PREG_OFFSET_CAPTURE)) {
+	        	if(preg_match('/('.implode("|", self::$RFC5451_authentication_methods).')'.$cfws.'='.$cfws.'('.implode("|", array_keys(self::$RFC5451_authentication_results)).')'.$cfws.'(\(.*?\))?/i', $resinfo, $m, PREG_OFFSET_CAPTURE)) {
 	        		$parsed_resinfo = array('title' => $m[0][0], 
 	        														'method' => $m[1][0], 
 	        														'result' => $m[6][0], 
@@ -249,7 +249,7 @@ class authres_status extends rcube_plugin
 	    return $results;
     }
     
-    private function get_authentication_status($headers, $show_statuses = 0, $uid = 0)
+    public function get_authentication_status($headers, $show_statuses = 0, $uid = 0)
     {
       /* If dkimproxy did not find a signature, stop here
       */
