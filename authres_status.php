@@ -303,6 +303,7 @@ class authres_status extends rcube_plugin
           		
               /* DKIM_* are defined at: http://search.cpan.org/~kmcgrail/Mail-SpamAssassin-3.3.2/lib/Mail/SpamAssassin/Plugin/DKIM.pm */
               $results = $headers->others['x-spam-status'];
+              if(is_array($results)) $results = end($results); // Should we take first or last header found? Last has probably been added by our own MTA
               if(preg_match_all('/DKIM_[^,]+/', $results, $m)) {
                   if(array_search('DKIM_SIGNED', $m[0]) !== FALSE) {
                       if(array_search('DKIM_VALID', $m[0]) !== FALSE) {
