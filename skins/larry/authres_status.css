@@ -1,18 +1,16 @@
 
-.webkit .messagelist tr td.authres_status,
-.webkit #messagelist tr td.authres_status
+.webkit .messagelist tr > .authres_status
 {
   width: 20px;
 }
 
-.messagelist tr td.authres_status,
-#messagelist tr td.authres_status {
-	width: 14px;
+.messagelist tr > .authres_status {
+  width: 20px;
   padding: 2px 3px;
   text-align: center;
 }
 
-.messagelist tr td.authres_status span {
+.messagelist tr > .authres_status span {
   display: inline-block;
   vertical-align: middle;
   background: url(badge.png) center no-repeat;
