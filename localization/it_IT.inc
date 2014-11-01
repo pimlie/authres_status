@@ -5,26 +5,27 @@ $labels['nosignature'] = 'Nessuna firma diponibile';
 $labels['noauthresults'] = 'Alcune firme sono state trovate, ma nessu auth. header. C\'è un problema di configurazione?';
 $labels['signaturepass'] = 'Firme valide dal dominio del mittente. Verificate da';
 $labels['partialpass'] = 'Alcune firme non sono valide, ma almeno una risulta valida per il dominio del mittente. Verificato da';
-$labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Signature is not valid! verified by ';
+$labels['thirdparty'] = 'Firmato da terzi, la firma è presente ma per il dominio diverso da quello dell\'indirizzo. verificate per';
+$labels['temporaryinvalid'] = 'La firma non è valida (temporaneamente)! verificato da';
+$labels['invalidsignature'] = 'La firma non è valida! verificato da';
 
-$labels['for'] = 'for';
-$labels['by'] = 'by';
+$labels['for'] = 'per';
+$labels['by'] = 'da';
 
-$labels['section_title']  = 'Authenticaton Status';
-$labels['column_title']  = 'Auth. Result';
+$labels['section_title']  = 'Stato autenticazione';
+$labels['column_title']  = 'Auth. Risult';
 
-$labels['title_enable_column']  = 'Enable Column';
-$labels['label_enable_column']  = 'Enable authentication result column in message list';
+$labels['title_enable_column']  = 'Abilita colonna';
+$labels['label_enable_column']  = 'Abilitare la colonna risultato autenticazione nell\'elenco dei messaggi';
+$labels['label_fallback_verifier'] = 'Usa verifica interna DKIM (se la firma è stata trovata ma non presenta intestazione di auth. result)';
 
-$labels['title_include_status'] = 'Only show the following statuses';
-$labels['label_include_status1']  = 'No signature found';
-$labels['label_include_status2']  = 'Signature found but no auth. results header';
-$labels['label_include_status4']  = 'All signatures passed validation';
-$labels['label_include_status8']  = 'At least one signature passed validation';
-$labels['label_include_status16']  = 'Third party signature';
-$labels['label_include_status32']  = 'Signature temporary failed';
-$labels['label_include_status64']  = 'Signature permanently failed';
+$labels['title_include_status'] = 'Mostra le seguenti stati';
+$labels['label_include_status1']  = 'Nessuna firma trovata';
+$labels['label_include_status2']  = 'Firma trovata ma non presenta nessuna intestazione di auth. result';
+$labels['label_include_status4']  = 'Tutte le firme hanno superato la convalidazione';
+$labels['label_include_status8']  = 'Almeno una firma ha superato la convalida';
+$labels['label_include_status16']  = 'Firma da terzi';
+$labels['label_include_status32']  = 'Firma temporaneamente fallita';
+$labels['label_include_status64']  = 'Firma fallita in modo permanente';
 
 ?>

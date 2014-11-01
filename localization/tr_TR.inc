@@ -17,6 +17,7 @@ $labels['column_title']  = 'Doğrulama Sonucu';
 
 $labels['title_enable_column']  = 'Sütunu Etkinleştir';
 $labels['label_enable_column']  = 'Mesaj listesinde doğrulama sonucu sütununu etkinleştir';
+$labels['label_fallback_verifier'] = 'Dahili DKIM doğrulayıcısını kullan (İmza bulundu fakat doğrulama sonucu başlığı yok ise)';
 
 $labels['title_include_status'] = 'Sadece aşağıdaki durumları göster';
 $labels['label_include_status1']  = 'İmza bulunamadı';

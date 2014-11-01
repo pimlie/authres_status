@@ -17,6 +17,7 @@ $labels['column_title']  = 'Egiaztapenaren emaitza';
 
 $labels['title_enable_column']  = 'Gaitu zutabea';
 $labels['label_enable_column']  = 'Gaitu emaitzen egiaztapen zutabea mezuen zerrendan';
+$labels['label_fallback_verifier'] = 'Erabili barneko DKIM egiaztatzailea (baldin eta sindura topatu bada baina ez egiaztapenen emaitzen goiburua)';
 
 $labels['title_include_status'] = 'Erakutsi bakarrik ondoko egoerak';
 $labels['label_include_status1']  = 'Ez da sinadurarik topatu';

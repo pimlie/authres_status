@@ -17,6 +17,7 @@ $labels['column_title']  = 'Resultáu autenticación';
 
 $labels['title_enable_column']  = 'Habilitar columna';
 $labels['label_enable_column']  = 'Habilitar columna de resultáu d\'autenticación na llista de mensaxes';
+$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
 
 $labels['title_include_status'] = 'Namái pa los siguientes estaos';
 $labels['label_include_status1']  = 'Nun s\'atopó robla';

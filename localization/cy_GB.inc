@@ -17,6 +17,7 @@ $labels['column_title']  = 'Canlyniad Dilysu';
 
 $labels['title_enable_column']  = 'Galluogi Colofn';
 $labels['label_enable_column']  = 'Galluogi colofn canlyniad dilysu yn y rhestr negeseuon';
+$labels['label_fallback_verifier'] = 'Defnyddio gwirydd DKIM mewnol (os gwelwyd llofnod ond dim pennawd canlyniad dilysu)';
 
 $labels['title_include_status'] = 'Dangos y statysau canlynol yn unig';
 $labels['label_include_status1']  = 'Dim llofnod wedi ei ganfod';

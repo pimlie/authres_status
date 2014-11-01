@@ -17,6 +17,7 @@ $labels['column_title']  = 'Resultado de autenticación';
 
 $labels['title_enable_column']  = 'Habilitar columna';
 $labels['label_enable_column']  = 'Habilitar columna de resultado de autenticación en la lista de mensajes';
+$labels['label_fallback_verifier'] = 'Usar verificador interno DKIM (si se encuentra una firma, pero no un encabezamiento con los resultados de autor)';
 
 $labels['title_include_status'] = 'Mostrar sólo los siguientes estados';
 $labels['label_include_status1']  = 'Firma no encontrada';

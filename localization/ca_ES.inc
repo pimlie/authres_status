@@ -17,6 +17,7 @@ $labels['column_title']  = 'Resultat de l\'autenticació';
 
 $labels['title_enable_column']  = 'Activa la columna';
 $labels['label_enable_column']  = 'Activa la columna de resultats d\'autenticació a la llista de missatges';
+$labels['label_fallback_verifier'] = 'Fes servir el verificador intern per DKIM (només si s\'ha trobat la signatura però no hi ha capçalera amb resultats d\'autenticació)';
 
 $labels['title_include_status'] = 'Mostra només els estats següents';
 $labels['label_include_status1']  = 'No s\'ha trobat cap signatura';

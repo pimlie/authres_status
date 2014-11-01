@@ -1,30 +1,31 @@
 <?php
 
 $labels = array();
-$labels['nosignature'] = 'No signature information';
-$labels['noauthresults'] = 'Signature found but no auth. results header. Server configuration problem?';
-$labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
-$labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
-$labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Signature is not valid! verified by ';
+$labels['nosignature'] = 'Нет информации и подписи';
+$labels['noauthresults'] = 'Подпись найдена, но нет заголовка результата аутентификации. Проблемы конфигурации сервера?';
+$labels['signaturepass'] = 'Действительные подписи от домена отправителя. Подтверждено ';
+$labels['partialpass'] = 'Некоторые подписи недействительны, но как минимум одна действительна для домена отправителя. Подтверждено ';
+$labels['thirdparty'] = 'Подписано третьим лицом, подпись присутствует, но для домена, отличного от адреса отправителя. Подтверждено ';
+$labels['temporaryinvalid'] = 'Подпись (временно) недействительна! Подтверждено ';
+$labels['invalidsignature'] = 'Подпись недействительна! Подтверждено ';
 
-$labels['for'] = 'for';
+$labels['for'] = 'для';
 $labels['by'] = 'by';
 
-$labels['section_title']  = 'Authenticaton Status';
-$labels['column_title']  = 'Auth. Result';
+$labels['section_title']  = 'Статус аутентификации';
+$labels['column_title']  = 'Результат аутентификации';
 
-$labels['title_enable_column']  = 'Enable Column';
-$labels['label_enable_column']  = 'Enable authentication result column in message list';
+$labels['title_enable_column']  = 'Включить столбец';
+$labels['label_enable_column']  = 'Включить столбец с результатом аутентификации в список сообщений';
+$labels['label_fallback_verifier'] = 'Использовать внутреннюю DKIM проверку (если подпись найдена, но нет заголовка результата аутентификации)';
 
-$labels['title_include_status'] = 'Only show the following statuses';
+$labels['title_include_status'] = 'Показывать только следующие статусы';
 $labels['label_include_status1']  = 'Подпись не найдена';
-$labels['label_include_status2']  = 'Signature found but no auth. results header';
+$labels['label_include_status2']  = 'Подпись найдена, но нет заголовка результата аутентификации';
 $labels['label_include_status4']  = 'Все подписи прошли валидацию';
-$labels['label_include_status8']  = 'At least one signature passed validation';
+$labels['label_include_status8']  = 'Как минимум одна подпись прошла валидацию';
 $labels['label_include_status16']  = 'Подпись третьей стороны';
-$labels['label_include_status32']  = 'Signature temporary failed';
-$labels['label_include_status64']  = 'Signature permanently failed';
+$labels['label_include_status32']  = 'Подписание временно невозможно';
+$labels['label_include_status64']  = 'Подписание постоянно невозможно';
 
 ?>

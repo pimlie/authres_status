@@ -17,6 +17,7 @@ $labels['column_title']  = 'Výsledok autentifikácie';
 
 $labels['title_enable_column']  = 'Zapnúť stĺpec';
 $labels['label_enable_column']  = 'Zapnúť stĺpec s výsledkom autentifikácie v zozname správ';
+$labels['label_fallback_verifier'] = 'Použiť interný overovač DKIM (ak sa našiel podpis, ale žiadna hlavička s výsledkami autentifikácie)';
 
 $labels['title_include_status'] = 'Zobraziť len s nasledujúcim stavom:';
 $labels['label_include_status1']  = 'Nenašiel sa žiadny podpis';

@@ -17,6 +17,7 @@ $labels['column_title']  = 'Auth. Result';
 
 $labels['title_enable_column']  = 'Enable Column';
 $labels['label_enable_column']  = 'Enable authentication result column in message list';
+$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
 
 $labels['title_include_status'] = 'Only show the following statuses';
 $labels['label_include_status1']  = 'Nem található aláírás';

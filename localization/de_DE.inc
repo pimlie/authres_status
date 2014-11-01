@@ -17,6 +17,7 @@ $labels['column_title']  = 'Auth. Ergebnis';
 
 $labels['title_enable_column']  = 'Aktiviere Spalte';
 $labels['label_enable_column']  = 'Aktiviere Spalte für das Ergebnis der Authentisierung in der Nachrichtenliste';
+$labels['label_fallback_verifier'] = 'Verwende den internen DKIM-Überprüfer (wenn eine Signatur vorhanden ist, aber kein Header mit dem Ergebnis der Authentifizierung)';
 
 $labels['title_include_status'] = 'Zeige nur die folgenden Status an';
 $labels['label_include_status1']  = 'Keine Signatur gefunden';
