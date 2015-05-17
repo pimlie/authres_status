@@ -130,23 +130,24 @@ class authres_status extends rcube_plugin
 
     public function preferences_save($args)
     {
-      $args['prefs']['enable_authres_status_column'] = isset($_POST["_enable_authres_status_column"]) && $_POST["_enable_authres_status_column"] == 1;
-      $list_cols = rcmail::get_instance()->config->get('list_cols');
-      
-      $args['prefs']['use_fallback_verifier'] = isset($_POST["_use_fallback_verifier"]) && $_POST["_use_fallback_verifier"] == 1;
-      
-      if(!is_array($list_cols)) $list_cols = array();
-      if($args['prefs']['enable_authres_status_column']) {
-      	if(!in_array('authres_status', $list_cols)) $list_cols[] = 'authres_status';
-      }else{
-      	$list_cols = array_diff($list_cols, array('authres_status'));
+    	if ($args['section'] == 'authres_status') {
+	      $args['prefs']['enable_authres_status_column'] = isset($_POST["_enable_authres_status_column"]) && $_POST["_enable_authres_status_column"] == 1;
+	      $list_cols = rcmail::get_instance()->config->get('list_cols');
+	      
+	      $args['prefs']['use_fallback_verifier'] = isset($_POST["_use_fallback_verifier"]) && $_POST["_use_fallback_verifier"] == 1;
+	      
+	      if(!is_array($list_cols)) $list_cols = array();
+	      if($args['prefs']['enable_authres_status_column']) {
+	      	if(!in_array('authres_status', $list_cols)) $list_cols[] = 'authres_status';
+	      }else{
+	      	$list_cols = array_diff($list_cols, array('authres_status'));
+	      }
+	      $args['prefs']['list_cols'] = $list_cols;
+	      
+	      if(is_array($_POST["_show_statuses"])) {
+	      	$args['prefs']['show_statuses'] = (int)array_sum($_POST["_show_statuses"]);
+	      }
       }
-      $args['prefs']['list_cols'] = $list_cols;
-      
-      if(is_array($_POST["_show_statuses"])) {
-      	$args['prefs']['show_statuses'] = (int)array_sum($_POST["_show_statuses"]);
-      }
-      
       return $args;
     }
 
