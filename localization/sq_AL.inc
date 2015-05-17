@@ -9,8 +9,8 @@ $labels['thirdparty'] = 'Signed by third party, signature is present but for dif
 $labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
 $labels['invalidsignature'] = 'Signature is not valid! verified by ';
 
-$labels['for'] = 'for';
-$labels['by'] = 'by';
+$labels['for'] = 'për';
+$labels['by'] = 'nga';
 
 $labels['section_title']  = 'Authenticaton Status';
 $labels['column_title']  = 'Auth. Result';

@@ -1,12 +1,12 @@
 <?php
 
 $labels = array();
-$labels['nosignature'] = 'Keine Informationen zur Sigantur';
-$labels['noauthresults'] = 'Signature found but no auth. results header. Server configuration problem?';
-$labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
-$labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
-$labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
+$labels['nosignature'] = 'Keine Informationen zur Signatur';
+$labels['noauthresults'] = 'Signatur gefunden aber keine Auth-Results Kopfzeilen. Server-Konfigurations-Problem?';
+$labels['signaturepass'] = 'Gültige Signatur(en) der Absenderdomäne. Geprüft von';
+$labels['partialpass'] = 'Einige Signaturen sind ungültig aber mind. eine ist gültig für die Absenderdomäne. Geprüft von';
+$labels['thirdparty'] = 'Signiert von einer Drittpartei! Signatur liegt vor, ist jedoch von einer anderen Domäne als die Absenderadresse. Geprüft für';
+$labels['temporaryinvalid'] = 'Signatur ist (temporär) ungültig! Geprüft von';
 $labels['invalidsignature'] = 'Ungültige Signatur! Verifiziert durch';
 
 $labels['for'] = 'für';
@@ -15,17 +15,17 @@ $labels['by'] = 'von';
 $labels['section_title']  = 'Authenifizierungsstatus';
 $labels['column_title']  = 'Auth. Resultat';
 
-$labels['title_enable_column']  = 'Enable Column';
-$labels['label_enable_column']  = 'Enable authentication result column in message list';
-$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
+$labels['title_enable_column']  = 'Spalte anzeigen';
+$labels['label_enable_column']  = 'Authenifizierungsresultat in der Nachrichtenliste anzeigen';
+$labels['label_fallback_verifier'] = 'Interne DKIM-Prüfung verwenden (falls Signatur vorhanden aber keine Auth-Results Kopfzeilen)';
 
-$labels['title_include_status'] = 'Only show the following statuses';
+$labels['title_include_status'] = 'Nur die folgenden Status anzeigen';
 $labels['label_include_status1']  = 'Keine Signatur gefunden';
-$labels['label_include_status2']  = 'Signature found but no auth. results header';
-$labels['label_include_status4']  = 'All signatures passed validation';
-$labels['label_include_status8']  = 'At least one signature passed validation';
-$labels['label_include_status16']  = 'Third party Signatur';
-$labels['label_include_status32']  = 'Signature temporary failed';
-$labels['label_include_status64']  = 'Signature permanently failed';
+$labels['label_include_status2']  = 'Signatur gefunden aber keine Auth-Results Kopfzeilen';
+$labels['label_include_status4']  = 'Alle Signaturen haben die Prüfung bestanden';
+$labels['label_include_status8']  = 'Mind. eine Signature hat die Prüfung bestanden';
+$labels['label_include_status16']  = 'Drittpartei-Signatur';
+$labels['label_include_status32']  = 'Signatur temporär fehlgeschlagen';
+$labels['label_include_status64']  = 'Signatur permanent fehlgeschlagen';
 
 ?>

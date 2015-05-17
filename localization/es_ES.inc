@@ -12,10 +12,10 @@ $labels['invalidsignature'] = '¡La firma no es válida! Verificada por';
 $labels['for'] = 'para';
 $labels['by'] = 'por';
 
-$labels['section_title']  = 'Estado de autenticación';
-$labels['column_title']  = 'Resultado de autenticación';
+$labels['section_title']  = 'Estado de Autenticación';
+$labels['column_title']  = 'Resultado de Autenticación';
 
-$labels['title_enable_column']  = 'Habilitar columna';
+$labels['title_enable_column']  = 'Habilitar Columna';
 $labels['label_enable_column']  = 'Habilitar columna de resultado de autenticación en la lista de mensajes';
 $labels['label_fallback_verifier'] = 'Usar verificador interno DKIM (si se encuentra una firma, pero no un encabezamiento con los resultados de autor)';
 
@@ -25,7 +25,7 @@ $labels['label_include_status2']  = 'Firma encontrada pero no la cabecera de res
 $labels['label_include_status4']  = 'Todas las firmas han pasado la validación';
 $labels['label_include_status8']  = 'Al menos una firma ha pasado la validación';
 $labels['label_include_status16']  = 'Firma de terceros';
-$labels['label_include_status32']  = 'Firma errónea temporalmente';
-$labels['label_include_status64']  = 'Firma errónea permanentemente';
+$labels['label_include_status32']  = 'Error temporal de la firma';
+$labels['label_include_status64']  = 'Error permanente de la firma';
 
 ?>

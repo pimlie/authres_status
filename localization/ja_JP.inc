@@ -17,7 +17,7 @@ $labels['column_title']  = '認証結果';
 
 $labels['title_enable_column']  = '列を有効';
 $labels['label_enable_column']  = 'メッセージの一覧で認証結果の列を有効にします。';
-$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
+$labels['label_fallback_verifier'] = '内蔵のDKIMの検証を使用(署名があり、認証結果のヘッダーがない場合)';
 
 $labels['title_include_status'] = '以下の署名だけ表示';
 $labels['label_include_status1']  = '署名がありません。';

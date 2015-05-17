@@ -1,31 +1,31 @@
 <?php
 
 $labels = array();
-$labels['nosignature'] = 'No signature information';
-$labels['noauthresults'] = 'Signature found but no auth. results header. Server configuration problem?';
-$labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
-$labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
-$labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Signature is not valid! verified by ';
+$labels['nosignature'] = 'Žádné informace podpisu';
+$labels['noauthresults'] = 'Podpis nalezen, ale chybí hlavička výsledku ověření. Chyba konfigurace serveru?';
+$labels['signaturepass'] = 'Platné podpis(y) z domény odesilatele. ověřil';
+$labels['partialpass'] = 'Některé podpisy jsou neplatné, ale alespoň jeden je platný pro doménu odesilatele. ověřil';
+$labels['thirdparty'] = 'Podepsáno třetí stranou, podpis je platný ale pro jinou doménu než má odesilatel. ověřeno pro';
+$labels['temporaryinvalid'] = 'Podpis není (dočasně) platný! ověřil';
+$labels['invalidsignature'] = 'Podpis není platný! ověřil';
 
-$labels['for'] = 'for';
-$labels['by'] = 'by';
+$labels['for'] = 'pro';
+$labels['by'] = 'od';
 
-$labels['section_title']  = 'Authenticaton Status';
-$labels['column_title']  = 'Auth. Result';
+$labels['section_title']  = 'Stav ověření';
+$labels['column_title']  = 'Ověření';
 
-$labels['title_enable_column']  = 'Enable Column';
-$labels['label_enable_column']  = 'Enable authentication result column in message list';
-$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
+$labels['title_enable_column']  = 'Zapnout Sloupec';
+$labels['label_enable_column']  = 'Zapnout sloupec s výsledkem ověření v seznamu zpráv';
+$labels['label_fallback_verifier'] = 'Použít vestavěný ověřovač DKIM (pokud je nalezen podpis ale chybí hlavička výsledku ověření)';
 
-$labels['title_include_status'] = 'Only show the following statuses';
-$labels['label_include_status1']  = 'No signature found';
-$labels['label_include_status2']  = 'Signature found but no auth. results header';
-$labels['label_include_status4']  = 'All signatures passed validation';
-$labels['label_include_status8']  = 'At least one signature passed validation';
-$labels['label_include_status16']  = 'Third party signature';
-$labels['label_include_status32']  = 'Signature temporary failed';
-$labels['label_include_status64']  = 'Signature permanently failed';
+$labels['title_include_status'] = 'Zobrazit pouze následující stavy';
+$labels['label_include_status1']  = 'Žádný podpis nenalezen';
+$labels['label_include_status2']  = 'Podpis nalezen, ale chybí hlavička výsledku ověření';
+$labels['label_include_status4']  = 'Všechny podpisy prošli ověřením';
+$labels['label_include_status8']  = 'Alespoň jeden podpis prošel ověřením';
+$labels['label_include_status16']  = 'Podpis třetí strany';
+$labels['label_include_status32']  = 'Podpis dočasně selhal';
+$labels['label_include_status64']  = 'Podpis trvale selhal';
 
 ?>

@@ -19,9 +19,9 @@ $labels['title_enable_column']  = 'Abilita colonna';
 $labels['label_enable_column']  = 'Abilitare la colonna risultato autenticazione nell\'elenco dei messaggi';
 $labels['label_fallback_verifier'] = 'Usa verifica interna DKIM (se la firma è stata trovata ma non presenta intestazione di auth. result)';
 
-$labels['title_include_status'] = 'Mostra le seguenti stati';
+$labels['title_include_status'] = 'Mostra soltanto i seguenti stati';
 $labels['label_include_status1']  = 'Nessuna firma trovata';
-$labels['label_include_status2']  = 'Firma trovata ma non presenta nessuna intestazione di auth. result';
+$labels['label_include_status2']  = 'Firma trovata ma non presenta alcuna intestazione di \'auth. result\'';
 $labels['label_include_status4']  = 'Tutte le firme hanno superato la convalidazione';
 $labels['label_include_status8']  = 'Almeno una firma ha superato la convalida';
 $labels['label_include_status16']  = 'Firma da terzi';

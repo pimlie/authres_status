@@ -1,31 +1,31 @@
 <?php
 
 $labels = array();
-$labels['nosignature'] = 'No signature information';
-$labels['noauthresults'] = 'Signature found but no auth. results header. Server configuration problem?';
-$labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
-$labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
-$labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Signature is not valid! verified by ';
+$labels['nosignature'] = 'Nulle information de signatura';
+$labels['noauthresults'] = 'Signatura trovate ma nulle capite de resultato de authentication. Problema de configuration del servitor?';
+$labels['signaturepass'] = 'Signatura(s) valide ab le dominio del expeditor, verificate per';
+$labels['partialpass'] = 'Alcun signaturas non es valide ma al minus un es valide pro le dominio del expeditor. Verificate per';
+$labels['thirdparty'] = 'Signate per un tertio. Le signatura es presente ma es pro un altere dominio que illo del adresse "De:". Verificate pro';
+$labels['temporaryinvalid'] = 'Le signatura (temporarimente) non es valide. Verificate per';
+$labels['invalidsignature'] = 'Le signatura non es valide. Verificate per';
 
-$labels['for'] = 'for';
-$labels['by'] = 'by';
+$labels['for'] = 'pro';
+$labels['by'] = 'per';
 
-$labels['section_title']  = 'Authenticaton Status';
-$labels['column_title']  = 'Auth. Result';
+$labels['section_title']  = 'Stato de authentication';
+$labels['column_title']  = 'Resultato de authentication';
 
-$labels['title_enable_column']  = 'Enable Column';
-$labels['label_enable_column']  = 'Enable authentication result column in message list';
-$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
+$labels['title_enable_column']  = 'Activar columna';
+$labels['label_enable_column']  = 'Activar le columna de resultato de authentication in le lista de messages';
+$labels['label_fallback_verifier'] = 'Usar le verificator DKIM interne (si le signatura es trovate ma il manca un capite de resultato de authentication)';
 
-$labels['title_include_status'] = 'Only show the following statuses';
-$labels['label_include_status1']  = 'No signature found';
-$labels['label_include_status2']  = 'Signature found but no auth. results header';
-$labels['label_include_status4']  = 'All signatures passed validation';
-$labels['label_include_status8']  = 'At least one signature passed validation';
-$labels['label_include_status16']  = 'Third party signature';
-$labels['label_include_status32']  = 'Signature temporary failed';
-$labels['label_include_status64']  = 'Signature permanently failed';
+$labels['title_include_status'] = 'Monstrar solmente le sequente statos';
+$labels['label_include_status1']  = 'Nulle signatura trovate';
+$labels['label_include_status2']  = 'Signatura trovate ma il manca un capite de resultato de authentication';
+$labels['label_include_status4']  = 'Tote le signaturas ha essite validate correctemente';
+$labels['label_include_status8']  = 'Al minus un signatura ha essite validate correctemente';
+$labels['label_include_status16']  = 'Signatura de tertio';
+$labels['label_include_status32']  = 'Le signatura ha temporarimente fallite';
+$labels['label_include_status64']  = 'Le signatura ha permanentemente fallite';
 
 ?>

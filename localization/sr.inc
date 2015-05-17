@@ -1,31 +1,31 @@
 <?php
 
 $labels = array();
-$labels['nosignature'] = 'No signature information';
-$labels['noauthresults'] = 'Signature found but no auth. results header. Server configuration problem?';
-$labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
-$labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
-$labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Signature is not valid! verified by ';
+$labels['nosignature'] = 'Нема података о потпису';
+$labels['noauthresults'] = 'Потпис нађен али нема заглавља с резултатом аутентификације. Проблем са серверским подешавањима?';
+$labels['signaturepass'] = 'Ваљан потпис да домена пошиљаоца. Оверен од стране';
+$labels['partialpass'] = 'Неки потписи су неисправни али бар један је исправан за домен пошиљаоца. Проверио ';
+$labels['thirdparty'] = 'Потписан од треће стране. Потпис присутан али за различит домен него што је у адреси. Проверен за ';
+$labels['temporaryinvalid'] = 'Потпис (привремено) није исправан! Проверио ';
+$labels['invalidsignature'] = 'Потпис није исправан! Проверио ';
 
-$labels['for'] = 'for';
-$labels['by'] = 'by';
+$labels['for'] = 'за';
+$labels['by'] = 'од';
 
-$labels['section_title']  = 'Authenticaton Status';
-$labels['column_title']  = 'Auth. Result';
+$labels['section_title']  = 'Стање аутентификације';
+$labels['column_title']  = 'Резултат аутентификације';
 
-$labels['title_enable_column']  = 'Enable Column';
-$labels['label_enable_column']  = 'Enable authentication result column in message list';
-$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
+$labels['title_enable_column']  = 'Укључи колону';
+$labels['label_enable_column']  = 'Приказује колону с резултатом аутентификације у листи порука';
+$labels['label_fallback_verifier'] = 'Користи интерни ДКИМ проверавач (ако нема заглавља аутентификације)';
 
-$labels['title_include_status'] = 'Only show the following statuses';
-$labels['label_include_status1']  = 'No signature found';
-$labels['label_include_status2']  = 'Signature found but no auth. results header';
-$labels['label_include_status4']  = 'All signatures passed validation';
-$labels['label_include_status8']  = 'At least one signature passed validation';
-$labels['label_include_status16']  = 'Third party signature';
-$labels['label_include_status32']  = 'Signature temporary failed';
-$labels['label_include_status64']  = 'Signature permanently failed';
+$labels['title_include_status'] = 'Прикажи само следећа стања';
+$labels['label_include_status1']  = 'Није пронађен потпис';
+$labels['label_include_status2']  = 'Потпис постоји али нема заглавља аутентификације';
+$labels['label_include_status4']  = 'Сви потписи су прошли оверу';
+$labels['label_include_status8']  = 'Бар један потпис је прошао оверу';
+$labels['label_include_status16']  = 'Потпис треће стране';
+$labels['label_include_status32']  = 'Потпис привремено неуспешан';
+$labels['label_include_status64']  = 'Потпис трајно неуспешан';
 
 ?>

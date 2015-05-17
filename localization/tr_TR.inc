@@ -6,8 +6,8 @@ $labels['noauthresults'] = 'İmza bulundu fakat doğrulama sonucu başlığı yo
 $labels['signaturepass'] = 'Gönderici alan adından gelen imza(lar) geçerli.  Doğrulama yapan';
 $labels['partialpass'] = 'Bazı imzalar geçersiz fakat enaz bir tanesi bu gönderici alan adı için geçerli. Doğrulama yapan';
 $labels['thirdparty'] = '3. parti tarafından imzalanmış. İmza var fakat gönderici adresinden farklı bir alan adı için var. Şunun için doğrulandı:';
-$labels['temporaryinvalid'] = 'İmza (geçici olarak) geçerli değil. Şu tarafından doğrulandı:';
-$labels['invalidsignature'] = 'İmza geçerli değil. Şu tarafından doğrulandı:';
+$labels['temporaryinvalid'] = 'İmza (geçici olarak) geçerli değil. Doğrulayan:';
+$labels['invalidsignature'] = 'İmza geçerli değil. Doğrulayan:';
 
 $labels['for'] = 'için';
 $labels['by'] = 'tarafından';
