@@ -192,6 +192,7 @@ class authres_status extends rcube_plugin
         }
 
         $p['output']['from']['value'] = $this->img_status . $p['output']['from']['value'];
+        $p['output']['from']['html'] = true;
 
         return $p;
     }
