@@ -1,31 +1,31 @@
 <?php
 
 $labels = array();
-$labels['nosignature'] = 'No signature information';
-$labels['noauthresults'] = 'Signature found but no auth. results header. Server configuration problem?';
-$labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
-$labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
-$labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Signature is not valid! verified by ';
+$labels['nosignature'] = 'Гарын үсгийн мэдээлэл олсонгүй';
+$labels['noauthresults'] = 'Гарын үсэг олдсон ч толгой хэсэгт нэвтрэлтийн үр дүн  олдсонгүй. Серверийн тохиргооны асуудал?';
+$labels['signaturepass'] = 'Илгээгчийн домэйн нэр зөв гарын үсэгтэй. Баталгаажуулсан: ';
+$labels['partialpass'] = 'Илгээгчийн домэйний гарын үсгүүдээс нэг нь зөв, зарим нь буруу байна. Баталгаажуулсан: ';
+$labels['thirdparty'] = 'Гуравдагч этгээд баталгаажуулсан, гарын үсэг байгаач өөр домэйн нэр нь өөр байна. Баталгаажуулсан: ';
+$labels['temporaryinvalid'] = 'Гарын үсэг (түр) зөв биш байна! Шалгасан: ';
+$labels['invalidsignature'] = 'Гарын үсэг буруу! шалгасан: ';
 
 $labels['for'] = 'for';
-$labels['by'] = 'by';
+$labels['by'] = 'аар';
 
-$labels['section_title']  = 'Authenticaton Status';
-$labels['column_title']  = 'Auth. Result';
+$labels['section_title']  = 'Нэвтрэлтийн төлөв';
+$labels['column_title']  = 'Нэвт. Үр дүн';
 
-$labels['title_enable_column']  = 'Enable Column';
-$labels['label_enable_column']  = 'Enable authentication result column in message list';
-$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
+$labels['title_enable_column']  = 'Баганыг идэвхжүүлэх';
+$labels['label_enable_column']  = 'Захианы жагсаалтанд нэвтрэлтийн дүр баганыг идэвхжүүлэх';
+$labels['label_fallback_verifier'] = 'Дотоод DKIM шалгагч ашиглах (хэрэв гарын үсэг олдсон ч толгой хэсэгт нэвтрэлтийн үр дүн байхгүй) ';
 
-$labels['title_include_status'] = 'Only show the following statuses';
-$labels['label_include_status1']  = 'No signature found';
-$labels['label_include_status2']  = 'Signature found but no auth. results header';
-$labels['label_include_status4']  = 'All signatures passed validation';
-$labels['label_include_status8']  = 'At least one signature passed validation';
-$labels['label_include_status16']  = 'Third party signature';
-$labels['label_include_status32']  = 'Signature temporary failed';
-$labels['label_include_status64']  = 'Signature permanently failed';
+$labels['title_include_status'] = 'Зөвхөн дараах төлөвүүдийг харуулна';
+$labels['label_include_status1']  = 'Гарын үсэг олдсонгүй';
+$labels['label_include_status2']  = 'Гарын үсэг олдсон ч толгой хэсэгт нэвтрэлтийн үр дүн олдоогүй';
+$labels['label_include_status4']  = 'Бүх гарын үсэг зөв';
+$labels['label_include_status8']  = 'Ядаж нэг гарын үсэг зөв';
+$labels['label_include_status16']  = 'Гуравдагч этгээдийн гарын үсэг';
+$labels['label_include_status32']  = 'Гарын үсэг түр алдаатай';
+$labels['label_include_status64']  = 'Гарын үсэг алдаатай';
 
 ?>
