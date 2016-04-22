@@ -79,7 +79,7 @@ class authres_status extends rcube_plugin
             'statuses'  => !in_array('show_statuses', $dont_override),
         );
 
-        if (!in_array('list_cols', $dont_override)){
+        if ($this->config['list_cols']){
             $this->include_stylesheet($this->local_skin_path() . '/authres_status.css');
             if ($rcmail->config->get('enable_authres_status_column')) {
                 $this->include_script('authres_status.js');
