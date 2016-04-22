@@ -85,9 +85,11 @@ class authres_status extends rcube_plugin
                 $this->include_script('authres_status.js');
             }
 
-            $this->add_hook('preferences_list', array($this, 'preferences_list'));
-            $this->add_hook('preferences_sections_list', array($this, 'preferences_section'));
-            $this->add_hook('preferences_save', array($this, 'preferences_save'));
+            if ($this->config['column'] || $this->config['fallback'] || $this->config['statuses']) {
+                $this->add_hook('preferences_list', array($this, 'preferences_list'));
+                $this->add_hook('preferences_sections_list', array($this, 'preferences_section'));
+                $this->add_hook('preferences_save', array($this, 'preferences_save'));
+            }
         }
     }
 
