@@ -72,6 +72,13 @@ class authres_status extends rcube_plugin
         }
 
         $dont_override = $rcmail->config->get('dont_override', array());
+        $this->config = array(
+            'list_cols' => !in_array('list_cols', $dont_override),
+            'column'    => !in_array('enable_authres_status_column', $dont_override),
+            'fallback'  => !in_array('use_fallback_verifier', $dont_override),
+            'statuses'  => !in_array('show_statuses', $dont_override),
+        );
+
         if (!in_array('list_cols', $dont_override)){
             $this->include_stylesheet($this->local_skin_path() . '/authres_status.css');
             if ($rcmail->config->get('enable_authres_status_column')) {
