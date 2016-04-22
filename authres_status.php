@@ -120,18 +120,20 @@ class authres_status extends rcube_plugin
                 }
             }
 
-            $statuses = array(1, 2, 4, 8, 16, 32, 64);
-            $show_statuses = $rcmail->config->get('show_statuses');
-            if ($show_statuses === null) {
-                $show_statuses = array_sum($statuses) - self::STATUS_NOSIG;
-            }
+            if ($this->config['statuses']) {
+                $statuses = array(1, 2, 4, 8, 16, 32, 64);
+                $show_statuses = $rcmail->config->get('show_statuses');
+                if ($show_statuses === null) {
+                    $show_statuses = array_sum($statuses) - self::STATUS_NOSIG;
+                }
 
-            foreach($statuses as $status) {
-                $args['blocks']['authresstatus']['name'] = $this->gettext('title_include_status');
+                foreach($statuses as $status) {
+                    $args['blocks']['authresstatus']['name'] = $this->gettext('title_include_status');
 
-                $args['blocks']['authresstatus']['options']['enable' . $status]['title'] = $this->gettext('label_include_status' . $status);
-                $input = new html_checkbox(array('name' => '_show_statuses[]', 'id' => 'enable_authres_status_column', 'value' => $status));
-                $args['blocks']['authresstatus']['options']['enable' . $status]['content'] = $input->show(($show_statuses & $status));
+                    $args['blocks']['authresstatus']['options']['enable' . $status]['title'] = $this->gettext('label_include_status' . $status);
+                    $input = new html_checkbox(array('name' => '_show_statuses[]', 'id' => 'enable_authres_status_column', 'value' => $status));
+                    $args['blocks']['authresstatus']['options']['enable' . $status]['content'] = $input->show(($show_statuses & $status));
+                }
             }
         }
 
