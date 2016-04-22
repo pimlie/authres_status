@@ -1,0 +1,5 @@
+<?php
+    $config['enable_authres_status_column'] = true;
+    $config['use_fallback_verifier'] = false;
+    $config['show_statuses'] = 127;
+?>
