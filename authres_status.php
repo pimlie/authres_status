@@ -104,15 +104,21 @@ class authres_status extends rcube_plugin
         if ($args['section'] == 'authres_status') {
             $rcmail = rcmail::get_instance();
 
-            $args['blocks']['authrescolumn']['name'] = $this->gettext('title_enable_column');
+            if ($this->config['column'] || $this->config['fallback']) {
+                $args['blocks']['authrescolumn']['name'] = $this->gettext('title_enable_column');
 
-            $args['blocks']['authrescolumn']['options']['enable']['title'] = $this->gettext('label_enable_column');
-            $input = new html_checkbox(array('name' => '_enable_authres_status_column', 'id' => 'enable_authres_status_column', 'value' => 1));
-            $args['blocks']['authrescolumn']['options']['enable']['content'] = $input->show($rcmail->config->get('enable_authres_status_column'));
+                if ($this->config['column']) {
+                    $args['blocks']['authrescolumn']['options']['enable']['title'] = $this->gettext('label_enable_column');
+                    $input = new html_checkbox(array('name' => '_enable_authres_status_column', 'id' => 'enable_authres_status_column', 'value' => 1));
+                    $args['blocks']['authrescolumn']['options']['enable']['content'] = $input->show($rcmail->config->get('enable_authres_status_column'));
+                }
 
-            $args['blocks']['authrescolumn']['options']['fallback']['title'] = $this->gettext('label_fallback_verifier');
-            $input = new html_checkbox(array('name' => '_use_fallback_verifier', 'id' => 'use_fallback_verifier', 'value' => 1));
-            $args['blocks']['authrescolumn']['options']['fallback']['content'] = $input->show($rcmail->config->get('use_fallback_verifier'));
+                if ($this->config['fallback']) {
+                    $args['blocks']['authrescolumn']['options']['fallback']['title'] = $this->gettext('label_fallback_verifier');
+                    $input = new html_checkbox(array('name' => '_use_fallback_verifier', 'id' => 'use_fallback_verifier', 'value' => 1));
+                    $args['blocks']['authrescolumn']['options']['fallback']['content'] = $input->show($rcmail->config->get('use_fallback_verifier'));
+                }
+            }
 
             $statuses = array(1, 2, 4, 8, 16, 32, 64);
             $show_statuses = $rcmail->config->get('show_statuses');
