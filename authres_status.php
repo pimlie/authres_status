@@ -51,7 +51,7 @@ class authres_status extends rcube_plugin
     private static $RFC5451_ptypes = array("smtp", "header", "body", "policy");
     private static $RFC5451_properties = array("auth", "d", "i", "from", "sender", "iprev", "mailfrom", "helo");
 
-    private $config;
+    private $override;
     private $img_status;
     private $message_headers_done = false;
 
@@ -72,15 +72,24 @@ class authres_status extends rcube_plugin
         }
 
         $dont_override = $rcmail->config->get('dont_override', array());
-        if (!in_array('list_cols', $dont_override)){
+        $this->override = array(
+            'list_cols' => !in_array('list_cols', $dont_override),
+            'column'    => !in_array('enable_authres_status_column', $dont_override),
+            'fallback'  => !in_array('use_fallback_verifier', $dont_override),
+            'statuses'  => !in_array('show_statuses', $dont_override),
+        );
+
+        if ($this->override['list_cols']){
             $this->include_stylesheet($this->local_skin_path() . '/authres_status.css');
             if ($rcmail->config->get('enable_authres_status_column')) {
                 $this->include_script('authres_status.js');
             }
 
-            $this->add_hook('preferences_list', array($this, 'preferences_list'));
-            $this->add_hook('preferences_sections_list', array($this, 'preferences_section'));
-            $this->add_hook('preferences_save', array($this, 'preferences_save'));
+            if ($this->override['column'] || $this->override['fallback'] || $this->override['statuses']) {
+                $this->add_hook('preferences_list', array($this, 'preferences_list'));
+                $this->add_hook('preferences_sections_list', array($this, 'preferences_section'));
+                $this->add_hook('preferences_save', array($this, 'preferences_save'));
+            }
         }
     }
 
@@ -95,28 +104,36 @@ class authres_status extends rcube_plugin
         if ($args['section'] == 'authres_status') {
             $rcmail = rcmail::get_instance();
 
-            $args['blocks']['authrescolumn']['name'] = $this->gettext('title_enable_column');
+            if ($this->override['column'] || $this->override['fallback']) {
+                $args['blocks']['authrescolumn']['name'] = $this->gettext('title_enable_column');
 
-            $args['blocks']['authrescolumn']['options']['enable']['title'] = $this->gettext('label_enable_column');
-            $input = new html_checkbox(array('name' => '_enable_authres_status_column', 'id' => 'enable_authres_status_column', 'value' => 1));
-            $args['blocks']['authrescolumn']['options']['enable']['content'] = $input->show($rcmail->config->get('enable_authres_status_column'));
+                if ($this->override['column']) {
+                    $args['blocks']['authrescolumn']['options']['enable']['title'] = $this->gettext('label_enable_column');
+                    $input = new html_checkbox(array('name' => '_enable_authres_status_column', 'id' => 'enable_authres_status_column', 'value' => 1));
+                    $args['blocks']['authrescolumn']['options']['enable']['content'] = $input->show($rcmail->config->get('enable_authres_status_column'));
+                }
 
-            $args['blocks']['authrescolumn']['options']['fallback']['title'] = $this->gettext('label_fallback_verifier');
-            $input = new html_checkbox(array('name' => '_use_fallback_verifier', 'id' => 'use_fallback_verifier', 'value' => 1));
-            $args['blocks']['authrescolumn']['options']['fallback']['content'] = $input->show($rcmail->config->get('use_fallback_verifier'));
-
-            $statuses = array(1, 2, 4, 8, 16, 32, 64);
-            $show_statuses = $rcmail->config->get('show_statuses');
-            if ($show_statuses === null) {
-                $show_statuses = array_sum($statuses) - self::STATUS_NOSIG;
+                if ($this->override['fallback']) {
+                    $args['blocks']['authrescolumn']['options']['fallback']['title'] = $this->gettext('label_fallback_verifier');
+                    $input = new html_checkbox(array('name' => '_use_fallback_verifier', 'id' => 'use_fallback_verifier', 'value' => 1));
+                    $args['blocks']['authrescolumn']['options']['fallback']['content'] = $input->show($rcmail->config->get('use_fallback_verifier'));
+                }
             }
 
-            foreach($statuses as $status) {
-                $args['blocks']['authresstatus']['name'] = $this->gettext('title_include_status');
+            if ($this->override['statuses']) {
+                $statuses = array(1, 2, 4, 8, 16, 32, 64);
+                $show_statuses = $rcmail->config->get('show_statuses');
+                if ($show_statuses === null) {
+                    $show_statuses = array_sum($statuses) - self::STATUS_NOSIG;
+                }
 
-                $args['blocks']['authresstatus']['options']['enable' . $status]['title'] = $this->gettext('label_include_status' . $status);
-                $input = new html_checkbox(array('name' => '_show_statuses[]', 'id' => 'enable_authres_status_column', 'value' => $status));
-                $args['blocks']['authresstatus']['options']['enable' . $status]['content'] = $input->show(($show_statuses & $status));
+                foreach($statuses as $status) {
+                    $args['blocks']['authresstatus']['name'] = $this->gettext('title_include_status');
+
+                    $args['blocks']['authresstatus']['options']['enable' . $status]['title'] = $this->gettext('label_include_status' . $status);
+                    $input = new html_checkbox(array('name' => '_show_statuses[]', 'id' => 'enable_authres_status_column', 'value' => $status));
+                    $args['blocks']['authresstatus']['options']['enable' . $status]['content'] = $input->show(($show_statuses & $status));
+                }
             }
         }
 
