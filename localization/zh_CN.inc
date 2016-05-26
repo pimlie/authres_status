@@ -1,31 +1,31 @@
 <?php
 
 $labels = array();
-$labels['nosignature'] = 'No signature information';
-$labels['noauthresults'] = 'Signature found but no auth. results header. Server configuration problem?';
-$labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
-$labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
-$labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Signature is not valid! verified by ';
+$labels['nosignature'] = '没有签名信息';
+$labels['noauthresults'] = '找到签名但没有 auth. results 头。服务器配置存在问题？';
+$labels['signaturepass'] = '发件方域名的有效签名。验证者';
+$labels['partialpass'] = '部分签名无效，但有至少一个发件方域名的有效签名。验证者';
+$labels['thirdparty'] = '已被第三方签名，但与地址的域名不同。验证者';
+$labels['temporaryinvalid'] = '签名（暂时）无效！验证者';
+$labels['invalidsignature'] = '签名无效！验证者';
 
-$labels['for'] = 'for';
-$labels['by'] = 'by';
+$labels['for'] = '对';
+$labels['by'] = '由';
 
-$labels['section_title']  = 'Authenticaton Status';
+$labels['section_title']  = '身份验证状态';
 $labels['column_title']  = 'Auth. Result';
 
-$labels['title_enable_column']  = 'Enable Column';
-$labels['label_enable_column']  = 'Enable authentication result column in message list';
-$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
+$labels['title_enable_column']  = '启用列';
+$labels['label_enable_column']  = '启用消息列表中的“身份验证结果”列';
+$labels['label_fallback_verifier'] = '使用内部 DKIM 验证器（如果找到签名但没有 auth. results 头）';
 
-$labels['title_include_status'] = 'Only show the following statuses';
-$labels['label_include_status1']  = 'No signature found';
-$labels['label_include_status2']  = 'Signature found but no auth. results header';
-$labels['label_include_status4']  = 'All signatures passed validation';
-$labels['label_include_status8']  = 'At least one signature passed validation';
-$labels['label_include_status16']  = 'Third party signature';
-$labels['label_include_status32']  = 'Signature temporary failed';
-$labels['label_include_status64']  = 'Signature permanently failed';
+$labels['title_include_status'] = '只显示下列签名';
+$labels['label_include_status1']  = '没有找到签名';
+$labels['label_include_status2']  = '找到签名但没有 auth. results 头';
+$labels['label_include_status4']  = '所有签名通过验证';
+$labels['label_include_status8']  = '至少一个签名通过验证';
+$labels['label_include_status16']  = '第三方签名';
+$labels['label_include_status32']  = '签名暂时失败';
+$labels['label_include_status64']  = '签名永久失败';
 
 ?>
