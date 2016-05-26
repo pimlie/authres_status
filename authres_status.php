@@ -328,7 +328,7 @@ class authres_status extends rcube_plugin
                     $results = end($results); // Should we take first or last header found? Last has probably been added by our own MTA
                 }
 
-                if (preg_match_all('/DKIM_[^,]+/', $results, $m)) {
+                if (preg_match_all('/DKIM_[^,=]+/', $results, $m)) {
                     if (array_search('DKIM_SIGNED', $m[0]) !== FALSE) {
                         if (array_search('DKIM_VALID', $m[0]) !== FALSE) {
                             if (array_search('DKIM_VALID_AU', $m[0])) {
