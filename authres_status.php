@@ -27,6 +27,7 @@ class authres_status extends rcube_plugin
     const STATUS_THIRD = 16;
     const STATUS_WARN  = 32;
     const STATUS_FAIL  = 64;
+    const STATUS_ALL   = 127;
 
     private static $RFC5451_authentication_methods = array(
         "auth",
