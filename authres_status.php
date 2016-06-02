@@ -60,6 +60,7 @@ class authres_status extends rcube_plugin
         $this->add_texts('localization', true);
 
         $rcmail = rcmail::get_instance();
+        $this->load_config();
         if ($rcmail->action == 'show' || $rcmail->action == 'preview') {
             $this->add_hook('storage_init', array($this, 'storage_init'));
             $this->add_hook('message_headers_output', array($this, 'message_headers'));
