@@ -1,7 +1,10 @@
 <?php
 
 // RoundCube plugin authres_status default settings
-
+//
+// If you wish to protect certain variables to be overriden by the user, add them to 
+// dont_override in your main config/config.inc.php
+//
 // Set to true to enable authentication result column in message list, default false
 //$config['enable_authres_status_column'] = false;
 
@@ -26,8 +29,3 @@
 // default value: authres_status::STATUS_ALL & ~authres_status::STATUS_NOSIG
 //
 //$config['show_statuses'] = authres_status::STATUS_ALL & ~authres_status::STATUS_NOSIG;
-
-// Donot allowed the user to override configuration
-// Add the names of the config variables your users are not allowed to override themselves, default empty
-//$config['dont_override'] = array('enable_authres_status_column', 'use_fallback_verifier', 'show_statuses');
-
