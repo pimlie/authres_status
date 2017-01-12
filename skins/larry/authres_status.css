@@ -20,3 +20,7 @@
 	background-image: url(badge.png);
 	background-position: 10px 5px;
 }
+
+.authres-status-img {
+	vertical-align: top;	
+}
