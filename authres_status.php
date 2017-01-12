@@ -437,7 +437,7 @@ class authres_status extends rcube_plugin
         if (!$show_statuses || ($show_statuses & $status)) {
             $alt = $this->gettext($alt);
 
-            return '<img src="plugins/authres_status/images/' . $image . '" alt="' . $alt . '" title="' . $alt . htmlentities($title) . '" width="14" height="14" /> ';
+            return '<img src="plugins/authres_status/images/' . $image . '" alt="' . $alt . '" title="' . $alt . htmlentities($title) . '" width="14" height="14" class="authres-status-img" /> ';
         }
 
         return '';
