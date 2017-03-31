@@ -308,6 +308,7 @@ class authres_status extends rcube_plugin
                     */
                     if (preg_match("/[@]([a-zA-Z0-9]+([.][a-zA-Z0-9]+)?\.[a-zA-Z]{2,4})/", $headers->from, $m)) {
                         $authordomain = $m[1];
+                        $authorDomainFound = false;
 
                         foreach ($results as $result) {
                             if ($result['method'] == 'dkim' || $result['method'] == 'domainkeys') {
@@ -317,13 +318,22 @@ class authres_status extends rcube_plugin
                                             $pvalue = $m[1];
                                         }
 
-                                        if (($property == 'd' || $property == 'i' || $property == 'from' || $property == 'sender') && $pvalue != $authordomain) {
-                                            if ($status == self::STATUS_THIRD) {
-                                                $title .= '; ' . $this->gettext('for') . ' ' . $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
+                                        if ($property == 'd' || $property == 'i' || $property == 'from' || $property == 'sender') {
+                                            if ($pvalue == $authordomain) {
+                                                $authorDomainFound = true;
+
+                                                if ($status != self::STATUS_PASS) {
+                                                    $status = self::STATUS_PASS;
+                                                    $title = '';
+                                                }
                                             } else {
-                                                $status = self::STATUS_THIRD;
-                                                $title = $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
-                                            }
+                                                if ($status == self::STATUS_THIRD) {
+                                                    $title .= '; ' . $this->gettext('for') . ' ' . $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
+                                                } else if (!$authorDomainFound) {
+                                                    $status = self::STATUS_THIRD;
+                                                    $title = $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
+                                                }
+                                            } 
                                         }
                                     }
                                 }
@@ -418,7 +428,7 @@ class authres_status extends rcube_plugin
             $alt = 'signaturepass';
         } else {
             // at least one auth method was passed, show partial pass
-            if (($status & self::STATUS_PASS)) { 
+            if (($status & self::STATUS_PASS)) {
                 $status = self::STATUS_PARS;
                 $image = 'status_partial_pass.png';
                 $alt = 'partialpass';
