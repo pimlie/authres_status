@@ -324,7 +324,9 @@ class authres_status extends rcube_plugin
 
                                                 if ($status != self::STATUS_PASS) {
                                                     $status = self::STATUS_PASS;
-                                                    $title = '';
+                                                    $title = $result['title'];
+                                                } else {
+                                                    $title.= '; ' . $result['title'];
                                                 }
                                             } else {
                                                 if ($status == self::STATUS_THIRD) {
