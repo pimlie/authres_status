@@ -15,7 +15,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "http://plugins.roundcube.net"
+            "url": "https://plugins.roundcube.net"
         },
         {
             "type": "vcs",
@@ -26,9 +26,23 @@
         "roundcube/plugin-installer": ">=0.1.3",
         "angrychimp/php-dkim": "@dev"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1",
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+             "": "./",
+             "AuthresStatusTest\\": "tests/"
+        }
+    },
     "extra": {
         "roundcube": {
              "min-version": "1.0.0"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "cs": "vendor/bin/phpcs ./"
     }
 }

@@ -13,7 +13,7 @@
  * http://www.wladik.net
  *
  * icons by brankic1970: http://brankic1979.com/icons/
- * 
+ *
  */
 
 class authres_status extends rcube_plugin
@@ -65,10 +65,10 @@ class authres_status extends rcube_plugin
         if ($rcmail->action == 'show' || $rcmail->action == 'preview') {
             $this->add_hook('storage_init', array($this, 'storage_init'));
             $this->add_hook('message_headers_output', array($this, 'message_headers'));
-        } else if ($rcmail->action == 'list' || $rcmail->action == 'refresh' || $rcmail->action == 'move' || $rcmail->action == 'expunge') {
+        } elseif ($rcmail->action == 'list' || $rcmail->action == 'refresh' || $rcmail->action == 'move' || $rcmail->action == 'expunge') {
             $this->add_hook('storage_init', array($this, 'storage_init'));
             $this->add_hook('messages_list', array($this, 'messages_list'));
-        } else if ($rcmail->action == '') {
+        } elseif ($rcmail->action == '') {
             // with enabled_caching we're fetching additional headers before show/preview
             $this->add_hook('storage_init', array($this, 'storage_init'));
         }
@@ -81,7 +81,7 @@ class authres_status extends rcube_plugin
             'statuses'  => !in_array('show_statuses', $dont_override),
         );
 
-        if ($this->override['list_cols']){
+        if ($this->override['list_cols']) {
             $this->include_stylesheet($this->local_skin_path() . '/authres_status.css');
             if ($rcmail->config->get('enable_authres_status_column')) {
                 $this->include_script('authres_status.js');
@@ -129,7 +129,7 @@ class authres_status extends rcube_plugin
                     $show_statuses = array_sum($statuses) - self::STATUS_NOSIG;
                 }
 
-                foreach($statuses as $status) {
+                foreach ($statuses as $status) {
                     $args['blocks']['authresstatus']['name'] = $this->gettext('title_include_status');
 
                     $args['blocks']['authresstatus']['options']['enable' . $status]['title'] = $this->gettext('label_include_status' . $status);
@@ -182,7 +182,7 @@ class authres_status extends rcube_plugin
         return $args;
     }
 
-    function messages_list($p) 
+    public function messages_list($p)
     {
         if (!empty($p['messages'])) {
             $rcmail = rcmail::get_instance();
@@ -198,13 +198,13 @@ class authres_status extends rcube_plugin
         return $p;
     }
 
-    function message_headers($p)
+    public function message_headers($p)
     {
         /* We only have to check the headers once and this method is executed more than once,
         /* so let's cache the result
         */
         if (!$this->message_headers_done) {
-            $this->message_headers_done = true; 
+            $this->message_headers_done = true;
 
             $show_statuses = (int)rcmail::get_instance()->config->get('show_statuses');
             $this->img_status = $this->get_authentication_status($p['headers'], $show_statuses, (int)$_GET["_uid"]);
@@ -243,21 +243,21 @@ class authres_status extends rcube_plugin
 
                 $resinfos = array();
                 $header_parts = explode(";", $header);
-                while(count($header_parts)) {
+                while (count($header_parts)) {
                     $header_part = array_shift($header_parts);
 
                     // check whether part is not from within comment, eg 'dkim=pass    (1024-bit key; insecure key)' should be matched as one
-                    if(preg_match('/\([^)]*$/', $header_part)) {
+                    if (preg_match('/\([^)]*$/', $header_part)) {
                         $resinfos[] = trim($header_part . ';' . array_shift($header_parts));
                     } else {
                         $resinfos[] = trim($header_part);
                     }
                 }
 
-                foreach($resinfos as $resinfo) {
+                foreach ($resinfos as $resinfo) {
                     if (preg_match('/(' . implode("|", self::$RFC5451_authentication_methods) . ')' . $cfws . '=' . $cfws . '(' . implode("|", array_keys(self::$RFC5451_authentication_results)) . ')' . $cfws . '(\(.*?\))?/i', $resinfo, $m, PREG_OFFSET_CAPTURE)) {
                         $parsed_resinfo = array(
-                            'title'  => $m[0][0],
+                            'title'  => trim($m[0][0]),
                             'method' => $m[1][0],
                             'result' => $m[6][0],
                             'reason' => isset($m[7]) ? $m[7][0] : '',
@@ -267,7 +267,7 @@ class authres_status extends rcube_plugin
                         $propspec = trim(($m[0][1] > 0 ? substr($resinfo, 0, $m[0][1]) : '') . substr($resinfo, strlen($m[0][0])));
                         if ($propspec) {
                             if (preg_match_all('/(' . implode("|", self::$RFC5451_ptypes) . ')' . $cfws . '\.' . $cfws . '(' . implode("|", self::$RFC5451_properties) . ')' . $cfws . '=' . $cfws . '([^\s]*)/i', $propspec, $m)) {
-                                foreach($m[0] as $k => $v) {
+                                foreach ($m[0] as $k => $v) {
                                     if (!isset($parsed_resinfo['props'][$m[1][$k]])) {
                                         $parsed_resinfo['props'][$m[1][$k]] = array();
                                     }
@@ -297,7 +297,8 @@ class authres_status extends rcube_plugin
                 $results = $this->rfc5451_extract_authresheader($headers->others['authentication-results']);
                 $status = 0;
                 $title = '';
-                foreach($results As $result) {
+
+                foreach ($results as $result) {
                     $status = $status | (isset(self::$RFC5451_authentication_results[$result['result']]) ? self::$RFC5451_authentication_results[$result['result']] : self::STATUS_FAIL);
 
                     $title .= ($title ? '; ' : '') . $result['title'];
@@ -307,35 +308,37 @@ class authres_status extends rcube_plugin
                     /* Verify if its an author's domain signature or a third party
                     */
                     if (preg_match("/[@]([a-zA-Z0-9]+([.][a-zA-Z0-9]+)?\.[a-zA-Z]{2,4})/", $headers->from, $m)) {
-                        $authordomain = $m[1];
+                        $title = '';
+                        $authorDomain = $m[1];
                         $authorDomainFound = false;
 
                         foreach ($results as $result) {
                             if ($result['method'] == 'dkim' || $result['method'] == 'domainkeys') {
                                 if (is_array($result['props']) && isset($result['props']['header'])) {
-                                    foreach ($result['props']['header'] as $property => $pvalue) {
-                                        if (preg_match("/[@]?([a-zA-Z0-9]+([.][a-zA-Z0-9]+)?\.[a-zA-Z]{2,4})$/", $pvalue, $m)) {
-                                            $pvalue = $m[1];
+                                    $pvalue = '';
+
+                                    // d is required, but still not always present
+                                    if (isset($result['props']['header']['d'])) {
+                                        $pvalue = $result['props']['header']['d'];
+                                    } elseif (isset($result['props']['header']['i'])) {
+                                        $pvalue = substr($result['props']['header']['i'], strpos($result['props']['header']['i'], '@') + 1);
+                                    }
+
+                                    if ($pvalue == $authorDomain || substr($authorDomain, -1 * strlen($pvalue)) == $pvalue) {
+                                        $authorDomainFound = true;
+
+                                        if ($status != self::STATUS_PASS) {
+                                            $status = self::STATUS_PASS;
+                                            $title = $result['title'];
+                                        } else {
+                                            $title.= ($title ? '; ' : '') . $result['title'];
                                         }
-
-                                        if ($property == 'd' || $property == 'i' || $property == 'from' || $property == 'sender') {
-                                            if ($pvalue == $authordomain) {
-                                                $authorDomainFound = true;
-
-                                                if ($status != self::STATUS_PASS) {
-                                                    $status = self::STATUS_PASS;
-                                                    $title = $result['title'];
-                                                } else {
-                                                    $title.= '; ' . $result['title'];
-                                                }
-                                            } else {
-                                                if ($status == self::STATUS_THIRD) {
-                                                    $title .= '; ' . $this->gettext('for') . ' ' . $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
-                                                } else if (!$authorDomainFound) {
-                                                    $status = self::STATUS_THIRD;
-                                                    $title = $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
-                                                }
-                                            } 
+                                    } else {
+                                        if ($status == self::STATUS_THIRD) {
+                                            $title .= '; ' . $this->gettext('for') . ' ' . $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
+                                        } elseif (!$authorDomainFound) {
+                                            $status = self::STATUS_THIRD;
+                                            $title = $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
                                         }
                                     }
                                 }
@@ -350,7 +353,7 @@ class authres_status extends rcube_plugin
 
                 /* Check for spamassassin's X-Spam-Status
                 */
-            } else if ($headers->others['x-spam-status']) {
+            } elseif ($headers->others['x-spam-status']) {
                 $status = self::STATUS_NOSIG;
 
                 /* DKIM_* are defined at: http://search.cpan.org/~kmcgrail/Mail-SpamAssassin-3.3.2/lib/Mail/SpamAssassin/Plugin/DKIM.pm */
@@ -360,8 +363,8 @@ class authres_status extends rcube_plugin
                 }
 
                 if (preg_match_all('/DKIM_[^,=]+/', $results, $m)) {
-                    if (array_search('DKIM_SIGNED', $m[0]) !== FALSE) {
-                        if (array_search('DKIM_VALID', $m[0]) !== FALSE) {
+                    if (array_search('DKIM_SIGNED', $m[0]) !== false) {
+                        if (array_search('DKIM_VALID', $m[0]) !== false) {
                             if (array_search('DKIM_VALID_AU', $m[0])) {
                                 $status = self::STATUS_PASS;
                                 $title = 'DKIM_SIGNED, DKIM_VALID, DKIM_VALID_AU';
@@ -375,7 +378,7 @@ class authres_status extends rcube_plugin
                         }
                     }
                 }
-            } else if ($headers->others['dkim-signature'] || $headers->others['domainkey-signature']) {
+            } elseif ($headers->others['dkim-signature'] || $headers->others['domainkey-signature']) {
                 $status = 0;
 
                 if ($uid) {
@@ -422,10 +425,10 @@ class authres_status extends rcube_plugin
         if ($status == self::STATUS_NOSIG) {
             $image = 'status_nosig.png';
             $alt = 'nosignature';
-        } else if ($status == self::STATUS_NORES) {
+        } elseif ($status == self::STATUS_NORES) {
             $image = 'status_nores.png';
             $alt = 'noauthresults';
-        } else if ($status == self::STATUS_PASS) {
+        } elseif ($status == self::STATUS_PASS) {
             $image = 'status_pass.png';
             $alt = 'signaturepass';
         } else {
@@ -434,13 +437,13 @@ class authres_status extends rcube_plugin
                 $status = self::STATUS_PARS;
                 $image = 'status_partial_pass.png';
                 $alt = 'partialpass';
-            } else if ($status >= self::STATUS_FAIL) {
+            } elseif ($status >= self::STATUS_FAIL) {
                 $image = 'status_fail.png';
                 $alt = 'invalidsignature';
-            } else if ($status >= self::STATUS_WARN) {
+            } elseif ($status >= self::STATUS_WARN) {
                 $image = 'status_warn.png';
                 $alt = 'temporaryinvalid';
-            } else if ($status >= self::STATUS_THIRD) {
+            } elseif ($status >= self::STATUS_THIRD) {
                 $image = 'status_third.png';
                 $alt = 'thirdparty';
             }

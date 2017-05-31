@@ -1,26 +1,27 @@
 
 .webkit .messagelist tr > .authres_status
 {
-  width: 20px;
+    width: 20px;
 }
 
 .messagelist tr > .authres_status {
-  width: 20px;
-  padding: 2px 3px;
-  text-align: center;
+    width: 20px;
+    padding: 2px 3px;
+    text-align: center;
 }
 
 .messagelist tr > .authres_status span {
-  display: inline-block;
-  vertical-align: middle;
-  background: url(badge.png) center no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(badge.png) center no-repeat;
 }
 
 #sections-table tbody #rcmrowauthres_status td.section {
-	background-image: url(badge.png);
-	background-position: 10px 5px;
+    background-image: url(badge.png);
+    background-position: 10px 5px;
 }
 
 .authres-status-img {
-	vertical-align: top;	
+    vertical-align: top;
 }
+
