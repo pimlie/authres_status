@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Activeer kolom';
 $labels['label_enable_column']  = 'Voeg kolom met authenticatiestatus aan de berichtenlijst';
 $labels['label_fallback_verifier'] = 'Gebruik interne DKIM-verificatie (wanneer handtekening gevonden is, maar geen auth.-header)';
 
+$labels['title_trusted_mtas'] = 'Vertrouwde mta\'s';
+$labels['label_trusted_mtas'] = 'Komma gescheiden authserv-id lijst van vertrouwde mta\'s. Alleen resultaten van deze mta\'s zullen worden weergegeven';
+
 $labels['title_include_status'] = 'Geef alleen de volgende statussen weer';
 $labels['label_include_status1']  = 'Geen digitale handtekening gevonden';
 $labels['label_include_status2']  = 'Digitale handtekening gevonden maar geen auth.-header';
