@@ -55,7 +55,7 @@ class authres_status extends rcube_plugin
     private $override;
     private $img_status;
     private $message_headers_done = false;
-	private $trusted_mtas;
+    private $trusted_mtas;
 
     public function init()
     {
@@ -77,11 +77,11 @@ class authres_status extends rcube_plugin
         $dont_override = $rcmail->config->get('dont_override', array());
 
         $this->override = array(
-            'list_cols' 	=> !in_array('list_cols', $dont_override),
-            'column'    	=> !in_array('enable_authres_status_column', $dont_override),
-            'fallback'  	=> !in_array('use_fallback_verifier', $dont_override),
-            'statuses'  	=> !in_array('show_statuses', $dont_override),
-			'trusted_mtas'	=> !in_array('trusted_mtas', $dont_override),
+            'list_cols'     => !in_array('list_cols', $dont_override),
+            'column'        => !in_array('enable_authres_status_column', $dont_override),
+            'fallback'      => !in_array('use_fallback_verifier', $dont_override),
+            'statuses'      => !in_array('show_statuses', $dont_override),
+            'trusted_mtas'    => !in_array('trusted_mtas', $dont_override),
         );
 
         if ($this->override['list_cols']) {
@@ -127,13 +127,13 @@ class authres_status extends rcube_plugin
                 }
             }
 
-			if ($this->override['trusted_mtas']) {
-				$args['blocks']['authrestrusted']['name'] = $this->gettext('title_trusted_mtas');
-				
-				$args['blocks']['authrestrusted']['options']['trusted_mtas']['title'] = $this->gettext('label_trusted_mtas');
+            if ($this->override['trusted_mtas']) {
+                $args['blocks']['authrestrusted']['name'] = $this->gettext('title_trusted_mtas');
+                
+                $args['blocks']['authrestrusted']['options']['trusted_mtas']['title'] = $this->gettext('label_trusted_mtas');
                 $input = new html_inputfield(array('name' => '_trusted_mtas', 'id' => 'trusted_mtas'));
-				$args['blocks']['authrestrusted']['options']['trusted_mtas']['content'] = $input->show(implode(",", $rcmail->config->get('trusted_mtas')));
-			}
+                $args['blocks']['authrestrusted']['options']['trusted_mtas']['content'] = $input->show(implode(",", $rcmail->config->get('trusted_mtas')));
+            }
 
             if ($this->override['statuses']) {
                 $statuses = array(1, 2, 4, 8, 16, 32, 64);
@@ -173,15 +173,15 @@ class authres_status extends rcube_plugin
 
             $args['prefs']['use_fallback_verifier'] = isset($_POST["_use_fallback_verifier"]) && $_POST["_use_fallback_verifier"] == 1;
 
-			if (isset($_POST['_trusted_mtas'])) {
-				$trusted_mtas = array_map(function($value) {
-					return trim($value);
-				}, explode(",", $_POST["_trusted_mtas"]));
+            if (isset($_POST['_trusted_mtas'])) {
+                $trusted_mtas = array_map(function($value) {
+                    return trim($value);
+                }, explode(",", $_POST["_trusted_mtas"]));
 
-				$args['prefs']['trusted_mtas'] = array_diff($trusted_mtas, array(""));
-			} else {
-				$args['prefs']['trusted_mtas'] = array();
-			}
+                $args['prefs']['trusted_mtas'] = array_diff($trusted_mtas, array(""));
+            } else {
+                $args['prefs']['trusted_mtas'] = array();
+            }
 
             if (!is_array($list_cols)) {
                 $list_cols = array();
@@ -263,47 +263,47 @@ class authres_status extends rcube_plugin
             if (preg_match('/^' . $cfws . '((?=.{1,254}$)((?=[a-z0-9-]{1,63}\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,63}(\/[^\s]*)?)' . $cfws . '(\(.*?\))?' . $cfws . ';/i', trim($header), $m)) {
                 $authservid = $m[3];
 
-				if (!count($this->trusted_mtas) || in_array($authservid, $this->trusted_mtas)) {
-	                $header = substr($header, strlen($m[0]));
+                if (!count($this->trusted_mtas) || in_array($authservid, $this->trusted_mtas)) {
+                    $header = substr($header, strlen($m[0]));
 
-	                $resinfos = array();
-    	            $header_parts = explode(";", $header);
-        	        while (count($header_parts)) {
-            	        $header_part = array_shift($header_parts);
+                    $resinfos = array();
+                    $header_parts = explode(";", $header);
+                    while (count($header_parts)) {
+                        $header_part = array_shift($header_parts);
 
-                	    // check whether part is not from within comment, eg 'dkim=pass    (1024-bit key; insecure key)' should be matched as one
-                    	if (preg_match('/\([^)]*$/', $header_part)) {
-                        	$resinfos[] = trim($header_part . ';' . array_shift($header_parts));
-	                    } else {
-    	                    $resinfos[] = trim($header_part);
-        	            }
-            	    }
+                        // check whether part is not from within comment, eg 'dkim=pass    (1024-bit key; insecure key)' should be matched as one
+                        if (preg_match('/\([^)]*$/', $header_part)) {
+                            $resinfos[] = trim($header_part . ';' . array_shift($header_parts));
+                        } else {
+                            $resinfos[] = trim($header_part);
+                        }
+                    }
 
-	                foreach ($resinfos as $resinfo) {
-    	                if (preg_match('/(' . implode("|", self::$RFC5451_authentication_methods) . ')' . $cfws . '=' . $cfws . '(' . implode("|", array_keys(self::$RFC5451_authentication_results)) . ')' . $cfws . '(\(.*?\))?/i', $resinfo, $m, PREG_OFFSET_CAPTURE)) {
-        	                $parsed_resinfo = array(
-            	                'title'  => trim($m[0][0]),
-                	            'method' => $m[1][0],
-                    	        'result' => $m[6][0],
-                        	    'reason' => isset($m[7]) ? $m[7][0] : '',
-                            	'props'  => array()
-	                        );
+                    foreach ($resinfos as $resinfo) {
+                        if (preg_match('/(' . implode("|", self::$RFC5451_authentication_methods) . ')' . $cfws . '=' . $cfws . '(' . implode("|", array_keys(self::$RFC5451_authentication_results)) . ')' . $cfws . '(\(.*?\))?/i', $resinfo, $m, PREG_OFFSET_CAPTURE)) {
+                            $parsed_resinfo = array(
+                                'title'  => trim($m[0][0]),
+                                'method' => $m[1][0],
+                                'result' => $m[6][0],
+                                'reason' => isset($m[7]) ? $m[7][0] : '',
+                                'props'  => array()
+                            );
 
-    	                    $propspec = trim(($m[0][1] > 0 ? substr($resinfo, 0, $m[0][1]) : '') . substr($resinfo, strlen($m[0][0])));
-        	                if ($propspec) {
-            	                if (preg_match_all('/(' . implode("|", self::$RFC5451_ptypes) . ')' . $cfws . '\.' . $cfws . '(' . implode("|", self::$RFC5451_properties) . ')' . $cfws . '=' . $cfws . '([^\s]*)/i', $propspec, $m)) {
-                	                foreach ($m[0] as $k => $v) {
-                    	                if (!isset($parsed_resinfo['props'][$m[1][$k]])) {
-                        	                $parsed_resinfo['props'][$m[1][$k]] = array();
-                            	        }
+                            $propspec = trim(($m[0][1] > 0 ? substr($resinfo, 0, $m[0][1]) : '') . substr($resinfo, strlen($m[0][0])));
+                            if ($propspec) {
+                                if (preg_match_all('/(' . implode("|", self::$RFC5451_ptypes) . ')' . $cfws . '\.' . $cfws . '(' . implode("|", self::$RFC5451_properties) . ')' . $cfws . '=' . $cfws . '([^\s]*)/i', $propspec, $m)) {
+                                    foreach ($m[0] as $k => $v) {
+                                        if (!isset($parsed_resinfo['props'][$m[1][$k]])) {
+                                            $parsed_resinfo['props'][$m[1][$k]] = array();
+                                        }
 
-                                	    $parsed_resinfo['props'][$m[1][$k]] [$m[6][$k]] = $m[11][$k];
-	                                }
-    	                        }
-        	                }
+                                        $parsed_resinfo['props'][$m[1][$k]] [$m[6][$k]] = $m[11][$k];
+                                    }
+                                }
+                            }
 
-	                        $results[] = $parsed_resinfo;
-						}
+                            $results[] = $parsed_resinfo;
+                        }
                     }
                 }
             }
