@@ -4,7 +4,7 @@
     "description": "This authres_status plugin checks the Authentication-Results headers of your emails and displays the verification status. The verification status is displayed when you read an email, but you can also add a column to your message list.",
     "keywords": ["authentication","results","dkim","domainkeys","spf","sender-id","rfc5451"],
     "license": "GPL-3.0+",
-    "version": "0.2.5",
+    "version": "0.3.0",
     "authors": [
     	{
             "name": "pimlie",

@@ -4,13 +4,12 @@
  * This plugin displays an icon showing the status
  * of an authentication results header of the message
  *
- * @version 0.2
+ * @version 0.3
  * @author pimlie
  * @mail pimlie@hotmail.com
  *
  * based on dkimstatus plugin by Julien vehent - julien@linuxwall.info
  * original plugin from Vladimir Mach - wladik@gmail.com
- * http://www.wladik.net
  *
  * icons by brankic1970: http://brankic1979.com/icons/
  *
