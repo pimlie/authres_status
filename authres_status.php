@@ -65,7 +65,7 @@ class authres_status extends rcube_plugin
         if ($rcmail->action == 'show' || $rcmail->action == 'preview') {
             $this->add_hook('storage_init', array($this, 'storage_init'));
             $this->add_hook('message_headers_output', array($this, 'message_headers'));
-        } elseif ($rcmail->action == 'list' || $rcmail->action == 'refresh' || $rcmail->action == 'move' || $rcmail->action == 'expunge') {
+        } elseif ($rcmail->action == 'list' || $rcmail->action == 'refresh' || $rcmail->action == 'move' || $rcmail->action == 'expunge' || $rcmail->action == 'search') {
             $this->add_hook('storage_init', array($this, 'storage_init'));
             $this->add_hook('messages_list', array($this, 'messages_list'));
         } elseif ($rcmail->action == '') {
