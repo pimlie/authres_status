@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Укључи колону';
 $labels['label_enable_column']  = 'Приказује колону с резултатом аутентификације у листи порука';
 $labels['label_fallback_verifier'] = 'Користи интерни ДКИМ проверавач (ако нема заглавља аутентификације)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Прикажи само следећа стања';
 $labels['label_include_status1']  = 'Није пронађен потпис';
 $labels['label_include_status2']  = 'Потпис постоји али нема заглавља аутентификације';

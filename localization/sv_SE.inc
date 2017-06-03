@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Aktivera kolumn';
 $labels['label_enable_column']  = 'Aktivera kolumn för autentiseringsresultat i meddelandelistan';
 $labels['label_fallback_verifier'] = 'Använd intern verifiering med DKIM (om signatur hittades men utan autentisering)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Visa endast följande status';
 $labels['label_include_status1']  = 'Ingen signatur hittades';
 $labels['label_include_status2']  = 'Signatur hittades men utan autentisering';

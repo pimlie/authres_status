@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Fungsikan Kolom';
 $labels['label_enable_column']  = 'Fungsikan kolom hasil otentikasi dalam daftar pesan';
 $labels['label_fallback_verifier'] = 'Gunakan verifikator DKIM internal (bila tanda tangan ditemukan tapi tak ada kepala hasil auth.)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Hanya tampilkan status-status berikut';
 $labels['label_include_status1']  = 'Tidak ditemukan tanda tangan';
 $labels['label_include_status2']  = 'Tanda tangan ditemukan tapi tak ada kepala hasil auth.';

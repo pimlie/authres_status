@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Spalte anzeigen';
 $labels['label_enable_column']  = 'Authenifizierungsresultat in der Nachrichtenliste anzeigen';
 $labels['label_fallback_verifier'] = 'Interne DKIM-Prüfung verwenden (falls Signatur vorhanden aber keine Auth-Results Kopfzeilen)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Nur die folgenden Status anzeigen';
 $labels['label_include_status1']  = 'Keine Signatur gefunden';
 $labels['label_include_status2']  = 'Signatur gefunden aber keine Auth-Results Kopfzeilen';

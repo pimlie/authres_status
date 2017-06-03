@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Įgalinti stulpelį';
 $labels['label_enable_column']  = 'Rodyti autentifikacijos rezultato stulepį laiškų sąraše';
 $labels['label_fallback_verifier'] = 'Naudokite vidinį, DKIM verifikatorių (jeigu parašas yra, bet nėra autentifikacijos rezultatų antraštės)';
 
+$labels['title_trusted_mtas'] = 'Patikimi mta';
+$labels['label_trusted_mtas'] = 'Kableliais atskirtų mta, kuriais pasitikite, authserv-id sąrašas. Bus rodomi rezultatai tik iš šių mta';
+
 $labels['title_include_status'] = 'Rodyti tik šias būsenas';
 $labels['label_include_status1']  = 'Parašas nerastas';
 $labels['label_include_status2']  = 'Parašas rastas, bet ne autentifikacijos rezultato antraštė';

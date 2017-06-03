@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Gaitu zutabea';
 $labels['label_enable_column']  = 'Gaitu emaitzen egiaztapen zutabea mezuen zerrendan';
 $labels['label_fallback_verifier'] = 'Erabili barneko DKIM egiaztatzailea (baldin eta sindura topatu bada baina ez egiaztapenen emaitzen goiburua)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Erakutsi bakarrik ondoko egoerak';
 $labels['label_include_status1']  = 'Ez da sinadurarik topatu';
 $labels['label_include_status2']  = 'Sinadura topatu da baina ez egiaztapenen emaitzen goiburua';

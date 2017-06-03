@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Activa la columna';
 $labels['label_enable_column']  = 'Activa la columna de resultats d\'autenticació a la llista de missatges';
 $labels['label_fallback_verifier'] = 'Fes servir el verificador intern per DKIM (només si s\'ha trobat la signatura però no hi ha capçalera amb resultats d\'autenticació)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Mostra només els estats següents';
 $labels['label_include_status1']  = 'No s\'ha trobat cap signatura';
 $labels['label_include_status2']  = 'La signatura s\'ha trobat però sense cap capçalera d\'autenticació';

@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Ativar Coluna';
 $labels['label_enable_column']  = 'Ativar coluna de resultado da autenticação na lista de mensagens';
 $labels['label_fallback_verifier'] = 'Usar o verificador DKIM interno (se for encontrada uma assinatura mas, sem nenhum resultado de autenticação no cabeçalho)';
 
+$labels['title_trusted_mtas'] = 'MTA\'s de confiança';
+$labels['label_trusted_mtas'] = 'Lista separada por vírgula de authserv-id de MTA\'s da sua confiança. Apenas os resultados desses MTA\'s será apresentado.';
+
 $labels['title_include_status'] = 'Mostrar apenas os seguintes estados';
 $labels['label_include_status1']  = 'Nenhuma assinatura encontrada';
 $labels['label_include_status2']  = 'Assinatura encontrada mas sem cabeçalho de autenticação';

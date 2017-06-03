@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Habilitar columna';
 $labels['label_enable_column']  = 'Habilitar columna de resultado de autenticación en el listado de mensajes';
 $labels['label_fallback_verifier'] = 'Usa verificador interno de DKIM (si se encuentra una firma pero no autorizada. resultados de encabezado)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Sólo mostrar los siguientes estados';
 $labels['label_include_status1']  = 'No se ha encontrado una firma';
 $labels['label_include_status2']  = 'Firma encontrada pero no autorizada. resultados de encabezado';

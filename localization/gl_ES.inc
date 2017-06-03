@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Activar columna';
 $labels['label_enable_column']  = 'Amosar columna co resultado da autenticación na lista de mensaxes';
 $labels['label_fallback_verifier'] = 'Usar o verificador DKIM interno (si se atopou a sinatura pero non a cabeceira de resultados de autenticación)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Amosar solo as que estean no seguinte estado';
 $labels['label_include_status1']  = 'Non se atopou a sinatura';
 $labels['label_include_status2']  = 'Atopouse a sinatura, pero non a cabeceria de resultados de autenticación.';

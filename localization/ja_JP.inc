@@ -19,6 +19,9 @@ $labels['title_enable_column']  = '列を有効';
 $labels['label_enable_column']  = 'メッセージの一覧で認証結果の列を有効にします。';
 $labels['label_fallback_verifier'] = '内蔵のDKIMの検証を使用(署名があり、認証結果のヘッダーがない場合)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = '以下の署名だけ表示';
 $labels['label_include_status1']  = '署名がありません。';
 $labels['label_include_status2']  = '署名がありますが、認証情報の結果のヘッダーがありません。';

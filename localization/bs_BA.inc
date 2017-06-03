@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Uključi kolonu';
 $labels['label_enable_column']  = 'Omogući kolonu za autentifikacijske rezultate u listi poruka';
 $labels['label_fallback_verifier'] = 'Koristi interni DKIM verifikator (ako je potpis pronađen, ali nema zaglavlja rezultata autentifikacije)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Samo prikaži sljedeće statuse';
 $labels['label_include_status1']  = 'Nema pronađenih potpisa';
 $labels['label_include_status2']  = 'Potpis pronađen, ali nema zaglavlja autentifikacijskih rezultata';

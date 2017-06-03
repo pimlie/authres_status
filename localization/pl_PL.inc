@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Włącz kolumnę';
 $labels['label_enable_column']  = 'Włącz kolumnę wyniku autoryzacji na liście wiadomości';
 $labels['label_fallback_verifier'] = 'Używaj wewnętrznego weryfikatora DKIM (jeżeli sygnatura istnieje, lecz brak nagłówka wyników autoryzacji)';
 
+$labels['title_trusted_mtas'] = 'Zaufane MTA';
+$labels['label_trusted_mtas'] = 'Rozdzielona przecinkiem lista authserv-id zaufanych MTA. Tylko wyniki z tych MTA będą pokazane.';
+
 $labels['title_include_status'] = 'Pokaż tylko następujące statusy';
 $labels['label_include_status1']  = 'Nie znaleziono podpisu';
 $labels['label_include_status2']  = 'Znaleziono podpis, jednak bez autoryzacji.';

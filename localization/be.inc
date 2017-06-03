@@ -1,26 +1,29 @@
 <?php
 
 $labels = array();
-$labels['nosignature'] = 'No signature information';
-$labels['noauthresults'] = 'Signature found but no auth. results header. Server configuration problem?';
-$labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
-$labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
+$labels['nosignature'] = 'Няма дадзеных аб подпісе';
+$labels['noauthresults'] = 'Подпіс знойдзены, але няма загалоўка вынікаў праверкі сапраўднасці. Праблема канфігурацыі сервера?';
+$labels['signaturepass'] = 'Сапраўдны подпіс(ы) з дамена адпраўніка. праверана';
+$labels['partialpass'] = 'Некаторыя подпісы з\'яўляюцца несапраўднымі, але па меншай меры адзін сапраўдны для дамена адпраўніка. праверана';
 $labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Signature is not valid! verified by ';
+$labels['temporaryinvalid'] = 'Подпіс (часова) не дзейнічае! праверана';
+$labels['invalidsignature'] = 'Подпіс не зьяўляецца сапраўдным! праверана';
 
-$labels['for'] = 'for';
-$labels['by'] = 'by';
+$labels['for'] = 'для';
+$labels['by'] = 'па';
 
-$labels['section_title']  = 'Authenticaton Status';
-$labels['column_title']  = 'Auth. Result';
+$labels['section_title']  = 'Статус ідэнтыфікацыі';
+$labels['column_title']  = 'Вынікі праверкі сапраўднасці';
 
-$labels['title_enable_column']  = 'Enable Column';
-$labels['label_enable_column']  = 'Enable authentication result column in message list';
-$labels['label_fallback_verifier'] = 'Use internal DKIM verifier (if signature found but no auth. results header)';
+$labels['title_enable_column']  = 'Уключыць калонку';
+$labels['label_enable_column']  = 'Уключэнне ідэнтыфікацыі выніку калонкі ў спісе паведамленняў';
+$labels['label_fallback_verifier'] = 'Выкарыстоўвайце ўнутраную DKIM верыфікацыю (калі подпіс знойдзены, але не ідэнтыфікаваны вынік загалоўка)';
 
-$labels['title_include_status'] = 'Only show the following statuses';
-$labels['label_include_status1']  = 'No signature found';
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
+$labels['title_include_status'] = 'Паказваць толькі наступныя статусы';
+$labels['label_include_status1']  = 'Няма подпісу';
 $labels['label_include_status2']  = 'Signature found but no auth. results header';
 $labels['label_include_status4']  = 'All signatures passed validation';
 $labels['label_include_status8']  = 'At least one signature passed validation';

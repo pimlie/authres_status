@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Увімкнути колонку';
 $labels['label_enable_column']  = 'Увімкнути колонку результатів автентифікації у списку повідомлень';
 $labels['label_fallback_verifier'] = 'Використати внутрішній DKIM-перевірник (якщо підпис знайдено, але без заголовка результатів автентифікації)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Показувати лише вказані статуси';
 $labels['label_include_status1']  = 'Підпису не знайдено';
 $labels['label_include_status2']  = 'Підпис знайдено, однак без заголовка результатів автентифікації.';

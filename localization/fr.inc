@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Activer la colonne';
 $labels['label_enable_column']  = 'Activer la colonne de résultat d\'authentification dans la liste des courriels';
 $labels['label_fallback_verifier'] = 'Utiliser le vérificateur DKIM interne (si une signature est trouvée mais aucun en-tête de résultat d\'authentification)';
 
+$labels['title_trusted_mtas'] = 'Mta de confiance';
+$labels['label_trusted_mtas'] = 'Liste séparée par des virgules des authserv-id des mta en qui vous avez confiance. Seuls les résultats de ces mta seront affichés';
+
 $labels['title_include_status'] = 'Montrer seulement les états suivants';
 $labels['label_include_status1']  = 'Aucune signature trouvée';
 $labels['label_include_status2']  = 'Une signature a été trouvée, mais aucun en-tête de résultat d\'authentification.';

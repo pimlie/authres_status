@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Tendra teigar';
 $labels['label_enable_column']  = 'Tendra samgildis úrslit teiga í boð lista';
 $labels['label_fallback_verifier'] = 'Brúka innanhýsis DKIM váttara (um undirskrivt var funnin men eingin samgildis úrsilt fyri høvd)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Vís einans tær fylgjandi støðurnar';
 $labels['label_include_status1']  = 'Eingin undirskrivt funnin';
 $labels['label_include_status2']  = 'Undirskrift funnin, men eingin samgildis úrslit';

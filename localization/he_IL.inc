@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'אפשר טור';
 $labels['label_enable_column']  = 'השתמש בטור תוצאת אימות בתוך רשימת הודעה';
 $labels['label_fallback_verifier'] = 'השתמש במאמת DKIM פנימי (חתימה נמצאה אך לא תקורת תוצאת אימות)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'הצג רק את המצבים הבאים';
 $labels['label_include_status1']  = 'לא נמצאה חתימה';
 $labels['label_include_status2']  = 'חתימה נמצאה אך לא תקורת תוצאת אימות';

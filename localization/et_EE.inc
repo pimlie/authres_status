@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Luba veerg';
 $labels['label_enable_column']  = 'Luba tuvastamise tulemuse veerg nimekirjas';
 $labels['label_fallback_verifier'] = 'Kasuta sisemist DKIM verifitseeriat (kui signatuur on leitud aga puudub tuvastamise vastuse päis)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Näita ainult antud staatuseid';
 $labels['label_include_status1']  = 'Signatuuri ei leitud';
 $labels['label_include_status2']  = 'Signatuur leiti aga puudub tuvastamise vastuse päis';

@@ -19,6 +19,9 @@ $labels['title_enable_column']  = 'Activar columna';
 $labels['label_enable_column']  = 'Activar le columna de resultato de authentication in le lista de messages';
 $labels['label_fallback_verifier'] = 'Usar le verificator DKIM interne (si le signatura es trovate ma il manca un capite de resultato de authentication)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = 'Monstrar solmente le sequente statos';
 $labels['label_include_status1']  = 'Nulle signatura trovate';
 $labels['label_include_status2']  = 'Signatura trovate ma il manca un capite de resultato de authentication';

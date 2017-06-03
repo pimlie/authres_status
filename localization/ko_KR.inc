@@ -19,6 +19,9 @@ $labels['title_enable_column']  = '열 활성화';
 $labels['label_enable_column']  = '메시지 목록에 인증 결과 열을 활성화';
 $labels['label_fallback_verifier'] = '내장 DKIM 검증자 사용 (서명을 찾았으나 인증 결과 머리글이 없을 경우)';
 
+$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+
 $labels['title_include_status'] = '다음 상태만 보기';
 $labels['label_include_status1']  = '서명을 찾을 수 없음';
 $labels['label_include_status2']  = '서명을 찾았으나 인증 결과 머리글이 없음';
