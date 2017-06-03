@@ -36,6 +36,12 @@
              "AuthresStatusTest\\": "tests/"
         }
     },
+    "support":
+    {
+      "email": "pimlie@hotmail.com",
+      "issues": "https://github.com/pimlie/authres_status/issues",
+      "source": "https://github.com/pimlie/authres_status"
+    },
     "extra": {
         "roundcube": {
              "min-version": "1.0.0"
