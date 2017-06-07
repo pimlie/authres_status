@@ -62,16 +62,10 @@ class authres_status extends rcube_plugin
 
         $rcmail = rcmail::get_instance();
         $this->load_config();
-        if ($rcmail->action == 'show' || $rcmail->action == 'preview') {
-            $this->add_hook('storage_init', array($this, 'storage_init'));
-            $this->add_hook('message_headers_output', array($this, 'message_headers'));
-        } elseif ($rcmail->action == 'list' || $rcmail->action == 'refresh' || $rcmail->action == 'check-recent' || $rcmail->action == 'move' || $rcmail->action == 'expunge' || $rcmail->action == 'search') {
-            $this->add_hook('storage_init', array($this, 'storage_init'));
-            $this->add_hook('messages_list', array($this, 'messages_list'));
-        } elseif ($rcmail->action == '') {
-            // with enabled_caching we're fetching additional headers before show/preview
-            $this->add_hook('storage_init', array($this, 'storage_init'));
-        }
+
+        $this->add_hook('storage_init', array($this, 'storage_init'));
+        $this->add_hook('messages_list', array($this, 'messages_list'));
+        $this->add_hook('message_headers_output', array($this, 'message_headers'));
 
         $dont_override = $rcmail->config->get('dont_override', array());
 
