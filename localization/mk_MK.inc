@@ -19,8 +19,8 @@ $labels['title_enable_column']  = 'Овозможи колона';
 $labels['label_enable_column']  = 'Овозможи колона за исход од проверка во листата со пораки ';
 $labels['label_fallback_verifier'] = 'Користи внатрешен DKIM верификатор (ако е пронајен потпис не не е потврден резултирај поглавје)';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = 'Доверливи агенти за трансфер на пораки ';
+$labels['label_trusted_mtas'] = 'Аuthserv-id листа оделена со запирка на агенти за трансфер на пораки на кој ти им веруваш, Ќе бидат прикажани резултати само од овие агенти ';
 
 $labels['title_include_status'] = 'Покажи ги само следните статуси';
 $labels['label_include_status1']  = 'Не е пронајден потпис';
