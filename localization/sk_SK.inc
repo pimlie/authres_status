@@ -19,8 +19,8 @@ $labels['title_enable_column']  = 'Zapnúť stĺpec';
 $labels['label_enable_column']  = 'Zapnúť stĺpec s výsledkom autentifikácie v zozname správ';
 $labels['label_fallback_verifier'] = 'Použiť interný overovač DKIM (ak sa našiel podpis, ale žiadna hlavička s výsledkami autentifikácie)';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = 'Dôveryhodní agenti na prenos správ (MTA)';
+$labels['label_trusted_mtas'] = 'Čiarkou oddeľovaný zoznam ID autentif. serverov služby MTA, ktorým dôverujete. Výsledky budú obmedzené iba na takéto MTA.';
 
 $labels['title_include_status'] = 'Zobraziť len s nasledujúcim stavom:';
 $labels['label_include_status1']  = 'Nenašiel sa žiadny podpis';

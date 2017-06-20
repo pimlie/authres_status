@@ -19,8 +19,8 @@ $labels['title_enable_column']  = 'Разрешаване на колона';
 $labels['label_enable_column']  = 'Разрешаване на колона с резултат от удостоверяване на самоличност в списък с писма';
 $labels['label_fallback_verifier'] = 'Използвай вградена проверка на DKIM (ако е намерена сигнатура без заглавие с резултати от удост. на самоличност)';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = 'Надеждни МТА';
+$labels['label_trusted_mtas'] = 'Разделени със запетая authserv-ID на доверени МТА. Ще бъдат показани само резултатите от тези MTA';
 
 $labels['title_include_status'] = 'Показвай само следните статуси';
 $labels['label_include_status1']  = 'Не е намерена сигнатура';

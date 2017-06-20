@@ -19,8 +19,8 @@ $labels['title_enable_column']  = 'Aktiviere Spalte';
 $labels['label_enable_column']  = 'Aktiviere Spalte für das Ergebnis der Authentisierung in der Nachrichtenliste';
 $labels['label_fallback_verifier'] = 'Verwende den internen DKIM-Überprüfer (wenn eine Signatur vorhanden ist, aber kein Header mit dem Ergebnis der Authentifizierung)';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = 'Vertraute mta\'s';
+$labels['label_trusted_mtas'] = ' Komma separierte authserv-id Liste von mta\'s denen vertraut wird. Nur Ergebnisse dieser mta\'s werden angezeigt';
 
 $labels['title_include_status'] = 'Zeige nur die folgenden Status an';
 $labels['label_include_status1']  = 'Keine Signatur gefunden';
