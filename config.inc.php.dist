@@ -29,3 +29,6 @@
 // default value: authres_status::STATUS_ALL & ~authres_status::STATUS_NOSIG
 //
 //$config['show_statuses'] = authres_status::STATUS_ALL & ~authres_status::STATUS_NOSIG;
+
+// To only show authentication results from mta's you trust, add their authserv-id's here
+//$config['trusted_mtas'] = array('your.mta.hostname');
