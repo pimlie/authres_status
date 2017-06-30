@@ -125,7 +125,7 @@ class authres_status extends rcube_plugin
                 
                 $args['blocks']['authrestrusted']['options']['trusted_mtas']['title'] = $this->gettext('label_trusted_mtas');
                 $input = new html_inputfield(array('name' => '_trusted_mtas', 'id' => 'trusted_mtas'));
-                $args['blocks']['authrestrusted']['options']['trusted_mtas']['content'] = $input->show(implode(",", $rcmail->config->get('trusted_mtas')));
+                $args['blocks']['authrestrusted']['options']['trusted_mtas']['content'] = $input->show(implode(",", (array)$rcmail->config->get('trusted_mtas')));
             }
 
             if ($this->override['statuses']) {
