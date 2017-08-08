@@ -7,7 +7,6 @@ This plugin is partially based on [dkimstatus](https://github.com/jvehent/dkimst
 Icons by [brankic1979](http://brankic1979.com/icons);
 
 ## Install
-----------------------
 If not using composer, copy all files to your plugins/ folder and add 'authres_status' to your $config['plugins'] array in config/main.inc.php or config/config.inc.php.
 
 ## Configuration
@@ -30,3 +29,5 @@ The text between `Authentication-Results:` and the first `;` is the authserv-id,
 ## Tested
 Tested on Roundcube 1.0.0+, let me know if it works on previous version as well
 
+## Known issues
+- After changing layouts (e.g. from list to widescreen) you need to refresh the page to correctly show the authentication status column
