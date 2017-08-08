@@ -4,7 +4,7 @@
  * This plugin displays an icon showing the status
  * of an authentication results header of the message
  *
- * @version 0.3.4
+ * @version 0.4.0
  * @author pimlie
  * @mail pimlie@hotmail.com
  *
