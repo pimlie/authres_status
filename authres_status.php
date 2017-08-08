@@ -203,10 +203,24 @@ class authres_status extends rcube_plugin
         if (!empty($p['messages'])) {
             $rcmail = rcmail::get_instance();
             if ($rcmail->config->get('enable_authres_status_column')) {
+                $layout = $rcmail->config->get('layout');
+                if ($layout == 'widescreen') {
+                    $authres_flags = array();
+                }
+
                 $show_statuses = (int)$rcmail->config->get('show_statuses');
                 foreach ($p['messages'] as $index => $message) {
                     $img_status = $this->get_authentication_status($message, $show_statuses, $message->uid);
-                    $p['messages'][$index]->list_cols['authres_status'] = $img_status;
+
+                    if ($layout == 'widescreen') {
+                        $authres_flags[$message->uid] = $img_status;
+                    } else {
+                        $p['messages'][$index]->list_cols['authres_status'] = $img_status;
+                    }
+                }
+
+                if ($layout == 'widescreen') {
+                    $rcmail->output->set_env('authres_flags', $authres_flags);
                 }
             }
         }
@@ -469,9 +483,7 @@ class authres_status extends rcube_plugin
         }
 
         if (!$show_statuses || ($show_statuses & $status)) {
-            $alt = $this->gettext($alt);
-
-            return '<img src="plugins/authres_status/images/' . $image . '" alt="' . $alt . '" title="' . $alt . htmlentities($title) . '" width="14" height="14" class="authres-status-img" /> ';
+            return '<img src="plugins/authres_status/images/' . $image . '" alt="' . $alt . '" title="' . $this->gettext($alt) . htmlentities($title) . '" class="authres-status-img" /> ';
         }
 
         return '';

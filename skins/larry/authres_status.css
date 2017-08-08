@@ -23,5 +23,13 @@
 
 .authres-status-img {
     vertical-align: top;
+    height: 14px;
+    width: 14px;
 }
 
+.widescreen .authres-status-img {
+    position: relative;
+    top: -1px;
+    height: 12px;
+    width: 12px;
+}
