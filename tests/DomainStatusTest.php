@@ -15,7 +15,7 @@ class DomainStatusTest extends TestCase
         $result = $plugin->get_authentication_status($headers);
 
         $expected = <<<EOT
-<img src="plugins/authres_status/images/status_pass.png" alt="Valid signature(s) from the sender's domain. verified by " title="Valid signature(s) from the sender's domain. verified by dkim=pass (1024-bit key; secure)" width="14" height="14" class="authres-status-img" /> 
+<img src="plugins/authres_status/images/status_pass.png" alt="signaturepass" title="Valid signature(s) from the sender's domain. verified by dkim=pass (1024-bit key; secure)" class="authres-status-img" /> 
 EOT;
 
         $this->assertEquals($expected, $result);
@@ -29,7 +29,7 @@ EOT;
         $result = $plugin->get_authentication_status($headers);
 
         $expected = <<<EOT
-<img src="plugins/authres_status/images/status_pass.png" alt="Valid signature(s) from the sender's domain. verified by " title="Valid signature(s) from the sender's domain. verified by dkim=pass (1024-bit key; secure)" width="14" height="14" class="authres-status-img" /> 
+<img src="plugins/authres_status/images/status_pass.png" alt="signaturepass" title="Valid signature(s) from the sender's domain. verified by dkim=pass (1024-bit key; secure)" class="authres-status-img" /> 
 EOT;
 
         $this->assertEquals($expected, $result);
@@ -43,7 +43,7 @@ EOT;
         $result = $plugin->get_authentication_status($headers);
 
         $expected = <<<EOT
-<img src="plugins/authres_status/images/status_pass.png" alt="Valid signature(s) from the sender's domain. verified by " title="Valid signature(s) from the sender's domain. verified by dkim=pass; dkim=pass" width="14" height="14" class="authres-status-img" /> 
+<img src="plugins/authres_status/images/status_pass.png" alt="signaturepass" title="Valid signature(s) from the sender's domain. verified by dkim=pass; dkim=pass" class="authres-status-img" /> 
 EOT;
 
         $this->assertEquals($expected, $result);
@@ -57,7 +57,21 @@ EOT;
         $result = $plugin->get_authentication_status($headers);
 
         $expected = <<<EOT
-<img src="plugins/authres_status/images/status_third.png" alt="Signed by third party, signature is present but for different domain than from address. verified for " title="Signed by third party, signature is present but for different domain than from address. verified for mail.3rdparty.com by dkim=pass (1024-bit key; unprotected)" width="14" height="14" class="authres-status-img" /> 
+<img src="plugins/authres_status/images/status_third.png" alt="thirdparty" title="Signed by third party, signature is present but for different domain than from address. verified for mail.3rdparty.com by dkim=pass (1024-bit key; unprotected)" class="authres-status-img" /> 
+EOT;
+
+        $this->assertEquals($expected, $result);
+    }
+
+    public function test_smtp_auth_signature()
+    {
+        $headers = $this->create_header_object('auth=pass smtp.auth=sendonly smtp.mailfrom=mail@example.com');
+
+        $plugin = new authres_status();
+        $result = $plugin->get_authentication_status($headers);
+
+        $expected = <<<EOT
+<img src="plugins/authres_status/images/status_pass.png" alt="signaturepass" title="Valid signature(s) from the sender's domain. verified by " class="authres-status-img" /> 
 EOT;
 
         $this->assertEquals($expected, $result);
