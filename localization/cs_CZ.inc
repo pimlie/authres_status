@@ -19,8 +19,8 @@ $labels['title_enable_column']  = 'Zapnout Sloupec';
 $labels['label_enable_column']  = 'Zapnout sloupec s výsledkem ověření v seznamu zpráv';
 $labels['label_fallback_verifier'] = 'Použít vestavěný ověřovač DKIM (pokud je nalezen podpis ale chybí hlavička výsledku ověření)';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = 'Důvěryhodná MTA';
+$labels['label_trusted_mtas'] = 'Čárkou oddělený seznam authserv-id MTA, kterým důvěřujete. Zobrazeny budou pouze výsledky pro uvedené MTA   ';
 
 $labels['title_include_status'] = 'Zobrazit pouze následující stavy';
 $labels['label_include_status1']  = 'Žádný podpis nenalezen';

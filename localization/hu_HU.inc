@@ -19,8 +19,8 @@ $labels['title_enable_column']  = 'Oszlop engedélyezése';
 $labels['label_enable_column']  = 'A hitelesítés eredménye oszlop engedélyezése az üzenet listában';
 $labels['label_fallback_verifier'] = 'A belső DKIM ellenörző használata ( ha van aláírás, de nincs hitelesítési eredmény fejléc )';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = 'Megbizható mta-k';
+$labels['label_trusted_mtas'] = 'A megbizható mta-k vesszővel elválasztott  authserv-id listája. Csak a felsorolt mta-któl kapott eredmények lesznek láthatóak.';
 
 $labels['title_include_status'] = 'Csak a következő stászok megjelenítése';
 $labels['label_include_status1']  = 'Nem található aláírás';

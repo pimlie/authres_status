@@ -19,8 +19,8 @@ $labels['title_enable_column']  = 'Galluogi Colofn';
 $labels['label_enable_column']  = 'Galluogi colofn canlyniad dilysu yn y rhestr negeseuon';
 $labels['label_fallback_verifier'] = 'Defnyddio gwirydd DKIM mewnol (os gwelwyd llofnod ond dim pennawd canlyniad dilysu)';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = 'MTA\'s ymddiriedig';
+$labels['label_trusted_mtas'] = 'Rhestr wedi ei wahanu a coma o authserv-id yr mtas rydych yn ymddiried ynddo. Dim ond canlyniadau o\'r mtas yma bydd yn cael eu dangos';
 
 $labels['title_include_status'] = 'Dangos y statysau canlynol yn unig';
 $labels['label_include_status1']  = 'Dim llofnod wedi ei ganfod';

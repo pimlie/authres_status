@@ -19,8 +19,8 @@ $labels['title_enable_column']  = 'Aktivizoje Shtyllën';
 $labels['label_enable_column']  = 'Aktivizoni shtyllë përfundimesh mirëfilltësimi te lista e mesazheve';
 $labels['label_fallback_verifier'] = 'Përdor verifikues të brendshëm DKIM (nëse gjendet nënshkrim, por jo krye auth. results)';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = 'mta të besuara';
+$labels['label_trusted_mtas'] = 'Listë identitetesh authserv-id e ndarë me presje mta-sh që u besoni. Do të shfaqen vetëm përfundime prej këtyre mta-ve';
 
 $labels['title_include_status'] = 'Shfaq vetëm gjendjet vijuese';
 $labels['label_include_status1']  = 'S’u gjet nënshkrim';
