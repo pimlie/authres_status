@@ -77,6 +77,20 @@ EOT;
         $this->assertEquals($expected, $result);
     }
 
+    public function test_arc_header()
+    {
+        $headers = $this->create_header_object('arc=fail (signature failed)');
+
+        $plugin = new authres_status();
+        $result = $plugin->get_authentication_status($headers);
+
+        $expected = <<<EOT
+<img src="plugins/authres_status/images/status_fail.png" alt="invalidsignature" title="Signature is not valid! verified by arc=fail (signature failed)" class="authres-status-img" /> 
+EOT;
+
+        $this->assertEquals($expected, $result);
+    }
+
     protected function create_header_object($authres_header, $from = 'Test <test@email.com>')
     {
         $headers = new stdClass;

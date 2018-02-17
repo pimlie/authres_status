@@ -33,7 +33,8 @@ class authres_status extends rcube_plugin
         "dkim",
         "domainkeys",
         "sender-id",
-        "spf"
+        "spf",
+        "arc",
     );
 
     private static $RFC5451_authentication_results = array(
