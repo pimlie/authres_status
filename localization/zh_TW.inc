@@ -19,8 +19,8 @@ $labels['title_enable_column']  = '啟用欄位';
 $labels['label_enable_column']  = '於郵件清單，啟用身份核對結果欄位';
 $labels['label_fallback_verifier'] = '使用內部 DKIM 核實程式 (若找到簽名，但無身份核對標頭)';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = '信任的 MTA';
+$labels['label_trusted_mtas'] = '以逗號分隔的 authserv-id 清單，列出您信任的 MTA。僅顯示來自該等 MTA 的結果。';
 
 $labels['title_include_status'] = '僅顯示以下狀態';
 $labels['label_include_status1']  = '找不到簽名';

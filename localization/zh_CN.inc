@@ -19,8 +19,8 @@ $labels['title_enable_column']  = '启用列';
 $labels['label_enable_column']  = '启用消息列表中的“身份验证结果”列';
 $labels['label_fallback_verifier'] = '使用内部 DKIM 验证器（如果找到签名但没有 auth. results 头）';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = '受信的 ';
+$labels['label_trusted_mtas'] = '使用逗号分隔的你信任的 mta authserv-id 列表。只会显示这些 mta 的结果。';
 
 $labels['title_include_status'] = '只显示下列签名';
 $labels['label_include_status1']  = '没有找到签名';

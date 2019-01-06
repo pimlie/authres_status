@@ -19,7 +19,7 @@ $labels['title_enable_column']  = 'Habilitar Columna';
 $labels['label_enable_column']  = 'Habilitar columna de resultado de autenticación en la lista de mensajes';
 $labels['label_fallback_verifier'] = 'Usar verificador interno DKIM (si se encuentra una firma, pero no un encabezamiento con los resultados de autor)';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
+$labels['title_trusted_mtas'] = 'Servidores de correo de confianza';
 $labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
 
 $labels['title_include_status'] = 'Mostrar sólo los siguientes estados';

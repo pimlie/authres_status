@@ -2,12 +2,12 @@
 
 $labels = array();
 $labels['nosignature'] = 'Aucune information de signature';
-$labels['noauthresults'] = 'Une signature a été trouvée, mais aucun en-tête de résultat d’authentification. Il y a-t-il un problème de configuration du serveur ?';
+$labels['noauthresults'] = 'Une signature a été trouvée, mais aucun en-tête de résultat d’authentification. Il y a-t-il un problème de configuration du serveur ?';
 $labels['signaturepass'] = 'Signature(s) valide(s) du domaine de l’expéditeur. Vérifié par';
 $labels['partialpass'] = 'Certaines signatures sont invalides mais au moins une est valide pour le domaine de l’expéditeur. Vérifié par';
 $labels['thirdparty'] = 'Signé par un tiers, une signature est présente mais pour un domaine différent que l’adresse. Vérifié par';
-$labels['temporaryinvalid'] = 'La signature est (temporairement) invalide ! Vérifié par';
-$labels['invalidsignature'] = 'La signature est invalide ! Vérifié par';
+$labels['temporaryinvalid'] = 'La signature est (temporairement) invalide ! Vérifié par';
+$labels['invalidsignature'] = 'La signature est invalide ! Vérifié par';
 
 $labels['for'] = 'pour';
 $labels['by'] = 'par';

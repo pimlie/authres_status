@@ -19,8 +19,8 @@ $labels['title_enable_column']  = 'Ενεργοποίηση στήλης';
 $labels['label_enable_column']  = 'Ενεργοποίηση στήλης αποτελέσματος πιστοποίησης στην λίστα μηνυμάτων';
 $labels['label_fallback_verifier'] = 'Χρήση εσωτερικού επαληθευτή DKIM (αν η υπογραφή βρέθηκε αλλά όχι και η κεφαλίδα)';
 
-$labels['title_trusted_mtas'] = 'Trusted mta\'s';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['title_trusted_mtas'] = 'Έμπιστοι MTA';
+$labels['label_trusted_mtas'] = 'Λίστα οριοθετημένη με κόμματα των authserv-id των mta που εμπιστεύεστε. Μόνο αποτελέσματα από αυτούς τους mta θα εμφανίζονται';
 
 $labels['title_include_status'] = 'Εμφάνιση μόνο των παρακάτω καταστάσεων';
 $labels['label_include_status1']  = 'Δε βρέθηκε υπογραφή';
