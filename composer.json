@@ -5,7 +5,7 @@
     "keywords": ["authentication","results","dkim","domainkeys","spf","sender-id","rfc5451"],
     "homepage": "https://github.com/pimlie/authres_status",
     "license": "GPL-3.0+",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "authors": [
     	{
             "name": "pimlie",
@@ -17,15 +17,11 @@
         {
             "type": "composer",
             "url": "https://plugins.roundcube.net"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/pimlie/php-dkim"
         }
     ],
     "require": {
         "roundcube/plugin-installer": ">=0.1.3",
-        "angrychimp/php-dkim": "@dev"
+        "pimlie/php-dkim": ">=0.2.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.1",
