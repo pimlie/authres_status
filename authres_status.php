@@ -423,8 +423,15 @@ class authres_status extends rcube_plugin
                             $autoload->loadClass('Crypt_RSA'); // Preload for use in DKIM_Verify
                         }
 
-                        $dkimVerify = new DKIM_Verify($rcmail->imap->get_raw_body($uid));
-                        $results = $dkimVerify->validate();
+                        try {
+                          $dkimVerify = new DKIM_Verify($rcmail->imap->get_raw_body($uid));
+                          $results = $dkimVerify->validate();
+                        } catch(Exception $e) {
+                          $result = array();
+
+                          $status = self::STATUS_NOSIG;
+                          $title = "Exception thrown by internal verifier: " . $e->getMessage();
+                        }
 
                         if (count($results)) {
                             $status = 0;
