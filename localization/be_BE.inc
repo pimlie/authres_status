@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Няма дадзеных аб подпісе';
 $labels['noauthresults'] = 'Подпіс знойдзены, але няма загалоўка вынікаў праверкі сапраўднасці. Праблема канфігурацыі сервера?';
-$labels['signaturepass'] = 'Сапраўдны подпіс(ы) з дамена адпраўніка. праверана';
-$labels['partialpass'] = 'Некаторыя подпісы з\'яўляюцца несапраўднымі, але па меншай меры адзін сапраўдны для дамена адпраўніка. праверана';
+$labels['signaturepass'] = 'Сапраўдны подпіс(ы) з дамена адпраўніка. праверана ';
+$labels['partialpass'] = 'Некаторыя подпісы з\'яўляюцца несапраўднымі, але па меншай меры адзін сапраўдны для дамена адпраўніка. праверана ';
 $labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Подпіс (часова) не дзейнічае! праверана';
-$labels['invalidsignature'] = 'Подпіс не зьяўляецца сапраўдным! праверана';
+$labels['temporaryinvalid'] = 'Подпіс (часова) не дзейнічае! праверана ';
+$labels['invalidsignature'] = 'Подпіс не зьяўляецца сапраўдным! праверана ';
 
 $labels['for'] = 'для';
 $labels['by'] = 'па';

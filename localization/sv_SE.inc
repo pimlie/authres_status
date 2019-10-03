@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Ingen signaturinformation';
 $labels['noauthresults'] = 'Signatur hittades men utan autentisering. Konfigurationsproblem i server?';
-$labels['signaturepass'] = 'Giltig signatur (giltiga signaturer) för avsändarens domän. Verifierad av';
-$labels['partialpass'] = 'Några signaturer är ogiltiga men minst en signatur är giltig för avsändarens domän. Verifierad av';
-$labels['thirdparty'] = 'Signerad av oberoende part, signatur finns men för annan domän än i avsändaradressen. Verifierad av';
-$labels['temporaryinvalid'] = 'Signaturen är (tillfälligt) ogiltig! Verifierad av';
-$labels['invalidsignature'] = 'Signaturen är ogiltig! Verifierad av';
+$labels['signaturepass'] = 'Giltig signatur (giltiga signaturer) för avsändarens domän. Verifierad av ';
+$labels['partialpass'] = 'Några signaturer är ogiltiga men minst en signatur är giltig för avsändarens domän. Verifierad av ';
+$labels['thirdparty'] = 'Signerad av oberoende part, signatur finns men för annan domän än i avsändaradressen. Verifierad av ';
+$labels['temporaryinvalid'] = 'Signaturen är (tillfälligt) ogiltig! Verifierad av ';
+$labels['invalidsignature'] = 'Signaturen är ogiltig! Verifierad av ';
 
 $labels['for'] = 'till';
 $labels['by'] = 'av';

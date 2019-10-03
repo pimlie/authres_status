@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Pa të dhëna nënshkrimi';
 $labels['noauthresults'] = 'U gjet nënshkrim, pro jo krye auth. results. Problem me formësimin e shërbyesit?';
-$labels['signaturepass'] = 'Nënshkrim(e) i vlefshëm prej përkatësisë së dërguesit. Verifikuar nga';
-$labels['partialpass'] = 'Disa nga nënshkrimet janë të pavlefshme, por të paktën njëra është e vlefshme për përkatësinë e dërguesit. Verifikuar nga';
-$labels['thirdparty'] = 'Nënshkruar nga palë e tretë, nënshkrimi është i pranishëm, por për një përkatësi tjetër nga ajo e adresës. Verifikuar nga';
-$labels['temporaryinvalid'] = 'Nënshkrimi është (përkohësisht) i pavlefshëm! Verifikuar nga';
-$labels['invalidsignature'] = 'Nënshkrimi është i pavlefshëm! Verifikuar nga';
+$labels['signaturepass'] = 'Nënshkrim(e) i vlefshëm prej përkatësisë së dërguesit. Verifikuar nga ';
+$labels['partialpass'] = 'Disa nga nënshkrimet janë të pavlefshme, por të paktën njëra është e vlefshme për përkatësinë e dërguesit. Verifikuar nga ';
+$labels['thirdparty'] = 'Nënshkruar nga palë e tretë, nënshkrimi është i pranishëm, por për një përkatësi tjetër nga ajo e adresës. Verifikuar nga ';
+$labels['temporaryinvalid'] = 'Nënshkrimi është (përkohësisht) i pavlefshëm! Verifikuar nga ';
+$labels['invalidsignature'] = 'Nënshkrimi është i pavlefshëm! Verifikuar nga ';
 
 $labels['for'] = 'për';
 $labels['by'] = 'nga';

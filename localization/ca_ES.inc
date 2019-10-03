@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'No hi ha informació de signatura';
 $labels['noauthresults'] = 'La signatura s\'ha trobat però no hi ha capçaleres d\'autenticació. Problema de configuració del servidor?';
-$labels['signaturepass'] = 'Signatura(es) vàlida(es) del domini del remitent. Verificat per';
-$labels['partialpass'] = 'Algunes de les signatures no són vàlides però almenys una ho és pel domini del remitent. Verificat per';
-$labels['thirdparty'] = 'Signada per tercers, la signatura és present però per un domini diferent de l\'adreça. Verificat per';
-$labels['temporaryinvalid'] = 'La signatura és (temporalment) no vàlida! Verificat per';
-$labels['invalidsignature'] = 'La signatura no és vàlida! Verificat per';
+$labels['signaturepass'] = 'Signatura(es) vàlida(es) del domini del remitent. Verificat per ';
+$labels['partialpass'] = 'Algunes de les signatures no són vàlides però almenys una ho és pel domini del remitent. Verificat per ';
+$labels['thirdparty'] = 'Signada per tercers, la signatura és present però per un domini diferent de l\'adreça. Verificat per ';
+$labels['temporaryinvalid'] = 'La signatura és (temporalment) no vàlida! Verificat per ';
+$labels['invalidsignature'] = 'La signatura no és vàlida! Verificat per ';
 
 $labels['for'] = 'per a';
 $labels['by'] = 'per';

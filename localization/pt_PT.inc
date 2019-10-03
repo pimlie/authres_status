@@ -3,10 +3,10 @@
 $labels = array();
 $labels['nosignature'] = 'Nenhuma informação de assinatura';
 $labels['noauthresults'] = 'Assinatura encontrada, mas sem cabeçalho de autenticação. Problema de configuração do servidor?';
-$labels['signaturepass'] = 'Assinatura(s) válida(s) do domínio do remetente. Verificado por';
-$labels['partialpass'] = 'Algumas assinaturas são inválidas, mas pelo menos uma é válida para o domínio do remetente. Verificada por';
-$labels['thirdparty'] = 'Assinado por terceiros. A assinatura está presente, mas para o domínio é diferente do endereço. Verificado para';
-$labels['temporaryinvalid'] = 'A assinatura não é válida (temporariamente)! Verificado por';
+$labels['signaturepass'] = 'Assinatura(s) válida(s) do domínio do remetente. Verificado por ';
+$labels['partialpass'] = 'Algumas assinaturas são inválidas, mas pelo menos uma é válida para o domínio do remetente. Verificada por ';
+$labels['thirdparty'] = 'Assinado por terceiros. A assinatura está presente, mas para o domínio é diferente do endereço. Verificado para ';
+$labels['temporaryinvalid'] = 'A assinatura não é válida (temporariamente)! Verificado por ';
 $labels['invalidsignature'] = 'A assinatura não é válida! Verificado por ';
 
 $labels['for'] = 'para';

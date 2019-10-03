@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Ez dago sinadura informaziorik';
 $labels['noauthresults'] = 'Sinadura topatu da baina ez baimenen emaitzen goiburua. Zerbitzarian ezarpen arazorik?';
-$labels['signaturepass'] = 'Bidaltzailearen domeinuko sinadura baliozkoa(k), honek egiaztatua';
-$labels['partialpass'] = 'Bidaltzailearen domeinuko sinadura batzuk ez dira baliozkoak baina bat bederen bai, honek egiaztatua';
-$labels['thirdparty'] = 'Hirugarren batek sinatua, sinadura badago baina bidaltzailearen helbidekoarena ez den domeinu batentzat, honek egiaztatua';
-$labels['temporaryinvalid'] = 'Sinadura ez da (behin behinean) baliozkoa, honek egiaztatua';
-$labels['invalidsignature'] = 'Sinadura ez da baliozkoa, honen egiaztatua';
+$labels['signaturepass'] = 'Bidaltzailearen domeinuko sinadura baliozkoa(k), honek egiaztatua ';
+$labels['partialpass'] = 'Bidaltzailearen domeinuko sinadura batzuk ez dira baliozkoak baina bat bederen bai, honek egiaztatua ';
+$labels['thirdparty'] = 'Hirugarren batek sinatua, sinadura badago baina bidaltzailearen helbidekoarena ez den domeinu batentzat, honek egiaztatua ';
+$labels['temporaryinvalid'] = 'Sinadura ez da (behin behinean) baliozkoa, honek egiaztatua ';
+$labels['invalidsignature'] = 'Sinadura ez da baliozkoa, honen egiaztatua ';
 
 $labels['for'] = 'honentzat';
 $labels['by'] = 'honengandik';

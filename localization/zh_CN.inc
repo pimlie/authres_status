@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = '没有签名信息';
 $labels['noauthresults'] = '找到签名但没有 auth. results 头。服务器配置存在问题？';
-$labels['signaturepass'] = '发件方域名的有效签名。验证者';
-$labels['partialpass'] = '部分签名无效，但有至少一个发件方域名的有效签名。验证者';
-$labels['thirdparty'] = '已被第三方签名，但与地址的域名不同。验证者';
-$labels['temporaryinvalid'] = '签名（暂时）无效！验证者';
-$labels['invalidsignature'] = '签名无效！验证者';
+$labels['signaturepass'] = '发件方域名的有效签名。验证者 ';
+$labels['partialpass'] = '部分签名无效，但有至少一个发件方域名的有效签名。验证者 ';
+$labels['thirdparty'] = '已被第三方签名，但与地址的域名不同。验证者 ';
+$labels['temporaryinvalid'] = '签名（暂时）无效！验证者 ';
+$labels['invalidsignature'] = '签名无效！验证者 ';
 
 $labels['for'] = '对';
 $labels['by'] = '由';

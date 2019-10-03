@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Dim gwybodaeth llofnod';
 $labels['noauthresults'] = 'Llofnod wedi ei ganfod ond dim pennawd dilysu. Problem gyda cyfluniad y gweinydd?';
-$labels['signaturepass'] = 'Llofnod(au) dilys o barth yr anfonwr, dilyswyd gan';
-$labels['partialpass'] = 'Mae rhai llofnodion yn annilys ond mae o leia un yn ddilys ar gyfer parth yr anfonwr. gwiriwyd gan';
-$labels['thirdparty'] = 'Llofnodwyd gan trydydd parti, mae llofnod yn bresennol ond ar gyfer parth gwahanol i\'r cyfeiriad. gwiriwyd gan';
-$labels['temporaryinvalid'] = 'Llofnod yn annilys (dros dro)! gwiriwyd gan';
-$labels['invalidsignature'] = 'Llofnod yn annilys! gwiriwyd gan';
+$labels['signaturepass'] = 'Llofnod(au) dilys o barth yr anfonwr, dilyswyd gan ';
+$labels['partialpass'] = 'Mae rhai llofnodion yn annilys ond mae o leia un yn ddilys ar gyfer parth yr anfonwr. gwiriwyd gan ';
+$labels['thirdparty'] = 'Llofnodwyd gan trydydd parti, mae llofnod yn bresennol ond ar gyfer parth gwahanol i\'r cyfeiriad. gwiriwyd gan ';
+$labels['temporaryinvalid'] = 'Llofnod yn annilys (dros dro)! gwiriwyd gan ';
+$labels['invalidsignature'] = 'Llofnod yn annilys! gwiriwyd gan ';
 
 $labels['for'] = 'i';
 $labels['by'] = 'gan';

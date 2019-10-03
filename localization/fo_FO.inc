@@ -3,9 +3,9 @@
 $labels = array();
 $labels['nosignature'] = 'Eingin upplýsing um undirskrift ';
 $labels['noauthresults'] = 'Undirskriftir funnar, men eingin úrslit fyri samleikis høvdara. Kanska er tað ambætara trupuleikar?';
-$labels['signaturepass'] = 'Góðkendar undirskriftir frá sendara økisnavn. Vátta av';
-$labels['partialpass'] = 'Onkrar undirskriftir eru ógildigar, men minst ein er góðkend av økisnavninum hjá sendarinum. Góðkent av';
-$labels['thirdparty'] = 'Undirskriva av triðaparti. Undirskriftin er tilstaðar, men fyri onnur økisnøvn enn fyri bústaðin. Góðkent av';
+$labels['signaturepass'] = 'Góðkendar undirskriftir frá sendara økisnavn. Vátta av ';
+$labels['partialpass'] = 'Onkrar undirskriftir eru ógildigar, men minst ein er góðkend av økisnavninum hjá sendarinum. Góðkent av ';
+$labels['thirdparty'] = 'Undirskriva av triðaparti. Undirskriftin er tilstaðar, men fyri onnur økisnøvn enn fyri bústaðin. Góðkent av ';
 $labels['temporaryinvalid'] = 'Undirskrift er (fyribils) ikki gildig. Vátta av ';
 $labels['invalidsignature'] = 'Undirskrift er ikki gildig. Vátta av ';
 

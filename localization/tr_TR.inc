@@ -3,8 +3,8 @@
 $labels = array();
 $labels['nosignature'] = 'Herhangi bir imza bilgisi yok';
 $labels['noauthresults'] = 'İmza bulundu fakat kimlik doğrulama sonucu başlığı yok. Sunucu yapılandırma sorunu olabilir mi?';
-$labels['signaturepass'] = 'Gönderici alan adından gelen imza(lar) geçerli.  Doğrulama yapan';
-$labels['partialpass'] = 'Bazı imzalar geçersiz fakat en az bir tanesi bu gönderici alan adı için geçerli. Doğrulayan';
+$labels['signaturepass'] = 'Gönderici alan adından gelen imza(lar) geçerli.  Doğrulama yapan ';
+$labels['partialpass'] = 'Bazı imzalar geçersiz fakat en az bir tanesi bu gönderici alan adı için geçerli. Doğrulayan ';
 $labels['thirdparty'] = '3. taraf tarafından imzalanmış. İmza var ancak gönderici adresinden farklı bir alan adı için. Şunun için doğrulandı:';
 $labels['temporaryinvalid'] = 'İmza (geçici olarak) geçerli değil. Doğrulayan:';
 $labels['invalidsignature'] = 'İmza geçersiz. Doğrulayan:';

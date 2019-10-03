@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Nu există informații semnătură';
 $labels['noauthresults'] = 'Semnătură găsită, dar nu există rezultate autorizație în antet. Problema de configurare a serverului?';
-$labels['signaturepass'] = 'Semnătură validă de la domeniul expeditorului. verificat de';
+$labels['signaturepass'] = 'Semnătură validă de la domeniul expeditorului. verificat de ';
 $labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
 $labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
 $labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Semnătura nu este validă! verificat de';
+$labels['invalidsignature'] = 'Semnătura nu este validă! verificat de ';
 
 $labels['for'] = 'pentru';
 $labels['by'] = 'de';

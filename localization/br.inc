@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Titour ebet war ar sinadur';
 $labels['noauthresults'] = 'Kavet ez eus bet ar sinadur met ket talbenn an disoc\'hoù naoudi. Ur gudenn \'zo gant kefluniadur an dafariad?';
-$labels['signaturepass'] = 'Sinadur(ioù) talvoudek a-berzh domani ar c\'haser. gwiriet gant';
-$labels['partialpass'] = 'Ul lodenn eus ar sinadurioù a zo didalvoudek met unan d\'an nebeutañ a zo talvoudek evit domani ar c\'haser. Gwiriet gant';
-$labels['thirdparty'] = 'Sinet gant un trede, aze emañ ar sinadur met evit un domani disheñvhel eus hini ar chomlec\'h. Gwiriet gant';
-$labels['temporaryinvalid'] = 'Didalvoudek (evit ur mare) eo ar sinadur! Gwiriet gant';
-$labels['invalidsignature'] = 'Didalvoudek eo ar sinadur! Gwiriet gant';
+$labels['signaturepass'] = 'Sinadur(ioù) talvoudek a-berzh domani ar c\'haser. gwiriet gant ';
+$labels['partialpass'] = 'Ul lodenn eus ar sinadurioù a zo didalvoudek met unan d\'an nebeutañ a zo talvoudek evit domani ar c\'haser. Gwiriet gant ';
+$labels['thirdparty'] = 'Sinet gant un trede, aze emañ ar sinadur met evit un domani disheñvhel eus hini ar chomlec\'h. Gwiriet gant ';
+$labels['temporaryinvalid'] = 'Didalvoudek (evit ur mare) eo ar sinadur! Gwiriet gant ';
+$labels['invalidsignature'] = 'Didalvoudek eo ar sinadur! Gwiriet gant ';
 
 $labels['for'] = 'evit';
 $labels['by'] = 'gant';

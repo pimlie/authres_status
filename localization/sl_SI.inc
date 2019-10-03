@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Ni podatkov za podpis';
 $labels['noauthresults'] = 'Podpis je bil najden, vendar nobenih rezultatov preverjanja pristonosti v glavi sporočila. Morda gre za težavo v konfiguraciji strežnika?';
-$labels['signaturepass'] = 'Veljavni podpis(i) iz naslova domene pošiljatelja. Preverjeno iz strani';
+$labels['signaturepass'] = 'Veljavni podpis(i) iz naslova domene pošiljatelja. Preverjeno iz strani ';
 $labels['partialpass'] = 'Nekateri podpisi niso veljavni, vsaj en podpis z domeno pošiljatelja je veljaven. Preverjeno iz strani ';
-$labels['thirdparty'] = 'Podpisano iz neodvisnega naslova. Podpis je dodan, vendar za drugo domeno, kot je navedena v elektronskem naslovu. Preverjeno za';
-$labels['temporaryinvalid'] = 'Podpis je (trenutno) neveljaven. Preverjeno iz strani';
-$labels['invalidsignature'] = 'Podpis ni veljaven. Preverjeno iz strani';
+$labels['thirdparty'] = 'Podpisano iz neodvisnega naslova. Podpis je dodan, vendar za drugo domeno, kot je navedena v elektronskem naslovu. Preverjeno za ';
+$labels['temporaryinvalid'] = 'Podpis je (trenutno) neveljaven. Preverjeno iz strani ';
+$labels['invalidsignature'] = 'Podpis ni veljaven. Preverjeno iz strani ';
 
 $labels['for'] = 'za';
 $labels['by'] = 'od';

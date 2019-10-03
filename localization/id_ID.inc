@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Tidak ada informasi tanda tangan';
 $labels['noauthresults'] = 'Tanda tangan ditemukan tapi tak ada kepala hasil auth. Masalah konfigurasi server?';
-$labels['signaturepass'] = 'Tanda tangan valid dari domain pengirim. diverifikasi oleh';
-$labels['partialpass'] = 'Beberapa tanda tangan tidak valid tapi paling tidak satu valid bagi domain pengirim. diverifikasi oleh';
-$labels['thirdparty'] = 'Ditandatangani oleh pihak ke tiga, tanda tangan ada tapi untuk domain yang berbeda dari alamat pengirim. diverifikasi untuk';
-$labels['temporaryinvalid'] = 'Tanda tangan (untuk sementara) tidak valid! diverifikasi oleh';
-$labels['invalidsignature'] = 'Tanda tangan tidak valid! diverifikasi oleh';
+$labels['signaturepass'] = 'Tanda tangan valid dari domain pengirim. diverifikasi oleh ';
+$labels['partialpass'] = 'Beberapa tanda tangan tidak valid tapi paling tidak satu valid bagi domain pengirim. diverifikasi oleh ';
+$labels['thirdparty'] = 'Ditandatangani oleh pihak ke tiga, tanda tangan ada tapi untuk domain yang berbeda dari alamat pengirim. diverifikasi untuk ';
+$labels['temporaryinvalid'] = 'Tanda tangan (untuk sementara) tidak valid! diverifikasi oleh ';
+$labels['invalidsignature'] = 'Tanda tangan tidak valid! diverifikasi oleh ';
 
 $labels['for'] = 'untuk';
 $labels['by'] = 'oleh';

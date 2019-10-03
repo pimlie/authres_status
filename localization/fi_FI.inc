@@ -7,7 +7,7 @@ $labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verifi
 $labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
 $labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
 $labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Allekirjoitus ei ole kelvollinen! vahvistanut';
+$labels['invalidsignature'] = 'Allekirjoitus ei ole kelvollinen! vahvistanut ';
 
 $labels['for'] = 'for';
 $labels['by'] = 'by';

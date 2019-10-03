@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Nincs aláírásról információ';
 $labels['noauthresults'] = 'Az aláírás megvan, de nincs hiteles válasz fejléc. Talán kiszolgáló konfigurációs hiba?';
-$labels['signaturepass'] = 'Érvényes aláírás(ok) a küldők domainjából. Ellenőrizve a következő által';
-$labels['partialpass'] = 'Néhány aláírás nem valid, de van legalább egy ami valid a küldő tartományához. ellenőrizve a következő által';
-$labels['thirdparty'] = 'Harmadik fél által aláírt, az aláírás megtalálható de más domain számára mint a küldő címe. Ellenőrízve a következőre';
-$labels['temporaryinvalid'] = 'Az aláírás(átmenetileg) nem érvényes. Ellenőrízve a következő által';
-$labels['invalidsignature'] = 'Az aláírás nem érvényes. Ellenörizve a következővel';
+$labels['signaturepass'] = 'Érvényes aláírás(ok) a küldők domainjából. Ellenőrizve a következő által ';
+$labels['partialpass'] = 'Néhány aláírás nem valid, de van legalább egy ami valid a küldő tartományához. ellenőrizve a következő által ';
+$labels['thirdparty'] = 'Harmadik fél által aláírt, az aláírás megtalálható de más domain számára mint a küldő címe. Ellenőrízve a következőre ';
+$labels['temporaryinvalid'] = 'Az aláírás(átmenetileg) nem érvényes. Ellenőrízve a következő által ';
+$labels['invalidsignature'] = 'Az aláírás nem érvényes. Ellenörizve a következővel ';
 
 $labels['for'] = 'számára';
 $labels['by'] = 'általa';

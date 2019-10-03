@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Brak informacji o podpisie';
 $labels['noauthresults'] = 'Znaleziono podpis, jednak bez autoryzacji. Możliwe, że problem z konfiguracją serwera?';
-$labels['signaturepass'] = 'Aktualne sygnatury domeny nadawcy. Zweryfikowane przez';
-$labels['partialpass'] = 'Niektóre sygnatury są nieaktualne, lecz przynajmniej jedna z nich jest aktualna dla domeny nadawcy. Zweryfikowane przez';
-$labels['thirdparty'] = 'Podpisane przez podmiot trzeci, sygnatura jest dostępna, jednak przeznaczona jest dla innej domeny niż tej obecnej w adresie. Zweryfikowane dla';
-$labels['temporaryinvalid'] = 'Podpis jest (tymczasowo) niepoprawny! sprawdzone przez';
-$labels['invalidsignature'] = 'Podpis jest niepoprawny! sprawdzone przez';
+$labels['signaturepass'] = 'Aktualne sygnatury domeny nadawcy. Zweryfikowane przez ';
+$labels['partialpass'] = 'Niektóre sygnatury są nieaktualne, lecz przynajmniej jedna z nich jest aktualna dla domeny nadawcy. Zweryfikowane przez ';
+$labels['thirdparty'] = 'Podpisane przez podmiot trzeci, sygnatura jest dostępna, jednak przeznaczona jest dla innej domeny niż tej obecnej w adresie. Zweryfikowane dla ';
+$labels['temporaryinvalid'] = 'Podpis jest (tymczasowo) niepoprawny! sprawdzone przez ';
+$labels['invalidsignature'] = 'Podpis jest niepoprawny! sprawdzone przez ';
 
 $labels['for'] = 'dla';
 $labels['by'] = 'przez';

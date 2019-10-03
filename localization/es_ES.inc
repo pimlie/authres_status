@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'No hay información de firma';
 $labels['noauthresults'] = 'Encontrada firma pero no hay cabecera de resultados de autenticación. ¿Problema de configuración del servidor?';
-$labels['signaturepass'] = 'Firma(s) válida(s) del dominio del remitente. Verificadas por';
-$labels['partialpass'] = 'Algunas firmas no son válidas pero al menos una es válida para el dominio del remitente. Verificada por';
-$labels['thirdparty'] = 'Firmado por terceros, la firma está presente pero para un dominio diferente de la dirección remitente. Verificada por';
-$labels['temporaryinvalid'] = '¡La firma no es válida (temporalmente)! Verificada por';
-$labels['invalidsignature'] = '¡La firma no es válida! Verificada por';
+$labels['signaturepass'] = 'Firma(s) válida(s) del dominio del remitente. Verificadas por ';
+$labels['partialpass'] = 'Algunas firmas no son válidas pero al menos una es válida para el dominio del remitente. Verificada por ';
+$labels['thirdparty'] = 'Firmado por terceros, la firma está presente pero para un dominio diferente de la dirección remitente. Verificada por ';
+$labels['temporaryinvalid'] = '¡La firma no es válida (temporalmente)! Verificada por ';
+$labels['invalidsignature'] = '¡La firma no es válida! Verificada por ';
 
 $labels['for'] = 'para';
 $labels['by'] = 'por';

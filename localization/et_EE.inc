@@ -3,7 +3,7 @@
 $labels = array();
 $labels['nosignature'] = 'Puudub info signatuuride kohta';
 $labels['noauthresults'] = 'Signatuur leitud aga puudub valideerimise vastuse päis. Probleem serveri seadistusega?';
-$labels['signaturepass'] = 'Kontrollitud signatuur(id) saatja domeenilt. valideeritud';
+$labels['signaturepass'] = 'Kontrollitud signatuur(id) saatja domeenilt. valideeritud ';
 $labels['partialpass'] = 'Mõned signatuurid ei valideeru, aga vähemalt üks on valiidne. verifitseeritud ';
 $labels['thirdparty'] = 'Signeeritud kolmanda osapoole poolt, signatuur on olemas aga teisele domeenile kui saatja aadress. verifitseeritud ';
 $labels['temporaryinvalid'] = 'Signatuur ei ole (ajutiselt) valiidne. verifitseeritud ';

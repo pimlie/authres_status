@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Nema informacija o potpisu';
 $labels['noauthresults'] = 'Potpis je pronađen ali nema rezultata za zaglavlje autentifikacije. Problem u konfiguraciji servera?';
-$labels['signaturepass'] = 'Ispravan potpis sa domene pošiljaoca. verificirano od strane';
-$labels['partialpass'] = 'Neki potpisi su netačni ali je barem jedan ispravan sa domene pošiljaoca. verificirano od strane';
-$labels['thirdparty'] = 'Potpisano od strane trećeg lica, potpis je pristupan, ali za drugu adresu. verificirano od strane';
-$labels['temporaryinvalid'] = 'Potpis (trenutno) nije ispravan! verificirano od strane';
-$labels['invalidsignature'] = 'Potpis nije ispravan! verificirano od strane';
+$labels['signaturepass'] = 'Ispravan potpis sa domene pošiljaoca. verificirano od strane ';
+$labels['partialpass'] = 'Neki potpisi su netačni ali je barem jedan ispravan sa domene pošiljaoca. verificirano od strane ';
+$labels['thirdparty'] = 'Potpisano od strane trećeg lica, potpis je pristupan, ali za drugu adresu. verificirano od strane ';
+$labels['temporaryinvalid'] = 'Potpis (trenutno) nije ispravan! verificirano od strane ';
+$labels['invalidsignature'] = 'Potpis nije ispravan! verificirano od strane ';
 
 $labels['for'] = 'za';
 $labels['by'] = 'od';

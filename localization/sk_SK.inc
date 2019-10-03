@@ -3,7 +3,7 @@
 $labels = array();
 $labels['nosignature'] = 'Žiadna informácia o podpise';
 $labels['noauthresults'] = 'Podpis sa našiel, ale nenašla sa hlavička pre autentifikáciu výsledkov. Problém s konfiguráciou servera?';
-$labels['signaturepass'] = 'Platný podpis (platné podpisy) z domény odosielateľa. Overené cez';
+$labels['signaturepass'] = 'Platný podpis (platné podpisy) z domény odosielateľa. Overené cez ';
 $labels['partialpass'] = 'Niektoré podpisy nie sú platné, ale aspoň jeden podpis je platný pre doménu odosielateľa. Overené cez:';
 $labels['thirdparty'] = 'Podpísané treťou stranou, podpis je prítomný, ale je určený pre inú doménu ako je tá, ktorá je uvedená v adrese. Overené cez:';
 $labels['temporaryinvalid'] = 'Podpis je (dočasne) neplatný! Overené cez:';

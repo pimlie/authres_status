@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Không có thông tin chữ ký';
 $labels['noauthresults'] = 'Tìm thấy chữ ký nhưng không có kết quả cho phép dùng. Lỗi cấu hình ở máy chủ?';
-$labels['signaturepass'] = '(Các) Chữ ký hợp lệ từ tên miền của người gửi. Xác nhận bởi';
-$labels['partialpass'] = 'Vài chữ ký không hợp lệ, nhưng có ít nhất một chữ ký hợp lệ cho tên miền của người gửi. Xác nhận bởi';
-$labels['thirdparty'] = 'Xác nhận bởi bên thứ ba, chữ ký tồn tại, nhưng cho tên miền khác từ địa chỉ gửi. Xác nhận cho';
-$labels['temporaryinvalid'] = 'Chữ ký (tạm thời) không hợp lệ. Xác nhận bởi';
-$labels['invalidsignature'] = 'Chữ ký không hợp lệ! Xác nhận bởi';
+$labels['signaturepass'] = '(Các) Chữ ký hợp lệ từ tên miền của người gửi. Xác nhận bởi ';
+$labels['partialpass'] = 'Vài chữ ký không hợp lệ, nhưng có ít nhất một chữ ký hợp lệ cho tên miền của người gửi. Xác nhận bởi ';
+$labels['thirdparty'] = 'Xác nhận bởi bên thứ ba, chữ ký tồn tại, nhưng cho tên miền khác từ địa chỉ gửi. Xác nhận cho ';
+$labels['temporaryinvalid'] = 'Chữ ký (tạm thời) không hợp lệ. Xác nhận bởi ';
+$labels['invalidsignature'] = 'Chữ ký không hợp lệ! Xác nhận bởi ';
 
 $labels['for'] = 'cho';
 $labels['by'] = 'bởi';

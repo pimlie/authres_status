@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Non hai información sobre a sinatura';
 $labels['noauthresults'] = 'Atopouse unha sinatura, pero non a cabeceria de resultados da autenticación. Poida que haxa un problema de configuración no servidor.';
-$labels['signaturepass'] = 'Sinatura(s) válidas para o dominio do remitente. Verificado por';
-$labels['partialpass'] = 'Algunha das sinaturas é invalida, pero polo menos unha é válida para o dominio do remitente. Verificado por';
-$labels['thirdparty'] = 'Asinado por unha terceira parte. A sinatura está presente, pero para un dominio diferente ao do remitente. Verificado por';
-$labels['temporaryinvalid'] = 'A sinatura non é momentaneamente válida! Comprobado por';
-$labels['invalidsignature'] = 'A sinatura non é valida! Comprobado por';
+$labels['signaturepass'] = 'Sinatura(s) válidas para o dominio do remitente. Verificado por ';
+$labels['partialpass'] = 'Algunha das sinaturas é invalida, pero polo menos unha é válida para o dominio do remitente. Verificado por ';
+$labels['thirdparty'] = 'Asinado por unha terceira parte. A sinatura está presente, pero para un dominio diferente ao do remitente. Verificado por ';
+$labels['temporaryinvalid'] = 'A sinatura non é momentaneamente válida! Comprobado por ';
+$labels['invalidsignature'] = 'A sinatura non é valida! Comprobado por ';
 
 $labels['for'] = 'para';
 $labels['by'] = 'de';

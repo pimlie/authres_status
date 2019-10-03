@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Nulle information de signatura';
 $labels['noauthresults'] = 'Signatura trovate ma nulle capite de resultato de authentication. Problema de configuration del servitor?';
-$labels['signaturepass'] = 'Signatura(s) valide ab le dominio del expeditor, verificate per';
-$labels['partialpass'] = 'Alcun signaturas non es valide ma al minus un es valide pro le dominio del expeditor. Verificate per';
-$labels['thirdparty'] = 'Signate per un tertio. Le signatura es presente ma es pro un altere dominio que illo del adresse "De:". Verificate pro';
-$labels['temporaryinvalid'] = 'Le signatura (temporarimente) non es valide. Verificate per';
-$labels['invalidsignature'] = 'Le signatura non es valide. Verificate per';
+$labels['signaturepass'] = 'Signatura(s) valide ab le dominio del expeditor, verificate per ';
+$labels['partialpass'] = 'Alcun signaturas non es valide ma al minus un es valide pro le dominio del expeditor. Verificate per ';
+$labels['thirdparty'] = 'Signate per un tertio. Le signatura es presente ma es pro un altere dominio que illo del adresse "De:". Verificate pro ';
+$labels['temporaryinvalid'] = 'Le signatura (temporarimente) non es valide. Verificate per ';
+$labels['invalidsignature'] = 'Le signatura non es valide. Verificate per ';
 
 $labels['for'] = 'pro';
 $labels['by'] = 'per';

@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Gjin hântekening ynformaasje';
 $labels['noauthresults'] = 'Hântekening fûn mar gjin autentikaasje risseltaten kop. Tsjinner konfiguraasje probleem?';
-$labels['signaturepass'] = 'Jildige hântekening(en) fan stjoerder\'s domyn. Ferifiearre troch';
-$labels['partialpass'] = 'Guon hantekenings binne ûnjildich mar op syn minst ien is jildich foar stjoerder\'s domein. Ferifiearre troch';
-$labels['thirdparty'] = 'Ûndertekene troch tredde partij, hântekening is oanwêzich mar foar in oar domyn as út it adres. Ferifiearre foar';
-$labels['temporaryinvalid'] = 'Hântekening is (tydlik) net jildich! Ferifiearre troch';
-$labels['invalidsignature'] = 'Ûndertekening is net jildich! Ferifiearre troch';
+$labels['signaturepass'] = 'Jildige hântekening(en) fan stjoerder\'s domyn. Ferifiearre troch ';
+$labels['partialpass'] = 'Guon hantekenings binne ûnjildich mar op syn minst ien is jildich foar stjoerder\'s domein. Ferifiearre troch ';
+$labels['thirdparty'] = 'Ûndertekene troch tredde partij, hântekening is oanwêzich mar foar in oar domyn as út it adres. Ferifiearre foar ';
+$labels['temporaryinvalid'] = 'Hântekening is (tydlik) net jildich! Ferifiearre troch ';
+$labels['invalidsignature'] = 'Ûndertekening is net jildich! Ferifiearre troch ';
 
 $labels['for'] = 'foar';
 $labels['by'] = 'troch';

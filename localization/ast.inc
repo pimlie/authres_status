@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Nun hai información de robla';
 $labels['noauthresults'] = 'Atopóse una robla pero nun hai testera de resultaos d\'autenticación. ¿Problema de configuración del sirvidor?';
-$labels['signaturepass'] = 'Robla(es) válides del dominiu del remitente. Verificaes por';
-$labels['partialpass'] = 'Dalgunes robles nun son válides pero al menos una ye válida pal dominiu del remitente. Verificada por';
-$labels['thirdparty'] = 'Robláu por terceros, la robla ta presente pero pa un dominiu distintu de la direición remitente. Verificada por';
-$labels['temporaryinvalid'] = 'La robla nun ye válida (temporalmente) ! Verificada por';
-$labels['invalidsignature'] = 'La robla nun ye válida! Verificada por';
+$labels['signaturepass'] = 'Robla(es) válides del dominiu del remitente. Verificaes por ';
+$labels['partialpass'] = 'Dalgunes robles nun son válides pero al menos una ye válida pal dominiu del remitente. Verificada por ';
+$labels['thirdparty'] = 'Robláu por terceros, la robla ta presente pero pa un dominiu distintu de la direición remitente. Verificada por ';
+$labels['temporaryinvalid'] = 'La robla nun ye válida (temporalmente) ! Verificada por ';
+$labels['invalidsignature'] = 'La robla nun ye válida! Verificada por ';
 
 $labels['for'] = 'pa';
 $labels['by'] = 'por';
