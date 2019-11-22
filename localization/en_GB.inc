@@ -12,7 +12,7 @@ $labels['invalidsignature'] = 'Signature is not valid! verified by ';
 $labels['for'] = 'for';
 $labels['by'] = 'by';
 
-$labels['section_title']  = 'Authenticaton Status';
+$labels['section_title']  = 'Authentication Status';
 $labels['column_title']  = 'Auth. Result';
 
 $labels['title_enable_column']  = 'Enable Column';

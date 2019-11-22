@@ -67,6 +67,7 @@ class authres_status extends rcube_plugin
         $this->add_hook('storage_init', array($this, 'storage_init'));
         $this->add_hook('messages_list', array($this, 'messages_list'));
         $this->add_hook('message_headers_output', array($this, 'message_headers'));
+        $this->add_hook('template_object_messagesummary', array($this, 'message_summary'));
 
         $dont_override = $rcmail->config->get('dont_override', array());
 
@@ -229,8 +230,7 @@ class authres_status extends rcube_plugin
         return $p;
     }
 
-    public function message_headers($p)
-    {
+    private function populate_message_headers($p){
         /* We only have to check the headers once and this method is executed more than once,
         /* so let's cache the result
         */
@@ -240,11 +240,20 @@ class authres_status extends rcube_plugin
             $show_statuses = (int)rcmail::get_instance()->config->get('show_statuses');
             $this->img_status = $this->get_authentication_status($p['headers'], $show_statuses, (int)$_GET["_uid"]);
         }
+    }
+    public function message_headers($p)
+    {
+        $this->populate_message_headers($p);
 
         $p['output']['from']['value'] = $this->img_status . $p['output']['from']['value'];
         $p['output']['from']['html'] = true;
 
         return $p;
+    }
+
+    public function message_summary($p){
+        $this->populate_message_headers($GLOBALS['MESSAGE']);
+        return array('content' => preg_replace('/(<span>\s*)()(From)/', '$1' . $this->img_status . ' $3', $p['content']));
     }
 
     /* See https://tools.ietf.org/html/rfc5451
