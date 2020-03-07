@@ -1,15 +1,15 @@
 {
-    "name": "roundcube/authres_status",
+    "name": "texxasrulez/authres_status",
     "type": "roundcube-plugin",
     "description": "This authres_status plugin checks the Authentication-Results headers of your emails and displays the verification status. The verification status is displayed when you read an email, but you can also add a column to your message list.",
     "keywords": ["authentication","results","dkim","domainkeys","spf","sender-id","rfc5451"],
-    "homepage": "https://github.com/pimlie/authres_status",
+    "homepage": "https://github.com/texxasrulez/authres_status",
     "license": "GPL-3.0+",
     "version": "0.5.2",
     "authors": [
     	{
-            "name": "pimlie",
-            "email": "pimlie@hotmail.com",
+            "name": "texxasrulez",
+            "email": "texxasrulez@yahoo.com",
             "role": "Author"
         }
     ],
@@ -21,7 +21,7 @@
     ],
     "require": {
         "roundcube/plugin-installer": ">=0.1.3",
-        "pimlie/php-dkim": ">=0.2.2"
+        "texxasrulez/php-dkim": ">=0.2.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.1",
@@ -35,9 +35,9 @@
     },
     "support":
     {
-      "email": "pimlie@hotmail.com",
-      "issues": "https://github.com/pimlie/authres_status/issues",
-      "source": "https://github.com/pimlie/authres_status"
+      "email": "texxasrulez@yahoo.com",
+      "issues": "https://github.com/texxasrulez/authres_status/issues",
+      "source": "https://github.com/texxasrulez/authres_status"
     },
     "extra": {
         "roundcube": {
