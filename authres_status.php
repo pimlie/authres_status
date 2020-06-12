@@ -154,7 +154,7 @@ class authres_status extends rcube_plugin
     {
         $args['list']['authres_status'] = array(
             'id' => 'authres_status',
-            'section' => rcube::Q($this->gettext('section_title'))
+            'section' => rcube_utils::rep_specialchars_output($this->gettext('section_title'))
         );
 
         return $args;
