@@ -6,8 +6,8 @@ $labels['noauthresults'] = 'Signature found but no auth. results header. Server 
 $labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
 $labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
 $labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
-$labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
-$labels['invalidsignature'] = 'Signature is not valid! verified by ';
+$labels['temporaryinvalid'] = 'Undirritunin er (tímabundið) ógild! Sannvottað af';
+$labels['invalidsignature'] = 'Undirritunin er ógild! Sannvottað af';
 
 $labels['for'] = 'fyrir';
 $labels['by'] = 'af';

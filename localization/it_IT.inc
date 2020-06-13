@@ -13,14 +13,14 @@ $labels['for'] = 'per';
 $labels['by'] = 'da';
 
 $labels['section_title']  = 'Stato autenticazione';
-$labels['column_title']  = 'Risultato autent.';
+$labels['column_title']  = 'Risultato autenticazione';
 
 $labels['title_enable_column']  = 'Abilita colonna';
 $labels['label_enable_column']  = 'Abilitare la colonna risultato autenticazione nell\'elenco dei messaggi';
 $labels['label_fallback_verifier'] = 'Usa verifica interna DKIM (se la firma è stata trovata ma senza intestazione con il risultato dell\'autenticazione)';
 
 $labels['title_trusted_mtas'] = 'MTA affidabile';
-$labels['label_trusted_mtas'] = 'Comma separated authserv-id list of mta\'s you trust. Only results from these mta\'s will be shown';
+$labels['label_trusted_mtas'] = 'Elenco separato da virgole di authserv-id degli MTA fidati. Solo i risultati da questi MTA saranno mostrati';
 
 $labels['title_include_status'] = 'Mostra soltanto i seguenti stati';
 $labels['label_include_status1']  = 'Nessuna firma trovata';
