@@ -1,6 +1,4 @@
-.listing.iconized tr.authres_status>td.section:before {
-  content: "\f3ed"
-}
+/* Blue-Larry */
 
 .webkit .messagelist tr > .authres_status
 {
@@ -20,12 +18,20 @@
 }
 
 #sections-table tbody #rcmrowauthres_status td.section {
-    background-image: url(badge.png);
-    background-repeat: no-repeat;
-    background-position: 10px 5px;
+	background-image: url(badge2.png);
+	background-position: 10px 5px;
+}
+
+#sections-table tbody #rcmrowauthres_status.selected td.section {
+	background-image: url(badge.png);
+	background-repeat: no-repeat;
+	background-position: 10px 5px;
 }
 
 .authres-status-img {
+    vertical-align: top;
+    height: 14px;
+    width: 14px;
 }
 
 .widescreen .authres-status-img {
