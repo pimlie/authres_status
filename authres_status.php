@@ -67,7 +67,7 @@ class authres_status extends rcube_plugin
         $this->add_hook('storage_init', array($this, 'storage_init'));
         $this->add_hook('messages_list', array($this, 'messages_list'));
         $this->add_hook('message_headers_output', array($this, 'message_headers'));
-		$this->add_hook('template_object_messagesummary', array($this, 'message_summary'));
+        $this->add_hook('template_object_messagesummary', array($this, 'message_summary'));
 
         $dont_override = $rcmail->config->get('dont_override', array());
 
