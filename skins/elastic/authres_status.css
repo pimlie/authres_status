@@ -1,0 +1,36 @@
+.listing.iconized tr.authres_status>td.section:before {
+  content: "\f3ed"
+}
+
+.webkit .messagelist tr > .authres_status
+{
+    width: 20px;
+}
+
+.messagelist tr > .authres_status {
+    width: 20px;
+    padding: 2px 3px;
+    text-align: center;
+}
+
+.messagelist tr > .authres_status span {
+    display: inline-block;
+    vertical-align: middle;
+    background: url(badge.png) center no-repeat;
+}
+
+#sections-table tbody #rcmrowauthres_status td.section {
+    background-image: url(badge.png);
+    background-repeat: no-repeat;
+    background-position: 10px 5px;
+}
+
+.authres-status-img {
+}
+
+.widescreen .authres-status-img {
+    position: relative;
+    top: -1px;
+    height: 12px;
+    width: 12px;
+}
