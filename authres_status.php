@@ -34,7 +34,7 @@ class authres_status extends rcube_plugin
         "domainkeys",
         "sender-id",
         "spf",
-	"dmarc",
+        "dmarc",
         "arc",
     );
 
