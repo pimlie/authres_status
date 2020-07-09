@@ -34,6 +34,7 @@ class authres_status extends rcube_plugin
         "domainkeys",
         "sender-id",
         "spf",
+        "dmarc",
         "arc",
     );
 
@@ -297,7 +298,7 @@ class authres_status extends rcube_plugin
                 }
 
                 foreach ($resinfos as $resinfo) {
-                    if (preg_match('/(' . implode("|", self::$RFC5451_authentication_methods) . ')' . $cfws . '=' . $cfws . '(' . implode("|", array_keys(self::$RFC5451_authentication_results)) . ')' . $cfws . '(\(.*?\))?/i', $resinfo, $m, PREG_OFFSET_CAPTURE)) {
+                    if (preg_match('/^(' . implode("|", self::$RFC5451_authentication_methods) . ')' . $cfws . '=' . $cfws . '(' . implode("|", array_keys(self::$RFC5451_authentication_results)) . ')' . $cfws . '(\(.*?\))?/i', $resinfo, $m, PREG_OFFSET_CAPTURE)) {
                         $parsed_resinfo = array(
                             'title'  => trim($m[0][0]),
                             'method' => $m[1][0],
