@@ -142,7 +142,7 @@ class authres_status extends rcube_plugin
                     $args['blocks']['authresstatus']['name'] = $this->gettext('title_include_status');
 
                     $args['blocks']['authresstatus']['options']['enable' . $status]['title'] = $this->gettext('label_include_status' . $status);
-                    $input = new html_checkbox(array('name' => '_show_statuses[]', 'id' => 'enable_authres_status_column', 'value' => $status));
+                    $input = new html_checkbox(array('name' => '_show_statuses[]', 'id' => 'enable_authres_status_' . $status, 'value' => $status));
                     $args['blocks']['authresstatus']['options']['enable' . $status]['content'] = $input->show(($show_statuses & $status));
                 }
             }
