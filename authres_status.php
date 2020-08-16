@@ -253,7 +253,7 @@ class authres_status extends rcube_plugin
     }
 	
 	public function message_summary($p){
-	return array('content' => preg_replace('/(<span>\s*)()(From)/', '$1' . $this->img_status . ' $3', $p['content']));
+	return array('content' => preg_replace('/(<span>.*)(<span class="adr">)/', '$1' . $this->img_status . ' $2 ', $p['content']));
 	}
 	
     /* See https://tools.ietf.org/html/rfc5451
