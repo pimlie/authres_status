@@ -98,7 +98,7 @@ class authres_status extends rcube_plugin
 
     public function storage_init($p)
     {
-        $p['fetch_headers'] = trim($p['fetch_headers'] . ' ' . strtoupper('Authentication-Results') . ' ' . strtoupper('X-DKIM-Authentication-Results') . ' ' . strtoupper('X-Spam-Status') . ' ' . strtoupper('DKIM-Signature') . ' ' . strtoupper('DomainKey-Signature'));
+        $p['fetch_headers'] = trim(($p['fetch_headers'] ?? '') . ' ' . strtoupper('Authentication-Results') . ' ' . strtoupper('X-DKIM-Authentication-Results') . ' ' . strtoupper('X-Spam-Status') . ' ' . strtoupper('DKIM-Signature') . ' ' . strtoupper('DomainKey-Signature'));
         return $p;
     }
 
@@ -333,10 +333,10 @@ class authres_status extends rcube_plugin
     {
         /* If dkimproxy did not find a signature, stop here
         */
-        if (($results = $headers->others['x-dkim-authentication-results']) && strpos($results, 'none') !== false) {
+        if (($results = ($headers->others['x-dkim-authentication-results'] ?? '')) && strpos($results, 'none') !== false) {
             $status = self::STATUS_NOSIG;
         } else {
-            if ($headers->others['authentication-results']) {
+            if ($headers->others['authentication-results'] ?? null) {
                 $results = $this->rfc5451_extract_authresheader($headers->others['authentication-results']);
                 $status = 0;
                 $title = '';
@@ -396,7 +396,7 @@ class authres_status extends rcube_plugin
 
                 /* Check for spamassassin's X-Spam-Status
                 */
-            } elseif ($headers->others['x-spam-status']) {
+            } elseif ($headers->others['x-spam-status'] ?? null) {
                 $status = self::STATUS_NOSIG;
 
                 /* DKIM_* are defined at: http://search.cpan.org/~kmcgrail/Mail-SpamAssassin-3.3.2/lib/Mail/SpamAssassin/Plugin/DKIM.pm */
@@ -421,12 +421,12 @@ class authres_status extends rcube_plugin
                         }
                     }
                 }
-            } elseif ($headers->others['dkim-signature'] || $headers->others['domainkey-signature']) {
+            } elseif ($headers->others['dkim-signature'] ?? null || $headers->others['domainkey-signature'] ?? null) {
                 $status = 0;
 
                 if ($uid) {
                     $rcmail = rcmail::get_instance();
-                    if ($headers->others['dkim-signature'] && $rcmail->config->get('use_fallback_verifier')) {
+                    if ($headers->others['dkim-signature'] ?? null && $rcmail->config->get('use_fallback_verifier')) {
                         if (!class_exists('Crypt_RSA')) {
                             $autoload = require __DIR__ . "/../../vendor/autoload.php";
                             $autoload->loadClass('Crypt_RSA'); // Preload for use in DKIM_Verify
