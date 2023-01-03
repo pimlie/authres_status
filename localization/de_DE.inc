@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Keine Signatur-Informationen';
 $labels['noauthresults'] = 'Signatur gefunden aber keinen "auth. results header". Serverkonfiguration korrekt?';
-$labels['signaturepass'] = 'Gültige Signatur(en) von der Domain des Absenders. Verifiziert durch';
-$labels['partialpass'] = 'Einige Signaturen sind ungültig aber es wurde zumindest eine gültige Signatur für die Domain des Absenders gefunden. Verifiziert durch';
-$labels['thirdparty'] = 'Signiert durch einen Dritten. Signatur ist vorhanden aber für eine andere Domain als die der Adresse. Verifiziert für';
-$labels['temporaryinvalid'] = 'Signatur ist (vorübergehend) nicht gültig! Verifiziert durch';
-$labels['invalidsignature'] = 'Signatur ist nicht gültig! Verifiziert durch';
+$labels['signaturepass'] = 'Gültige Signatur(en) von der Domain des Absenders. Verifiziert durch ';
+$labels['partialpass'] = 'Einige Signaturen sind ungültig aber es wurde zumindest eine gültige Signatur für die Domain des Absenders gefunden. Verifiziert durch ';
+$labels['thirdparty'] = 'Signiert durch einen Dritten. Signatur ist vorhanden aber für eine andere Domain als die der Adresse. Verifiziert für ';
+$labels['temporaryinvalid'] = 'Signatur ist (vorübergehend) nicht gültig! Verifiziert durch ';
+$labels['invalidsignature'] = 'Signatur ist nicht gültig! Verifiziert durch ';
 
 $labels['for'] = 'für';
 $labels['by'] = 'durch';
