@@ -474,7 +474,7 @@ class authres_status extends rcube_plugin
 
         // at least one auth method was passed, show partial pass
         $rcmail = rcmail::get_instance();
-        if (($status & self::STATUS_PASS) && $rcmail->config->get('authres_permitpartialpass', true)) {
+        if (($status & self::STATUS_PASS) && ($status & self::STATUS_FAIL) && $rcmail->config->get('authres_permitpartialpass', true)) {
             $status = self::STATUS_PARS;
         } 
 
