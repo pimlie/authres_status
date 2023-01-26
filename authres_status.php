@@ -472,6 +472,12 @@ class authres_status extends rcube_plugin
             }
         }
 
+        // at least one auth method was passed, show partial pass
+        $rcmail = rcmail::get_instance();
+        if (($status & self::STATUS_PASS) && ($status & self::STATUS_FAIL) && $rcmail->config->get('authres_permitpartialpass', true)) {
+            $status = self::STATUS_PARS;
+        } 
+
         if ($status == self::STATUS_NOSIG) {
             $image = 'status_nosig.png';
             $alt = 'nosignature';
@@ -481,22 +487,18 @@ class authres_status extends rcube_plugin
         } elseif ($status == self::STATUS_PASS) {
             $image = 'status_pass.png';
             $alt = 'signaturepass';
-        } else {
-            // at least one auth method was passed, show partial pass
-            if (($status & self::STATUS_PASS)) {
-                $status = self::STATUS_PARS;
-                $image = 'status_partial_pass.png';
-                $alt = 'partialpass';
-            } elseif ($status >= self::STATUS_FAIL) {
-                $image = 'status_fail.png';
-                $alt = 'invalidsignature';
-            } elseif ($status >= self::STATUS_WARN) {
-                $image = 'status_warn.png';
-                $alt = 'temporaryinvalid';
-            } elseif ($status >= self::STATUS_THIRD) {
-                $image = 'status_third.png';
-                $alt = 'thirdparty';
-            }
+        } elseif ($status == self::STATUS_PARS) {
+            $image = 'status_partial_pass.png';
+            $alt = 'partialpass';
+        } elseif ($status >= self::STATUS_FAIL) {
+            $image = 'status_fail.png';
+            $alt = 'invalidsignature';
+        } elseif ($status >= self::STATUS_WARN) {
+            $image = 'status_warn.png';
+            $alt = 'temporaryinvalid';
+        } elseif ($status >= self::STATUS_THIRD) {
+            $image = 'status_third.png';
+            $alt = 'thirdparty';
         }
 
         if (!$show_statuses || ($show_statuses & $status)) {
