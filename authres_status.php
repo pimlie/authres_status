@@ -433,7 +433,7 @@ class authres_status extends rcube_plugin
                         }
 
                         try {
-                          $dkimVerify = new DKIM_Verify($rcmail->imap->get_raw_body($uid));
+                          $dkimVerify = new DKIM_Verify($rcmail->storage->get_raw_body($uid));
                           $results = $dkimVerify->validate();
                         } catch(Exception $e) {
                           $results = array();
