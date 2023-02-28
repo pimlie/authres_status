@@ -356,7 +356,7 @@ class authres_status extends rcube_plugin
                         $authorDomainFound = false;
 
                         foreach ($results as $result) {
-                            if ($result['method'] == 'dkim' || $result['method'] == 'domainkeys') {
+                            if (in_array($result['method'], array('dkim', 'dmarc', 'domainkeys'))) {
                                 if (is_array($result['props']) && isset($result['props']['header'])) {
                                     $pvalue = '';
 
@@ -365,7 +365,9 @@ class authres_status extends rcube_plugin
                                         $pvalue = $result['props']['header']['d'];
                                     } elseif (isset($result['props']['header']['i'])) {
                                         $pvalue = substr($result['props']['header']['i'], strpos($result['props']['header']['i'], '@') + 1);
-                                    }
+                                    } elseif (isset($result['props']['header']['from'])) {
+                                        $pvalue = $result['props']['header']['from'];
+				    }
 
                                     if ($pvalue == $authorDomain || substr($authorDomain, -1 * strlen($pvalue)) == $pvalue) {
                                         $authorDomainFound = true;
