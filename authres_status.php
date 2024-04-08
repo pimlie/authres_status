@@ -307,6 +307,10 @@ class authres_status extends rcube_plugin
                             'props'  => array()
                         );
 
+                        if (($parsed_resinfo['method'] == 'arc') && ($parsed_resinfo['result'] == 'none')) {
+                                continue;
+                        }
+
                         $propspec = trim(($m[0][1] > 0 ? substr($resinfo, 0, $m[0][1]) : '') . substr($resinfo, strlen($m[0][0])));
                         if ($propspec) {
                             if (preg_match_all('/(' . implode("|", self::$RFC5451_ptypes) . ')' . $cfws . '\.' . $cfws . '(' . implode("|", self::$RFC5451_properties) . ')' . $cfws . '=' . $cfws . '([^\s]*)/i', $propspec, $m)) {
