@@ -336,56 +336,96 @@ class authres_status extends rcube_plugin
         if (($results = ($headers->others['x-dkim-authentication-results'] ?? '')) && strpos($results, 'none') !== false) {
             $status = self::STATUS_NOSIG;
         } else {
-            if ($headers->others['authentication-results'] ?? null) {
+            $hasAuthenticationResultHeaders = (bool)$headers->others['authentication-results'];
+            if ($hasAuthenticationResultHeaders) {
                 $results = $this->rfc5451_extract_authresheader($headers->others['authentication-results']);
                 $status = 0;
                 $title = '';
 
                 foreach ($results as $result) {
                     $status = $status | (isset(self::$RFC5451_authentication_results[$result['result']]) ? self::$RFC5451_authentication_results[$result['result']] : self::STATUS_FAIL);
-
                     $title .= ($title ? '; ' : '') . $result['title'];
                 }
 
-                if ($status == self::STATUS_PASS) {
-                    /* Verify if its an author's domain signature or a third party
-                    */
-                    if (preg_match("/[@]([a-zA-Z0-9]+([.][a-zA-Z0-9]+)?\.[a-zA-Z]{2,4})/", $headers->from, $m)) {
+                if ($status === self::STATUS_PASS || $status === self::STATUS_THIRD) {
+                    // Extract emailaddress from From: header
+                    $authorEmail = '';
+                    $authorDomain = '';
+
+                    if (preg_match('/<([^>]+)>/', $headers->from, $m)) {
+                        $authorEmail = $m[1];
+                    }
+
+                    if (str_contains($authorEmail, '@')) {
+                        $authorDomain = explode('@', $authorEmail, 2)[1];
+                    }
+
+                    if ($authorDomain) {
                         $title = '';
-                        $authorDomain = $m[1];
                         $authorDomainFound = false;
 
+                        /* Verify if its an author's domain signature or a third party
+                        */
                         foreach ($results as $result) {
-                            if (in_array($result['method'], array('dkim', 'dmarc', 'domainkeys'))) {
-                                if (is_array($result['props']) && isset($result['props']['header'])) {
-                                    $pvalue = '';
+                            if (
+                                !in_array($result['method'], array('auth', 'dkim', 'dmarc', 'domainkeys'))
+                                || !is_array($result['props'])
+                            ) {
+                                continue;
+                            }
 
-                                    // d is required, but still not always present
-                                    if (isset($result['props']['header']['d'])) {
-                                        $pvalue = $result['props']['header']['d'];
-                                    } elseif (isset($result['props']['header']['i'])) {
-                                        $pvalue = substr($result['props']['header']['i'], strpos($result['props']['header']['i'], '@') + 1);
-                                    } elseif (isset($result['props']['header']['from'])) {
-                                        $pvalue = $result['props']['header']['from'];
-				    }
+                            if ($result['method'] === 'auth') {
+                                $method_props = $result['props']['smtp'];
+                            } else {
+                                $method_props = $result['props']['header'];
+                            }
 
-                                    if ($pvalue == $authorDomain || substr($authorDomain, -1 * strlen($pvalue)) == $pvalue) {
-                                        $authorDomainFound = true;
+                            if (!isset($method_props)) {
+                                continue;
+                            }
 
-                                        if ($status != self::STATUS_PASS) {
-                                            $status = self::STATUS_PASS;
-                                            $title = $result['title'];
-                                        } else {
-                                            $title.= ($title ? '; ' : '') . $result['title'];
-                                        }
-                                    } else {
-                                        if ($status == self::STATUS_THIRD) {
-                                            $title .= '; ' . $this->gettext('for') . ' ' . $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
-                                        } elseif (!$authorDomainFound) {
-                                            $status = self::STATUS_THIRD;
-                                            $title = $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
-                                        }
-                                    }
+                            $pvalue = ''; // pvalue refers to the definition in RFC-5451 (p10)
+
+                            if (isset($method_props['d'])) {
+                                // d is required, but still not always present
+                                $pvalue = $method_props['d'];
+                            } elseif (isset($method_props['i'])) {
+                                $pvalue = substr($method_props['i'], strpos($method_props['i'], '@') + 1);
+                            } elseif ($result['method'] === 'dmarc' && isset($method_props['from'])) {
+                                // from is used with dmarc results
+                                $pvalue = $method_props['from'];
+                            } elseif ($result['method'] === 'auth' && isset($method_props['mailfrom'])) {
+                                // mailfrom is used with smtp.auth results (RFC-4954)
+                                $pvalue = $method_props['mailfrom'];
+                            }
+
+                            $isAuthorValid = false;
+                            if ($result['method'] === 'auth') {
+                                $isAuthorValid = $pvalue === $authorEmail;
+                            } else {
+                                $isAuthorValid = $pvalue === $authorDomain;
+
+                                if (!$isAuthorValid) {
+                                    // Check if authorDomain is a subdomain of the signee
+                                    $isAuthorValid = str_ends_with($authorDomain, '.' . str_replace('@', '', $pvalue));
+                                }
+                            }
+
+                            if ($isAuthorValid) {
+                                $authorDomainFound = true;
+
+                                if ($status != self::STATUS_PASS) {
+                                    $status = self::STATUS_PASS;
+                                    $title = $result['title'];
+                                } else {
+                                    $title.= ($title ? '; ' : '') . $result['title'];
+                                }
+                            } else {
+                                if ($status == self::STATUS_THIRD) {
+                                    $title .= '; ' . $this->gettext('for') . ' ' . $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
+                                } elseif (!$authorDomainFound) {
+                                    $status = self::STATUS_THIRD;
+                                    $title = $pvalue . ' ' . $this->gettext('by') . ' ' . $result['title'];
                                 }
                             }
                         }
