@@ -520,7 +520,7 @@ class authres_status extends rcube_plugin
         } elseif ($status == self::STATUS_NORES) {
             $image = 'status_nores.png';
             $alt = 'noauthresults';
-        } elseif ($status == self::STATUS_PASS) {
+        } elseif (($status == self::STATUS_PASS) || ($status == self::STATUS_PASS + self::STATUS_NOSIG)) {
             $image = 'status_pass.png';
             $alt = 'signaturepass';
         } else {
