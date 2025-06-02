@@ -336,7 +336,7 @@ class authres_status extends rcube_plugin
         if (($results = ($headers->others['x-dkim-authentication-results'] ?? '')) && strpos($results, 'none') !== false) {
             $status = self::STATUS_NOSIG;
         } else {
-            $hasAuthenticationResultHeaders = (bool)$headers->others['authentication-results'];
+            $hasAuthenticationResultHeaders = (bool) isset($headers->others['authentication-results']);
             if ($hasAuthenticationResultHeaders) {
                 $results = $this->rfc5451_extract_authresheader($headers->others['authentication-results']);
                 $status = 0;
@@ -375,7 +375,7 @@ class authres_status extends rcube_plugin
                             }
 
                             if ($result['method'] === 'auth') {
-                                $method_props = $result['props']['smtp'];
+                                 $method_props = ($result['props']['smtp'] ?? '');
                             } else {
                                 $method_props = $result['props']['header'];
                             }
@@ -542,7 +542,7 @@ class authres_status extends rcube_plugin
         }
 
         if (!$show_statuses || ($show_statuses & $status)) {
-            return '<img src="plugins/authres_status/images/' . $image . '" alt="' . $alt . '" title="' . $this->gettext($alt) . htmlentities($title) . '" class="authres-status-img" /> ';
+            return '<img src="plugins/authres_status/images/' . $image . '" alt="' . $alt . '" title="' . $this->gettext($alt) . htmlentities($title ?? '') . '" class="authres-status-img" /> ';
         }
 
         return '';
