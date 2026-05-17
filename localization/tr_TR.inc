@@ -20,7 +20,7 @@ $labels['label_enable_column']  = 'İleti listesinde doğrulama sonucu sütunu k
 $labels['label_fallback_verifier'] = 'İç DKIM doğrulayıcısı kullanılsın (imza bulunmuş ancak doğrulama sonucu üst bilgisi yoksa';
 
 $labels['title_trusted_mtas'] = 'Güvenilen MTA kodları';
-$labels['label_trusted_mtas'] = 'Güvendiğiniz MTA kimlik doğrulama hizmeti kodlarının listesini virgül ile ayırarak yazın. Yalnızca bu MTA kodlarının sonuçları görüntülenir';
+$labels['label_trusted_mtas'] = 'Güvendiğiniz MTA kimlik doğrulama hizmeti kimliklerinin listesini virgül ile ayırarak yazın. Yalnızca bu MTA kodlarının sonuçları görüntülenir';
 
 $labels['title_include_status'] = 'Yalnızca aşağıdaki durumlar görüntülensin';
 $labels['label_include_status1']  = 'Herhangi bir imza bulunamadı';

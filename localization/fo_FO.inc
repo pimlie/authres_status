@@ -3,11 +3,11 @@
 $labels = array();
 $labels['nosignature'] = 'Eingin upplýsing um undirskrift ';
 $labels['noauthresults'] = 'Undirskriftir funnar, men eingin úrslit fyri samleikis høvdara. Kanska er tað ambætara trupuleikar?';
-$labels['signaturepass'] = 'Góðkendar undirskriftir frá sendara økisnavn. Vátta av';
+$labels['signaturepass'] = 'Góðkendar undirskriftir frá økisnavni sendarans. Váttað av';
 $labels['partialpass'] = 'Onkrar undirskriftir eru ógildigar, men minst ein er góðkend av økisnavninum hjá sendarinum. Góðkent av';
 $labels['thirdparty'] = 'Undirskriva av triðaparti. Undirskriftin er tilstaðar, men fyri onnur økisnøvn enn fyri bústaðin. Góðkent av';
-$labels['temporaryinvalid'] = 'Undirskrift er (fyribils) ikki gildig. Vátta av ';
-$labels['invalidsignature'] = 'Undirskrift er ikki gildig. Vátta av ';
+$labels['temporaryinvalid'] = 'Undirskrift er (fyribils) ógildug. Váttað av ';
+$labels['invalidsignature'] = 'Undirskrift er ógildug. Váttað av ';
 
 $labels['for'] = 'fyri';
 $labels['by'] = 'av';
@@ -26,8 +26,8 @@ $labels['title_include_status'] = 'Vís einans tær fylgjandi støðurnar';
 $labels['label_include_status1']  = 'Eingin undirskrivt funnin';
 $labels['label_include_status2']  = 'Undirskrift funnin, men eingin samgildis úrslit';
 $labels['label_include_status4']  = 'Allar undirskriftir vóru góðkendar';
-$labels['label_include_status8']  = 'Minst ein undirskrift var vátta';
-$labels['label_include_status16']  = 'Triðapart undirskrift';
+$labels['label_include_status8']  = 'Minst ein undirskrift var váttað';
+$labels['label_include_status16']  = 'Triðjapart undirskrift';
 $labels['label_include_status32']  = 'Undirskrift er fyribils miseydna';
 $labels['label_include_status64']  = 'Undirskrift er permanent miseydnast ';
 

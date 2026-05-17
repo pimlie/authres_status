@@ -1,9 +1,9 @@
 <?php
 
 $labels = array();
-$labels['nosignature'] = 'Agahiya îmzeyê tune ye';
-$labels['noauthresults'] = 'Signature found but no auth. results header. Server configuration problem?';
-$labels['signaturepass'] = 'Valid signature(s) from the sender\'s domain. verified by ';
+$labels['nosignature'] = 'Zanyariya îmzeyê tune ye';
+$labels['noauthresults'] = 'Îmze hat dîtin lê sernivîsa encamên mafdayînê tune ye. Pirsgirêka sazkariyên rajegirê?';
+$labels['signaturepass'] = 'Îmze(yên) derbasdar ji navpera şander. Hatine piştrastkirin ji aliyê';
 $labels['partialpass'] = 'Some signatures are invalid but at least one is valid for the sender\'s domain. verified by ';
 $labels['thirdparty'] = 'Signed by third party, signature is present but for different domain than from address. verified for ';
 $labels['temporaryinvalid'] = 'Signature is (temporarily) not valid! verified by ';
