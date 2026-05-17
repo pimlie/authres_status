@@ -549,7 +549,11 @@ class authres_status extends rcube_plugin
         }
 
         if (!$show_statuses || ($show_statuses & $status)) {
-            return '<img src="' . $this->urlbase . 'images/' . $image . '" alt="' . $alt . '" title="' . $this->gettext($alt) . htmlentities($title ?? '') . '" class="authres-status-img" /> ';
+            $staticBase = 'static.php/';
+            if (version_compare(RCUBE_VERSION, '1.7.0') < 0) {
+                $staticBase = '';
+            }
+            return '<img src="' . $staticBase . $this->urlbase . 'images/' . $image . '" alt="' . $alt . '" title="' . $this->gettext($alt) . htmlentities($title ?? '') . '" class="authres-status-img" /> ';
         }
 
         return '';
