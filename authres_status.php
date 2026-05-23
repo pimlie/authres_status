@@ -17,6 +17,20 @@
 
 class authres_status extends rcube_plugin
 {
+    const PLUGIN_VERSION = '0.7.1';
+    const PLUGIN_INFO = array(
+        'name' => 'authres_status',
+        'vendor' => 'pimlie',
+        'version' => self::PLUGIN_VERSION,
+        'license' => 'GPL-3.0+',
+        'uri' => 'https://github.com/pimlie/authres_status',
+    );
+
+    public static function info(): array
+    {
+        return self::PLUGIN_INFO;
+    }
+
     public $task = 'mail|settings';
 
     const STATUS_NOSIG = 1;
@@ -479,14 +493,24 @@ class authres_status extends rcube_plugin
                             $autoload->loadClass('Crypt_RSA'); // Preload for use in DKIM_Verify
                         }
 
-                        try {
-                          $dkimVerify = new DKIM_Verify($rcmail->storage->get_raw_body($uid));
-                          $results = $dkimVerify->validate();
-                        } catch(Exception $e) {
-                          $results = [];
+                        set_error_handler(function ($severity, $message, $file, $line) {
+                            if (!(error_reporting() & $severity)) {
+                                return false;
+                            }
 
-                          $status = self::STATUS_NOSIG;
-                          $title = "Exception thrown by internal verifier: " . $e->getMessage();
+                            throw new ErrorException($message, 0, $severity, $file, $line);
+                        });
+
+                        try {
+                            $dkimVerify = new DKIM_Verify($rcmail->storage->get_raw_body($uid));
+                            $results = $dkimVerify->validate();
+                        } catch (Exception $e) {
+                            $results = [];
+
+                            $status = self::STATUS_NOSIG;
+                            $title = "Exception thrown by internal verifier: " . $e->getMessage();
+                        } finally {
+                            restore_error_handler();
                         }
 
                         if (count($results)) {
@@ -549,13 +573,27 @@ class authres_status extends rcube_plugin
         }
 
         if (!$show_statuses || ($show_statuses & $status)) {
-            $staticBase = 'static.php/';
-            if (version_compare(RCUBE_VERSION, '1.7.0') < 0) {
-                $staticBase = '';
-            }
-            return '<img src="' . $staticBase . $this->urlbase . 'images/' . $image . '" alt="' . $alt . '" title="' . $this->gettext($alt) . htmlentities($title ?? '') . '" class="authres-status-img" /> ';
+            return '<img src="' . $this->plugin_asset_url('images/' . $image) . '" alt="' . $alt . '" title="' . $this->gettext($alt) . htmlentities($title ?? '') . '" class="authres-status-img" /> ';
         }
 
         return '';
+    }
+
+    private function plugin_asset_url($path)
+    {
+        $url = ltrim(method_exists($this, 'url') ? $this->url($path) : $this->urlbase . $path, '/');
+        $request_path = $_SERVER['SCRIPT_NAME'] ?? $_SERVER['PHP_SELF'] ?? $_SERVER['REQUEST_URI'] ?? '';
+
+        if (preg_match('#^(.*?)/public_html(?:/.*)?$#', $request_path, $matches)) {
+            return rtrim($matches[1], '/') . '/' . $url;
+        }
+
+        $rcmail = rcmail::get_instance();
+
+        if (is_object($rcmail->output) && method_exists($rcmail->output, 'asset_url')) {
+            return $rcmail->output->asset_url($url);
+        }
+
+        return $url;
     }
 }
