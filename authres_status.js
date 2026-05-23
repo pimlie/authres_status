@@ -9,9 +9,15 @@ var authres_status = {
        var li = '<label><input type="checkbox" name="list_col[]" value="authres_status" id="cols_authres_status" /> <span>'+rcmail.get_label('authres_status.column_title')+'</span></label>';
        $("#listoptions-columns ul.proplist").append('<li>'+li+'</li>');
     },
+    fixAssetUrls: function(html) {
+        return html.replace(
+            /\/public_html\/plugins\/authres_status\/images\//g,
+            '/plugins/authres_status/images/'
+        );
+    },
     insertrow: function(evt) {
         if (typeof(rcmail.env.authres_flags[evt.uid]) !== "undefined") {
-            $('.fromto', evt.row.obj).prepend($('<span/>').html(rcmail.env.authres_flags[evt.uid]));
+            $('.fromto', evt.row.obj).prepend($('<span/>').html(authres_status.fixAssetUrls(rcmail.env.authres_flags[evt.uid])));
         }
     }
 };
