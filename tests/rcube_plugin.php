@@ -1,5 +1,10 @@
 <?php
 
+// The expected image paths in the tests are the pre-1.7 ones (no static.php/ prefix).
+if (!defined('RCUBE_VERSION')) {
+    define('RCUBE_VERSION', '1.6.0');
+}
+
 class rcube_plugin
 {
 
