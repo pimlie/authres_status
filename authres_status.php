@@ -281,9 +281,22 @@ class authres_status extends rcube_plugin
             if (preg_match('/^' . $cfws . '((?=.{1,254}$)((?=[a-z0-9-]{1,63}\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,63}(\/[^\s]*)?)' . $cfws . '(\(.*?\))?' . $cfws . ';/i', trim($header), $m)) {
                 $authservid = $m[3];
                 $header = substr($header, strlen($m[0]));
+            } elseif (count($this->trusted_mtas) && preg_match(
+                '/^' . $cfws . '(?<authservid>[^\s;()]+)(?:' . $cfws . '[0-9]+)?'
+                    . $cfws . '(\(.*?\))?' . $cfws . ';/i',
+                trim($header),
+                $m
+            )) {
+                // RFC 8601 allows any token as authserv-id, optionally followed by a version.
+                // Only needed here to compare it with trusted_mtas.
+                $authservid = $m['authservid'];
+                $header = substr($header, strlen($m[0]));
             }
 
-            if (!$authservid || !count($this->trusted_mtas) || in_array($authservid, $this->trusted_mtas)) {
+            // With trusted_mtas set, a header is only trusted if its authserv-id could be read and
+            // is in the list. Anything else may have been added by the sender, so fail closed.
+            $trusted = $authservid !== false && in_array($authservid, $this->trusted_mtas, true);
+            if (!count($this->trusted_mtas) || $trusted) {
                 $resinfos = array();
                 $header_parts = explode(";", $header);
                 while (count($header_parts)) {
