@@ -357,9 +357,11 @@ class authres_status extends rcube_plugin
                     $authorEmail = '';
                     $authorDomain = '';
 
-                    if (preg_match('/<([^>]+)>/', $headers->from, $m)) {
-                        $authorEmail = $m[1];
-                    }
+                    // Use Roundcube's address parser on the raw header, so that every valid
+                    // form counts: "Name <user@example.com>", "<user@example.com>" and a bare
+                    // "user@example.com" (RFC 5322, section 3.4)
+                    $from = rcube_mime::decode_address_list((string) $headers->from, 1, false);
+                    $authorEmail = $from[1]['mailto'] ?? '';
 
                     if (str_contains($authorEmail, '@')) {
                         $authorDomain = explode('@', $authorEmail, 2)[1];
@@ -434,6 +436,10 @@ class authres_status extends rcube_plugin
                                 }
                             }
                         }
+                    } elseif ($status === self::STATUS_PASS) {
+                        // Without the author's domain the signature cannot be shown as the
+                        // author's own, so do not report it as a pass
+                        $status = self::STATUS_THIRD;
                     }
                 }
 
